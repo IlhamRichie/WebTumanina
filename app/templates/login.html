@@ -1,0 +1,48 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-logo">
+            <img src="{{ url_for('static', filename='images/Logo-tumanina.png') }}" alt="User Icon">
+        </div>
+        <h2>Admin Login</h2>
+
+        <!-- Tampilkan Flash Message -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages" id="flashMessage">
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('auth.login') }}" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Sign in</button>
+
+    <script>
+        setTimeout(function() {
+            const flashMessage = document.getElementById('flashMessage');
+            if (flashMessage) {
+                flashMessage.style.transition = 'opacity 0.5s ease';
+                flashMessage.style.opacity = '0';
+                setTimeout(() => flashMessage.remove(), 500); 
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

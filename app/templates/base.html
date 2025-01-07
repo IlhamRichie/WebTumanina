@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dashboard{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive_sidebar.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Hamburger Menu -->
+        <div class="hamburger" onclick="toggleSidebar()">
+            &#9776;
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar hidden" id="sidebar">
+            <h2>Admin Panel</h2>
+            <ul>
+                <li><a href="{{ url_for('auth.dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('auth.users') }}">Users</a></li>
+                <li><a href="{{ url_for('auth.artikel') }}">Artikel</a></li>
+                <li><a href="{{ url_for('sentiment.index') }}">Sentiments</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- Script untuk Toggle Sidebar -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

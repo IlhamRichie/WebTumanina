@@ -1,0 +1,2158 @@
+{
+    "intents": [
+        {
+            "tag": "dialog.introduction",
+            "patterns": [
+                "hai, perkenalkan aku adalah %name%",
+                "hai nama aku adalah %name%",
+                "perkenalkan nama aku %name%",
+                "lo siapa"
+            ],
+            "responses": [
+                "Hai, aku adalah Tumabot",
+                "Hai aku Tumabot Salam kenal.",
+                "perkenalkan aku Tumabot, senang mengenal kamu :)",
+                "Hallo, aku Tumabot, apa ada yang bisa saya bantu?"
+            ]
+        },
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Assalamu'alaikum",
+                "Assalamualaikum",
+                "assalamu",
+                "assalamulaikum",
+                "Halo",
+                "Hi",
+                "Hai",
+                "hai",
+                "Hello",
+                "Salam sejahtera",
+                "Selamat pagi!",
+                "Apa kabar?",
+                "Hai, ada yang bisa dibantu?",
+                "Assalamualaikum, boleh tanya?",
+                "Selamat sore, ada informasi?"
+            ],
+            "responses": [
+                "Wa'alaikumussalam! Ada yang bisa saya bantu?",
+                "waalikumsalam sobat! Ada yang bisa saya bantu?",
+                "waalikumsalam teman! tanya tumabot?",
+                "Halo! Saya TumaBot silakan bertanya.",
+                "Halo! Tumabot siap membantu",
+                "Assalamualaikum, bagaimana saya bisa membantu?",
+                "Wa'alaikumussalam, apa yang bisa saya bantu hari ini?",
+                "Halo, semoga hari Anda menyenangkan! Apa yang bisa saya bantu?",
+                "Assalamualaikum, ada yang perlu ditanyakan?",
+                "Waalaikumsalam! Selamat datang! Bagaimana aku bisa membantu Anda hari ini Jika Anda memiliki pertanyaan atau topik tertentu yang ingin dibahas, silakan beri tahu aku.",
+                "Waalaikumsalam wr.wb! Selamat datang! Bagaimana aku bisa membantu Anda hari ini Jika Anda memiliki pertanyaan atau topik tertentu yang ingin dibahas, silakan beri tahu aku.",
+                "Waalaikumsalam! Selamat datang! Bagaimana aku bisa membantu Anda hari ini Jika Anda memiliki pertanyaan atau topik tertentu yang ingin dibahas, silakan beri tahu aku.",
+                "Waalaikumsalam wr.wb! Selamat datang! Bagaimana aku bisa membantu Anda hari ini Jika Anda memiliki pertanyaan atau topik tertentu yang ingin dibahas, silakan beri tahu aku."
+            ]
+        },
+        {
+            "tag": "nama",
+            "patterns": [
+                "nama kamu siapa",
+                "lu siapa",
+                "siapa sih lo",
+                "lu sape ",
+                "nama lo sape dah ",
+                "nama",
+                "kamu siapa"
+            ],
+            "responses": [
+                "Hai, perkenalkan aku Tumabot, salam kenal kak!",
+                "Halo, aku Tumabot!",
+                "Kenalin, aku Tumabot!",
+                "aku ini Tumabot, boleh dong kenalan",
+                "Salken aku Tumabot, Kalo kamu?",
+                "namaku Tumabot, nama kamu siapa?"
+            ]
+        },
+        {
+            "tag": "pekerjaan",
+            "patterns": [
+                "lu ngapain",
+                "pekerjaan kamu apa",
+                "lu kerja apa",
+                "tugas kamu apa",
+                "tugas lo ngapain"
+            ],
+            "responses": [
+                "Aku disini untuk memberikan informasi mengenai Sholat dan Islam",
+                "Tugasku menjadi asisten virtual untuk membantu kalian di dalam belajar Sholat dan Islam",
+                "Aku disini siap membantu anda untuk memahami lebih lanjut tentang Sholat dan Islam",
+                "Aku di sini untuk membantu Anda dengan pertanyaan atau informasi apa pun yang mungkin Anda butuhkan. Ada yang bisa aku bantu?",
+                "tugas aku yaitu untuk memberikan informasi seputar Sholat dan Islam yang mungkin ingin anda ketahui"
+            ]
+        },
+        {
+            "tag": "ngawur",
+            "patterns": [
+                "Apa sih ini?",
+                "Kamu ngomong apa?",
+                "Ini ngawur banget!",
+                "Ngomong yang jelas dong!",
+                "Ini nggak masuk akal",
+                "Kamu serius?",
+                "Hah? Ini ngawur!",
+                "Apa maksudnya?",
+                "Ini nggak ada logikanya",
+                "Kok begini hasilnya?",
+                "Kamu becanda kan?",
+                "Hadeh, ngawur!",
+                "Ini salah semua",
+                "Kok kayak gini jawabannya?",
+                "Ya ampun, ngawur banget!",
+                "Serius dong jawabnya!"
+            ],
+            "responses": [
+                "Maaf jika ada yang tidak sesuai, saya akan mencoba memperbaikinya.",
+                "Ups, sepertinya ada kesalahan. Bisa dijelaskan lebih detail lagi?",
+                "Maaf, apa maksud Anda? Saya akan coba membantu lebih baik.",
+                "Hmm, mungkin ada kesalahan pemahaman. Bisa Anda ulangi?",
+                "Oke, mari kita perbaiki. Apa yang Anda butuhkan sebenarnya?",
+                "Sepertinya saya salah menangkap maksud Anda. Coba jelaskan lagi ya.",
+                "Terima kasih atas koreksinya. Saya akan mencoba menjawab lebih baik lagi.",
+                "Maaf kalau jawabannya kurang memuaskan. Mari kita coba lagi.",
+                "Saya akan mencoba lebih baik. Ada yang bisa dijelaskan lebih lanjut?",
+                "Ups, terima kasih sudah mengingatkan! Coba tanyakan lagi ya.",
+                "Oke, saya mengerti. Saya akan memperbaikinya untuk Anda.",
+                "Terima kasih atas feedback-nya! Saya akan coba menjelaskan ulang.",
+                "Wah, sepertinya ada kesalahan dari saya. Saya coba ulang ya.",
+                "Tunggu sebentar, saya akan memperbaiki jawaban saya.",
+                "Maaf, bisa lebih spesifik lagi? Saya akan coba lebih baik."
+            ]
+        },
+        {
+            "tag": "penjelasan.aplikasi.tumanina",
+            "patterns": [
+                "Apa itu aplikasi Tumanina?",
+                "Ceritakan tentang aplikasi Tumanina",
+                "Fitur apa saja yang ada di aplikasi Tumanina?",
+                "Bagaimana cara belajar sholat di Tumanina?",
+                "Apa manfaat aplikasi Tumanina?",
+                "Apakah Tumanina bisa membantu mengenal Islam lebih baik?",
+                "Tumanina aplikasi apa?",
+                "Saya ingin belajar sholat, apakah Tumanina bisa membantu?",
+                "Ada fitur apa saja di Tumanina?",
+                "Kenapa saya harus pakai Tumanina?"
+            ],
+            "responses": [
+                "Tumanina adalah aplikasi interaktif yang dirancang untuk membantu belajar sholat dengan benar dan mendalami ajaran Islam. Aplikasi ini cocok untuk semua usia dan menyediakan panduan yang mudah dipahami.",
+                "Dengan Tumanina, Anda bisa belajar gerakan sholat lengkap, bacaan sholat, serta arti dari setiap bacaan dengan cara yang menarik dan mudah.",
+                "Aplikasi Tumanina memiliki fitur-fitur menarik seperti panduan sholat langkah demi langkah, pengenalan dasar-dasar Islam, dan kuis untuk menguji pemahaman Anda.",
+                "Tumanina membantu Anda belajar sholat dengan panduan visual, audio, dan teks, sehingga Anda bisa memahami dengan lebih mudah.",
+                "Manfaat utama Tumanina adalah membantu Anda mendalami Islam dengan cara yang menyenangkan dan sesuai dengan kebutuhan belajar Anda.",
+                "Melalui Tumanina, Anda tidak hanya belajar sholat, tetapi juga memahami nilai-nilai Islam secara mendalam.",
+                "Tumanina dirancang untuk memberikan pengalaman belajar Islam yang terstruktur dan interaktif, sehingga cocok untuk anak-anak maupun dewasa.",
+                "Jika Anda ingin meningkatkan kualitas ibadah sholat atau mengenal Islam lebih dalam, Tumanina adalah solusi yang tepat.",
+                "Aplikasi ini memiliki fitur pengingat waktu sholat, penghafalan doa-doa pendek, dan konten Islami lainnya yang bermanfaat.",
+                "Dengan Tumanina, belajar Islam menjadi lebih mudah, menyenangkan, dan interaktif."
+            ]
+        },
+        {
+            "tag": "greetings.hello",
+            "patterns": [
+                "halo",
+                "hai",
+                "hello",
+                "allo",
+                "hallo Tumabot",
+                "hai Tumabot",
+                "hello Tumabot"
+            ],
+            "responses": [
+                "Hai!",
+                "Halo!",
+                "Hello!",
+                "allo!",
+                "hallo juga kamu!",
+                "hai juga kamu!",
+                "hello juga kamu!"
+            ]
+        },
+        {
+            "tag": "dialog.holdon",
+            "patterns": [
+                "tunggu",
+                "tunggu sebentar",
+                "harap tunggu",
+                "bisakah kamu menunggu",
+                "sebentar",
+                "tungguin dong"
+            ],
+            "responses": [
+                "aku akan menunggu",
+                "Oke, aku di sini",
+                "iyah aku tungguin kok",
+                "Baik aku akan selalu disini menunggu kamu",
+                "aku pasti akan nungguin kamu terus"
+            ]
+        },
+        {
+            "tag": "dialog.thank",
+            "patterns": [
+                "terimakasih",
+                "thank",
+                "thank you",
+                "makasih",
+                "makasih banget"
+            ],
+            "responses": [
+                "terimakasih kembali, senang bisa membantumu",
+                "thank u too, senang bisa membantumu",
+                "terimakasih juga, senang bisa membantumu",
+                "thank you too, senang bisa membantumu",
+                "terimakasih kembali, senang bisa membantumu"
+            ]
+        },
+        {
+            "tag": "dialog.idontcare",
+            "patterns": [
+                "tidak peduli",
+                "aku tidak peduli sama sekali",
+                "tidak peduli sama sekali",
+                "aku seharusnya tidak peduli tentang ini"
+            ],
+            "responses": [
+                "Oke, mari kita tidak membicarakannya!",
+                "Baiklah. Mari kita lanjutkan!",
+                "maaf jika aku ada salah!",
+                "baiklah apakah ada hal lain yang mungkin bisa aku bantu?"
+            ]
+        },
+        {
+            "tag": "dialog.sorry",
+            "patterns": [
+                "aku minta maaf",
+                "sangat menyesal",
+                "maafkan aku",
+                "maaf",
+                "maafin aku yah"
+            ],
+            "responses": [
+                "Tidak apa-apa. Jangan khawatir.",
+                "Sudahlah tidak perlu dipikirkan.",
+                "jangan meminta maaf, kamu tidak salah apa-apa.",
+                "sudah lupakan saja, mari kita membicarakan hal lain.",
+                "kamu tidak perlu meminta maaf, mungkin ada yang bisa saya bantu"
+            ]
+        },
+        {
+            "tag": "dialog.kabar",
+            "patterns": [
+                "apa kabarmu",
+                "kamu apa kabar",
+                "apakah kamu baik-baik saja",
+                "gimana kabarmu",
+                "bagaimana kabar kamu hari ini?"
+            ],
+            "responses": [
+                "Hari ini saya senang sekali, Bagaimana dengan anda?",
+                "Halo! Saya adalah Tumabot yang siap membantu Anda. Kabar saya baik, Bagaimana dengan anda hari ini?",
+                "Hari ini saya senang sekali, Bagaimana dengan anda?",
+                "Tentu saja baik, kalo kamu bagaimana kabarnya?",
+                "kabar aku sangat baik, bagaimana dengan kabarrmu?"
+            ]
+        },
+        {
+            "tag": "greetings.kenalan",
+            "patterns": [
+                "salam kenal Tumabot",
+                "kenalan dong"
+            ],
+            "responses": [
+                "salam kenal juga, aku Tumabot apakah ada yang bisa aku bantu?",
+                "ayok, perkenalkan nama aku Tumabot aku adalah asisten virtual, Saya di sini untuk membantu Anda dengan pertanyaan atau informasi apa pun yang mungkin Anda butuhkan. Ada yang bisa aku bantu?"
+            ]
+        },
+        {
+            "tag": "developer",
+            "patterns": [
+                "yang bikin kamu siapa?",
+                "Siapa yang bikin kamu?",
+                "kamu dibuat oleh siapa?",
+                "siapa yang bikin Tumabot?"
+            ],
+            "responses": [
+                "yang bikin aku adalah developer Tumanina, ada yang bisa aku bantu?",
+                "aku yang bikin adalah developer tumanina",
+                "yang buat tumbot adalah tim tumanina"
+            ]
+        },
+        {
+            "tag": "greetings.bye",
+            "patterns": [
+                "selamat tinggal untuk sekarang",
+                "selamat tinggal hati-hati",
+                "oke sampai jumpa lagi",
+                "selamat tinggal untuk sekarang",
+                "Dah",
+                "Daah",
+                "aku harus pergi"
+            ],
+            "responses": [
+                "Sampai nanti",
+                "sampai jumpa lagi!",
+                "aku berharap kita ketemu lagi.",
+                "Kalau ada masalah, hubungi aku lagi ya",
+                "jumpa lagi, tidak sabar untuk bertemu anda kembali",
+                "selamat tinggal, serta jumpa kembali",
+                "bye bye jangan merindukanku yah"
+            ]
+        },
+        {
+            "tag": "greetings.howareyou",
+            "patterns": [
+                "bagaimana harimu",
+                "bagaimana hari mu",
+                "apa kabar",
+                "bagaimana kabarmu",
+                "bagaimana dengan harimu",
+                "apa kamu baik baik saja"
+            ],
+            "responses": [
+                "Merasa luar biasa!",
+                "Masya Allah, luarbiasa!",
+                "Luar biasa! Terima kasih telah bertanya",
+                "kabar saya sangat baik, kabarmu bagaimana?",
+                "kabarku selalu baik apalagi setelah bertemu denganmu",
+                "hari-hari ku sangat bahagia bagaimana denganmu?",
+                "aku baik-baik saja, bagaimana denganmu? apa ada yang bisa aku bantu"
+            ]
+        },
+        {
+            "tag": "greetings.nicetomeetyou",
+            "patterns": [
+                "senang bertemu denganmu",
+                "aku sangat senang bertemu denganmu",
+                "senang jumpa kamu",
+                "senang"
+            ],
+            "responses": [
+                "Senang bertemu denganmu juga",
+                "Begitu juga. Aku berharap bisa membantumu",
+                "Senang bertemu denganmu, juga",
+                "Kamu senang aku pun ikut senang"
+            ]
+        },
+        {
+            "tag": "greetings.nicetoseeyou",
+            "patterns": [
+                "senang bisa melihat dirimu",
+                "senang melihatmu",
+                "senang mengenalmu"
+            ],
+            "responses": [
+                "Aku juga sangat senang bisa melihatmu kembali",
+                "Begitupun aku juga senang melihatmu",
+                "aku juga sangat senang bisa mengenalmu"
+            ]
+        },
+        {
+            "tag": "greetings.nicetotalktoyou",
+            "patterns": [
+                "senang berbicara denganmu",
+                "aku senang bisa mengobrol denganmu",
+                "aku mengobrol denganmu"
+            ],
+            "responses": [
+                "Kita bisa ngobrol lagi dilain waktu.",
+                "Aku juga senang ngobrol denganmu.",
+                "ayok kita mulai mengobrol, bagaimana jika membahas tentang Sholat?"
+            ]
+        },
+        {
+            "tag": "greetings.whatareyoudoing",
+            "patterns": [
+                "lagi apa",
+                "sedang apa",
+                "kamu sedang apa",
+                "kamu lagi apa",
+                "Lagi ngapain"
+            ],
+            "responses": [
+                "Mengobrol dengan kamu",
+                "Menunggu balasan dari kamu",
+                "lagi nungguin kamu",
+                "sedang menunggu pertanyaan darimu hehe",
+                "lagi menunggu kamu nih"
+            ]
+        },
+        {
+            "tag": "kemampuan",
+            "patterns": [
+                "kamu bisa apa",
+                "apa yang bisa anda lakukan",
+                "kamu bisa ngapain aja",
+                "lo bisa ngapain",
+                "apa kemampuan lo"
+            ],
+            "responses": [
+                "Kakak bisa tanya-tanya nama aku, apa yang aku lakukan dan yang berhubungan dengan Sholat dan Islam",
+                "Pokoknya semua topik yang berhubungan dengan Sholat dan Islam kak :)",
+                "Saya dapat memberikan informasi tentang topik seputar Sholat dan Islam",
+                "Jika Anda memiliki masalah atau pertanyaan, saya dapat mencoba membantu Anda menemukan solusinya.",
+                "Aku bisa memberikan anda informasi tentang topik Sholat dan Islam"
+            ]
+        },
+        {
+            "tag": "developer.tumanina",
+            "patterns": [
+                "Bagaimana cara menggunakan fitur deteksi gerakan salat?",
+                "Apa itu fitur deteksi gerakan salat real-time?",
+                "Bisakah aplikasi ini membantu belajar salat?",
+                "Apa saja gerakan salat yang bisa dideteksi?",
+                "Saya ingin belajar cara salat dengan benar",
+                "Apa manfaat dari fitur deteksi gerakan salat?",
+                "Bagaimana aplikasi ini mengenali gerakan salat?",
+                "Apa panduan belajar salat untuk pemula?",
+                "Apakah aplikasi ini menyediakan doa-doa dalam salat?",
+                "Bagaimana cara mengenal Islam melalui aplikasi ini?",
+                "Apa saja fitur belajar Islam yang disediakan?",
+                "Apa yang dimaksud dengan fitur panduan salat?",
+                "Bagaimana cara aplikasi ini bekerja secara real-time?",
+                "Apakah aplikasi ini cocok untuk anak-anak belajar salat?",
+                "Adakah fitur pengingat waktu salat di aplikasi ini?",
+                "Bagaimana cara menyesuaikan gerakan saya dengan panduan aplikasi?",
+                "Apa saja fitur utama aplikasi Tumanina?",
+                "Bisakah saya belajar doa-doa pendek melalui aplikasi ini?",
+                "Apakah ada fitur cerita tentang Islam di aplikasi ini?",
+                "Bagaimana aplikasi ini membantu meningkatkan kualitas salat?"
+            ],
+            "responses": [
+                "Fitur deteksi gerakan salat real-time membantu memantau gerakan salat Anda dan memberikan umpan balik untuk perbaikan.",
+                "Aplikasi ini dirancang untuk membantu pengguna belajar salat dengan benar sesuai panduan Islam.",
+                "Fitur deteksi gerakan dapat mengenali berbagai gerakan salat seperti rukuk, sujud, dan duduk di antara dua sujud.",
+                "Panduan salat untuk pemula tersedia dalam bentuk teks, audio, dan video interaktif.",
+                "Aplikasi ini menyediakan doa-doa yang dibaca saat salat, lengkap dengan terjemahan dan pengucapannya.",
+                "Melalui fitur belajar Islam, Anda dapat memahami dasar-dasar Islam, cerita nabi, dan nilai-nilai Islam.",
+                "Fitur ini menggunakan teknologi pengenalan gerakan untuk memberikan umpan balik secara langsung.",
+                "Aplikasi ini cocok untuk semua usia, termasuk anak-anak yang ingin belajar salat.",
+                "Fitur pengingat waktu salat akan membantu Anda tidak melewatkan salat wajib.",
+                "Melalui fitur cerita Islam, Anda bisa membaca kisah nabi dan sahabat secara menarik.",
+                "Fitur doa-doa pendek membantu Anda menghafal doa sehari-hari dengan mudah.",
+                "Aplikasi ini membantu meningkatkan kualitas salat Anda dengan panduan dan evaluasi gerakan yang mendetail.",
+                "Aplikasi Tumanina dirancang untuk mempermudah Anda belajar dan menjalankan ibadah dengan teknologi modern."
+            ]
+        },
+        {
+            "tag": "pembuat.tumanina",
+            "patterns": [
+                "Apa itu Tumanina?",
+                "Tumanina untuk apa?",
+                "Ceritakan tentang aplikasi Tumanina",
+                "Bagaimana cara menggunakan Tumanina?",
+                "Apa fungsi utama Tumanina?",
+                "Tumanina bisa digunakan untuk apa?",
+                "Apa fitur Tumanina?",
+                "Cara niat sholat dengan Tumanina",
+                "Cara ibadah sholat dengan Tumanina",
+                "Bagaimana Tumanina membantu ibadah?",
+                "Siapa saja pembuat tumanina"
+            ],
+            "responses": [
+                "Tumanina adalah aplikasi Tuntunan Mandiri Niat dan Ibadah Sholat. Aplikasi ini dirancang untuk membantu Anda memahami niat dan tata cara sholat dengan mudah.",
+                "Aplikasi Tumanina bertujuan memberikan panduan mandiri bagi pengguna yang ingin memperbaiki dan memahami niat serta ibadah sholat mereka.",
+                "Dengan Tumanina, Anda dapat mempelajari niat sholat, tata cara sholat, dan panduan doa lainnya dengan langkah-langkah yang jelas.",
+                "Untuk menggunakan Tumanina, cukup unduh aplikasinya, pilih jenis sholat atau ibadah yang ingin Anda pelajari, lalu ikuti petunjuk yang disediakan.",
+                "Fungsi utama Tumanina adalah memberikan panduan praktis dan mudah untuk melaksanakan ibadah sholat sesuai tuntunan.",
+                "Fitur utama Tumanina meliputi panduan niat sholat, gerakan sholat, doa setelah sholat, dan penjelasan tata cara ibadah lainnya.",
+                "Tumanina mempermudah Anda memahami niat sholat, panduan gerakan, dan doa dalam satu aplikasi yang mudah digunakan.",
+                "Dengan aplikasi ini, Anda tidak hanya belajar tata cara sholat, tetapi juga memahami artinya agar ibadah menjadi lebih khusyuk.",
+                "Tumanina membantu ibadah Anda dengan menyediakan panduan lengkap dan ringkas sesuai syariat Islam.",
+                "Aplikasi ini sangat cocok untuk pemula yang ingin belajar sholat atau siapa saja yang ingin memperbaiki tata cara ibadah mereka.",
+                "yang membuat tumanina yaitu M. Ilham Rigan Agachi, Angga Sukha Pratama, Satrio Ramadhan Wicaksono, Moch Iqbal Firmansyah"
+            ]
+        },
+        {
+            "tag": "fitur.belajarsholat",
+            "patterns": [
+                "Bagaimana cara sholat yang benar?",
+                "Ajarin sholat lengkap dong",
+                "Tumanina, bantu belajar sholat",
+                "Tutorial sholat lengkap",
+                "Panduan sholat wajib",
+                "Cara sholat subuh",
+                "Sholat dzuhur gimana caranya?",
+                "Langkah-langkah sholat ashar",
+                "Panduan sholat maghrib",
+                "Sholat isya lengkap",
+                "Gerakan sholat yang benar",
+                "Bacaan sholat wajib",
+                "Tumanina, panduan sholat",
+                "Tuntunan sholat lima waktu"
+            ],
+            "responses": [
+                "Berikut adalah panduan lengkap untuk sholat lima waktu: Subuh, Dzuhur, Ashar, Maghrib, dan Isya. Pilih jenis sholat untuk memulai.",
+                "Ayo belajar sholat bersama Tumanina! Pilih langkah atau jenis sholat yang ingin dipelajari.",
+                "Tumanina siap membantu Anda memahami gerakan dan bacaan sholat. Yuk mulai!",
+                "Klik di sini untuk melihat tutorial sholat yang lengkap dan jelas.",
+                "Langkah-langkah dan bacaan sholat telah tersedia. Silakan pilih sholat yang ingin Anda pelajari.",
+                "Untuk sholat Subuh, Anda perlu melaksanakan 2 rakaat. Tekan tombol panduan untuk informasi lebih lanjut.",
+                "Tuntunan sholat Dzuhur terdiri dari 4 rakaat. Mulai panduan di aplikasi sekarang.",
+                "Sholat Ashar mencakup 4 rakaat. Pelajari gerakan dan bacaannya di sini.",
+                "Pelajari sholat Maghrib dengan panduan 3 rakaat yang sudah disiapkan Tumanina.",
+                "Panduan sholat Isya yang terdiri dari 4 rakaat sudah tersedia. Klik untuk memulai."
+            ]
+        },
+        {
+            "tag": "fitur.pantausholat",
+            "patterns": [
+                "Bagaimana cara memantau sholat?",
+                "Apa itu fitur pantau sholat?",
+                "Saya ingin tahu progres sholat saya",
+                "Tolong pantau sholat saya",
+                "Bagaimana saya bisa melacak ibadah sholat saya?",
+                "Ada fitur untuk memantau sholat?",
+                "Pantau sholat harian saya gimana?",
+                "Saya ingin memantau konsistensi sholat",
+                "Cara mencatat sholat yang sudah dilakukan?",
+                "Adakah log untuk ibadah sholat?",
+                "Bagaimana cara melihat statistik sholat saya?",
+                "Apakah aplikasi ini bisa memonitor sholat saya?",
+                "Saya ingin mengecek jadwal dan pelaksanaan sholat saya",
+                "Bisa bantu saya untuk memastikan sholat saya terpantau?"
+            ],
+            "responses": [
+                "Fitur Pantau Sholat membantu Anda mencatat dan memantau ibadah sholat harian Anda.",
+                "Dengan fitur ini, Anda bisa melihat statistik sholat yang sudah dilakukan dan memastikan konsistensi ibadah.",
+                "Untuk memantau sholat Anda, silakan masuk ke menu 'Pantau Sholat' di aplikasi.",
+                "Anda dapat mencatat setiap sholat yang sudah dilakukan dan melihat laporan harian atau mingguan.",
+                "Fitur ini dirancang untuk membantu Anda lebih disiplin dan konsisten dalam menjalankan sholat.",
+                "Gunakan fitur Pantau Sholat untuk memonitor ibadah sholat Anda dengan mudah.",
+                "Di menu Pantau Sholat, Anda bisa melacak progres dan memastikan ibadah sholat lima waktu Anda tercatat.",
+                "Aplikasi Tumanina menyediakan log sholat yang dapat membantu Anda memantau pelaksanaan ibadah dengan lebih teratur.",
+                "Fitur ini juga memungkinkan Anda untuk melihat jadwal dan memastikan sholat dilakukan tepat waktu.",
+                "Pantau sholat Anda dengan aplikasi Tumanina untuk mendapatkan data yang akurat dan bermanfaat."
+            ]
+        },
+        {
+            "tag": "fitur.waktusholat",
+            "patterns": [
+                "Kapan waktu sholat subuh?",
+                "Jam berapa waktu sholat dzuhur?",
+                "Tolong beri tahu waktu sholat maghrib.",
+                "Waktu sholat isya sekarang?",
+                "Sholat ashar mulai jam berapa?",
+                "Waktu sholat di sini sekarang.",
+                "Kapan waktu adzan subuh?",
+                "Waktu sholat di daerah saya.",
+                "Berapa jam lagi masuk waktu sholat dzuhur?",
+                "Tolong informasikan jadwal sholat hari ini."
+            ],
+            "responses": [
+                "Waktu sholat subuh adalah pukul 04:30 pagi. Pastikan untuk sholat tepat waktu!",
+                "Waktu sholat dzuhur dimulai pukul 12:15 siang. Jangan lupa menunaikan sholat!",
+                "Maghrib masuk pada pukul 18:10 sore. Persiapkan diri untuk sholat.",
+                "Isya dimulai pada pukul 19:30 malam. Semoga ibadah Anda lancar.",
+                "Ashar dimulai pukul 15:45 sore. Jangan sampai terlewat!",
+                "Berikut adalah jadwal waktu sholat di lokasi Anda: Subuh 04:30, Dzuhur 12:15, Ashar 15:45, Maghrib 18:10, dan Isya 19:30.",
+                "Menurut lokasi Anda, waktu adzan subuh adalah pukul 04:30 pagi.",
+                "Waktu sholat di daerah Anda akan disesuaikan dengan zona waktu setempat. Pastikan GPS aktif untuk informasi akurat.",
+                "Dzuhur masuk dalam 2 jam lagi, tepat pukul 12:15 siang.",
+                "Berikut adalah jadwal sholat lengkap hari ini: Subuh 04:30, Dzuhur 12:15, Ashar 15:45, Maghrib 18:10, Isya 19:30."
+            ]
+        },
+        {
+            "tag": "fitur.tumabot",
+            "patterns": [
+                "Apa itu Tumanina?",
+                "Bagaimana cara menggunakan aplikasi Tumanina?",
+                "Apa saja fitur di Tumanina?",
+                "Tumanina bisa bantu apa?",
+                "Saya butuh panduan sholat",
+                "Cara niat sholat bagaimana?",
+                "Bisa ajari saya doa setelah sholat?",
+                "Ada panduan gerakan sholat?",
+                "Apa manfaat aplikasi Tumanina?",
+                "Tumanina untuk siapa?",
+                "Bagaimana cara unduh aplikasi Tumanina?",
+                "Apakah Tumanina gratis?",
+                "Fungsi fitur Tumabot apa?",
+                "Tumabot bisa apa saja?",
+                "Butuh panduan bacaan sholat."
+            ],
+            "responses": [
+                "Tumanina adalah aplikasi tuntunan mandiri untuk niat dan ibadah sholat, dirancang untuk membantu umat Islam memperbaiki dan memahami tata cara ibadah.",
+                "Untuk menggunakan aplikasi Tumanina, cukup unduh dari platform resmi, daftar, dan mulai eksplorasi fitur-fitur kami!",
+                "Tumanina memiliki fitur panduan niat sholat, bacaan sholat, doa harian, gerakan sholat yang benar, dan Tumabot untuk menjawab pertanyaan Anda!",
+                "Saya Tumabot, asisten virtual di Tumanina. Saya di sini untuk membantu Anda dengan pertanyaan tentang ibadah sholat dan fitur aplikasi.",
+                "Jika Anda butuh panduan sholat, buka menu 'Panduan Sholat' di aplikasi Tumanina untuk langkah-langkah lengkap.",
+                "Cara niat sholat dijelaskan di aplikasi Tumanina dengan bacaan dan video pendukung. Coba fitur 'Niat Sholat' sekarang!",
+                "Anda bisa menemukan doa setelah sholat di fitur 'Doa Harian' di aplikasi kami. Klik dan pelajari dengan mudah.",
+                "Untuk panduan gerakan sholat yang benar, lihat video interaktif di fitur 'Gerakan Sholat' di aplikasi Tumanina.",
+                "Manfaat Tumanina adalah membantu umat Islam menjalankan ibadah sholat dengan lebih khusyuk dan sesuai tuntunan.",
+                "Tumanina dirancang untuk siapa saja yang ingin belajar atau memperbaiki ibadah sholat mereka, dari pemula hingga yang sudah berpengalaman.",
+                "Anda dapat mengunduh aplikasi Tumanina melalui Google Play Store atau App Store secara gratis.",
+                "Ya, Tumanina dapat digunakan secara gratis dengan fitur-fitur yang dirancang untuk membantu ibadah Anda.",
+                "Fitur Tumabot membantu menjawab pertanyaan Anda seputar aplikasi Tumanina dan panduan ibadah sholat.",
+                "Tumabot bisa menjelaskan tata cara sholat, bacaan doa, niat sholat, serta menjawab pertanyaan terkait fitur Tumanina.",
+                "Untuk panduan bacaan sholat, Anda bisa menemukan teks lengkap di fitur 'Bacaan Sholat' dalam aplikasi Tumanina."
+            ]
+        },
+        {
+            "tag": "fitur.kiblat",
+            "patterns": [
+                "Bagaimana cara mencari arah kiblat?",
+                "Arah kiblat di mana?",
+                "Cara tahu arah kiblat?",
+                "Tolong bantu temukan arah kiblat.",
+                "Kiblat itu ke mana?",
+                "Arah sholat di mana?",
+                "Saya butuh fitur arah kiblat.",
+                "Dimana arah kiblat untuk sholat?",
+                "Bantu arahkan kiblat.",
+                "Apa aplikasi ini bisa cari kiblat?",
+                "Arah kiblat dengan aplikasi ini gimana?",
+                "Gimana cara pakai fitur kiblat di Tumanina?"
+            ],
+            "responses": [
+                "Untuk mencari arah kiblat, gunakan fitur Kiblat di aplikasi Tumanina. Pastikan GPS Anda aktif.",
+                "Fitur Kiblat di Tumanina membantu Anda menemukan arah kiblat dengan akurat. Aktifkan GPS untuk hasil terbaik.",
+                "Cukup buka fitur Kiblat pada aplikasi dan ikuti petunjuk untuk menemukan arah kiblat.",
+                "Pastikan Anda berada di area terbuka dan gunakan kompas pada fitur Kiblat untuk akurasi yang lebih baik.",
+                "Arah kiblat dapat ditemukan dengan mudah melalui fitur Kiblat di Tumanina. Klik ikon Kiblat untuk memulai.",
+                "Dengan fitur Kiblat di Tumanina, Anda bisa memastikan arah sholat dengan cepat dan akurat.",
+                "Buka fitur Kiblat di aplikasi Tumanina dan biarkan aplikasi membantu Anda menemukan arah kiblat.",
+                "Gunakan fitur Kiblat di Tumanina untuk memastikan arah sholat Anda sesuai dengan arah Ka'bah.",
+                "Arah kiblat dapat ditemukan di fitur Kiblat pada aplikasi Tumanina. Pastikan perangkat Anda mendukung GPS.",
+                "Tumanina menyediakan fitur Kiblat untuk membantu Anda sholat dengan arah yang benar. Coba sekarang!",
+                "Cari ikon Kiblat di aplikasi Tumanina untuk memulai pencarian arah kiblat yang akurat.",
+                "Pastikan GPS aktif, lalu buka fitur Kiblat di Tumanina untuk menemukan arah Ka'bah."
+            ]
+        },
+        {
+            "tag": "fitur.tasbih",
+            "patterns": [
+                "Bagaimana cara menggunakan tasbih di aplikasi?",
+                "Ada fitur tasbih di aplikasi ini?",
+                "Cara menghitung dzikir dengan tasbih di Tumanina?",
+                "Fitur tasbih untuk dzikir bagaimana?",
+                "Tasbih digital di Tumanina bisa digunakan untuk apa?",
+                "Saya ingin berdzikir menggunakan tasbih, bagaimana caranya?",
+                "Apa manfaat tasbih digital di aplikasi ini?",
+                "Bisakah saya mencatat dzikir saya dengan fitur tasbih?",
+                "Bagaimana cara reset hitungan tasbih di aplikasi ini?",
+                "Fitur tasbih otomatisnya bagaimana cara kerjanya?"
+            ],
+            "responses": [
+                "Fitur tasbih di Tumanina dirancang untuk membantu Anda berdzikir dengan mudah. Anda dapat menekan tombol di layar untuk menghitung dzikir Anda.",
+                "Tasbih digital di Tumanina memungkinkan Anda mencatat jumlah dzikir harian Anda secara praktis.",
+                "Untuk menggunakan fitur tasbih, cukup buka menu Tasbih di aplikasi, lalu tekan layar setiap kali Anda berdzikir.",
+                "Fitur tasbih kami juga menyediakan opsi reset jika Anda ingin memulai hitungan baru.",
+                "Anda dapat menggunakan tasbih digital ini untuk dzikir harian seperti Subhanallah, Alhamdulillah, dan Allahu Akbar.",
+                "Tasbih digital kami memiliki antarmuka sederhana yang memudahkan Anda fokus pada ibadah.",
+                "Setiap kali Anda berdzikir, tekan tombol hitung, dan jumlahnya akan otomatis tersimpan.",
+                "Fitur ini dirancang agar Anda bisa berdzikir kapan saja dan di mana saja tanpa membawa tasbih fisik.",
+                "Tasbih digital di Tumanina juga memungkinkan Anda mengatur target dzikir harian Anda.",
+                "Ingin memulai hitungan baru? Gunakan tombol reset untuk mengatur ulang hitungan dzikir Anda."
+            ]
+        },
+        {
+            "tag": "fitur.alqurandigital",
+            "patterns": [
+                "Bisa baca Al-Qur'an di aplikasi ini?",
+                "Ada fitur Al-Qur'an di Tumanina?",
+                "Bagaimana cara membaca Al-Qur'an digital?",
+                "Saya ingin membaca Al-Qur'an, bisa di aplikasi ini?",
+                "Fitur Al-Qur'an digital seperti apa di Tumanina?",
+                "Tumanina menyediakan Al-Qur'an?",
+                "Apa aplikasi ini punya Al-Qur'an digital?",
+                "Saya ingin mengakses Al-Qur'an, bagaimana?",
+                "Dimana fitur Al-Qur'an digital di Tumanina?",
+                "Ada Al-Qur'an lengkap di aplikasi ini?"
+            ],
+            "responses": [
+                "Tentu, Tumanina menyediakan fitur Al-Qur'an digital lengkap dengan terjemahan dan tafsir.",
+                "Anda bisa membaca Al-Qur'an digital di aplikasi Tumanina kapan saja.",
+                "Fitur Al-Qur'an digital di Tumanina juga dilengkapi dengan pencarian ayat dan bookmark.",
+                "Silakan buka fitur Al-Qur'an digital di aplikasi Tumanina untuk membaca dan mempelajari ayat-ayat suci.",
+                "Fitur Al-Qur'an kami mempermudah Anda untuk membaca, memahami, dan mengamalkan ayat-ayat Al-Qur'an.",
+                "Di aplikasi Tumanina, Anda bisa mengakses Al-Qur'an digital lengkap dengan fitur-fitur pendukungnya.",
+                "Untuk membaca Al-Qur'an, buka menu 'Al-Qur'an Digital' di aplikasi Tumanina.",
+                "Tumanina menyediakan Al-Qur'an digital yang bisa diakses dengan mudah, termasuk fitur terjemahan bahasa Indonesia.",
+                "Akses Al-Qur'an digital dengan mudah di aplikasi kami dan simpan ayat-ayat favorit Anda.",
+                "Fitur Al-Qur'an digital di Tumanina dirancang untuk membantu Anda membaca dan memahami ayat-ayat suci."
+            ]
+        },
+        {
+            "tag": "fitur.doaharian",
+            "patterns": [
+                "Apa doa harian hari ini?",
+                "Tolong beri doa harian",
+                "Doa harian apa ya?",
+                "Berikan doa harian",
+                "Ada doa harian?",
+                "Doa yang bisa dibaca setiap hari?",
+                "Doa sehari-hari apa saja?",
+                "Doa harian yang dianjurkan?",
+                "Doa untuk hari ini apa?",
+                "Bagaimana doa untuk keseharian?",
+                "Doa-doa yang dianjurkan sehari-hari?"
+            ],
+            "responses": [
+                "Doa harian untuk hari ini: \n\n *Allahumma inni as-aluka 'ilman nafi'an, wa rizqan thayyiban, wa 'amalan mutaqabbalan.* \n\n (Ya Allah, aku memohon kepada-Mu ilmu yang bermanfaat, rezeki yang baik, dan amal yang diterima)",
+                "Doa yang dapat dibaca setiap hari: \n\n *Rabbana atina fid-dunya hasanah, wa fil-akhirati hasanah, wa qina 'adzabannar.* \n\n (Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, serta lindungilah kami dari siksa neraka)",
+                "Berikut doa harian untuk keseharian Anda: \n\n *Allahumma barik lana fima razaqtana waqina 'adhaban-nar.* \n\n (Ya Allah, berkahilah kami pada rezeki yang telah Engkau berikan dan jauhkanlah kami dari azab neraka)",
+                "Doa yang bisa diamalkan setiap hari: \n\n *Subhanallahi wa bihamdihi, subhanallahil 'azim.* \n\n (Maha Suci Allah dan segala puji bagi-Nya, Maha Suci Allah yang Maha Agung)",
+                "Amalkan doa ini dalam keseharian: \n\n *Astaghfirullahal 'azimalladzi la ilaha illa huwal hayyul qayyum wa atubu ilaih.* \n\n (Aku memohon ampun kepada Allah yang Maha Agung, yang tiada Tuhan selain Dia, Yang Maha Hidup lagi Maha Mengatur, dan aku bertaubat kepada-Nya)",
+                "Doa harian pilihan: \n\n *La ilaha illallah, wahdahu la syarika lah, lahul mulku wa lahul hamdu wa huwa 'ala kulli syai'in qadir.* \n\n (Tiada Tuhan selain Allah Yang Maha Esa, tiada sekutu bagi-Nya. Milik-Nya kerajaan dan pujian. Dia Maha Kuasa atas segala sesuatu)",
+                "Berikut adalah doa yang dianjurkan: \n\n *Hasbiyallahu la ilaha illa huwa, 'alaihi tawakkaltu, wa huwa rabbul 'arshil 'azim.* \n\n (Cukuplah Allah bagiku, tiada Tuhan selain Dia. Hanya kepada-Nya aku bertawakal, dan Dia adalah Tuhan yang memiliki 'Arsy yang agung)",
+                "Doa harian untuk memulai aktivitas: \n\n *Bismillahi tawakkaltu 'alallah, la hawla wa la quwwata illa billah.* \n\n (Dengan nama Allah, aku bertawakal kepada Allah. Tiada daya dan kekuatan melainkan dengan pertolongan Allah)",
+                "Doa harian untuk memohon perlindungan: \n\n *A'udzu bikalimatillahit-tammati min sharri ma khalaq.* \n\n (Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari kejahatan makhluk yang Dia ciptakan)",
+                "Doa untuk mengawali hari: \n\n *Allahumma inni asbahtu usyhiduka, wa usyhidu hamalata 'arsyika, wa malaikataka, wa jami'a khalqika, annaka antallah, la ilaha illa anta wahdaka la syarika laka, wa anna muhammadan 'abduka wa rasuluka.* \n\n (Ya Allah, aku menyaksikan di pagi ini, dan aku mempersaksikan para pemikul 'Arsy-Mu, para malaikat-Mu, dan seluruh makhluk-Mu, bahwa Engkau adalah Allah, tiada Tuhan selain Engkau, tiada sekutu bagi-Mu, dan bahwa Muhammad adalah hamba dan utusan-Mu)"
+            ]
+        },
+        {
+            "tag": "fitur.doaharian",
+            "patterns": [
+                "Tampilkan doa harian",
+                "Apa saja doa-doa harian?",
+                "Berikan doa untuk sebelum makan",
+                "Ada doa sebelum tidur?",
+                "Doa harian apa saja yang tersedia?",
+                "Tolong beri saya doa harian",
+                "Ada doa bangun tidur?",
+                "Doa untuk memulai pekerjaan apa ya?",
+                "Tolong tunjukkan doa setelah makan",
+                "Ada doa perlindungan?"
+            ],
+            "responses": [
+                "Berikut adalah doa harian yang bisa Anda baca: \n1. Doa Sebelum Makan \n2. Doa Sesudah Makan \n3. Doa Sebelum Tidur \n4. Doa Bangun Tidur \n5. Doa Memulai Pekerjaan \n6. Doa Perlindungan. Silakan pilih doa mana yang ingin Anda pelajari lebih lanjut!",
+                "Tentu, ini adalah beberapa doa harian: \n- Sebelum makan: 'Allahumma barik lana...' \n- Setelah makan: 'Alhamdulillahilladzi...' \n- Sebelum tidur: 'Bismika Allahumma...' \n- Bangun tidur: 'Alhamdulillahiladzi...'\nIngin detail doa yang mana?",
+                "Kami memiliki banyak doa harian untuk membantu Anda, termasuk doa untuk sebelum/sesudah makan, tidur, dan memulai pekerjaan. Ketikkan doa yang Anda butuhkan!",
+                "Berikut ini adalah doa-doa harian yang tersedia di Tumanina: \n- Doa Sebelum Makan \n- Doa Sesudah Makan \n- Doa Sebelum Tidur \n- Doa Bangun Tidur \n- Doa Memulai Pekerjaan. Pilih doa mana yang Anda perlukan!",
+                "Doa harian sangat bermanfaat untuk berbagai aktivitas sehari-hari. Anda bisa meminta doa untuk makan, tidur, bangun, atau perlindungan. Silakan pilih doa mana yang ingin ditampilkan.",
+                "Apakah Anda mencari doa sebelum tidur, bangun tidur, atau doa perlindungan? Beritahu kami agar kami bisa membantu!",
+                "Doa harian adalah bagian dari rutinitas seorang Muslim. Ingin doa untuk kegiatan tertentu seperti makan atau tidur? Beritahu kami!",
+                "Kami menyediakan berbagai doa harian untuk mempermudah ibadah Anda. Coba sebutkan aktivitas yang ingin Anda ketahui doanya.",
+                "Doa harian seperti doa makan, tidur, bangun, dan perlindungan tersedia di sini. Sebutkan doa yang Anda cari!",
+                "Ingin doa untuk kegiatan sehari-hari? Misalnya doa sebelum makan, doa tidur, atau doa perlindungan. Pilih salah satu untuk ditampilkan!"
+            ]
+        },
+        {
+            "tag": "fitur.artikelkalam",
+            "patterns": [
+                "Apa itu Artikel Kalam?",
+                "Bagaimana cara membaca artikel di aplikasi?",
+                "Tampilkan artikel terbaru",
+                "Artikel kalam terbaru apa saja?",
+                "Apa saja artikel tentang ibadah?",
+                "Beri saya artikel tentang sholat",
+                "Artikel terkait niat sholat ada?",
+                "Saya ingin belajar tentang sholat dari artikel",
+                "Ada artikel seputar doa?",
+                "Baca artikel populer di Tumanina",
+                "Apa saja topik artikel yang tersedia?",
+                "Artikel tentang tuntunan sholat apa saja?",
+                "Rekomendasikan artikel tentang Islam",
+                "Bagaimana saya menemukan artikel di aplikasi ini?",
+                "Bisakah saya membaca artikel inspiratif di Tumanina?"
+            ],
+            "responses": [
+                "Artikel Kalam adalah kumpulan tulisan yang membahas berbagai topik terkait niat, doa, dan ibadah sholat. Silakan pilih kategori yang Anda inginkan.",
+                "Anda bisa membaca artikel dengan masuk ke menu Artikel Kalam di aplikasi. Ada banyak pilihan topik menarik.",
+                "Berikut adalah artikel terbaru kami: \"Keutamaan Sholat Tahajud\", \"Tips Khusyuk dalam Sholat\", dan \"Manfaat Dzikir Setelah Sholat\".",
+                "Kami memiliki artikel seperti \"Panduan Niat Sholat Fardhu\", \"Pentingnya Sholat Berjamaah\", dan banyak lagi.",
+                "Silakan buka menu Artikel Kalam untuk menemukan berbagai tulisan tentang sholat dan doa harian.",
+                "Butuh inspirasi? Coba baca artikel kami tentang \"Keutamaan Berdoa di Waktu Mustajab\".",
+                "Untuk menemukan artikel, buka menu utama, lalu pilih \"Artikel Kalam\". Anda akan melihat daftar artikel sesuai kategori.",
+                "Topik yang tersedia meliputi tuntunan sholat, niat, doa, dzikir, dan inspirasi Islam harian.",
+                "Artikel populer saat ini adalah \"Cara Meningkatkan Khusyuk dalam Sholat\" dan \"Keistimewaan Sholat Dhuha\".",
+                "Artikel Kalam membantu Anda memahami berbagai aspek ibadah secara mendalam. Jelajahi sekarang!"
+            ]
+        },
+        {
+            "tag": "login.tumanina",
+            "patterns": [
+                "Bagaimana cara login ke Tumanina?",
+                "Saya lupa password untuk login Tumanina",
+                "Login Tumanina tidak berhasil, apa yang harus saya lakukan?",
+                "Apakah ada cara login dengan akun Google di Tumanina?",
+                "Tumanina error saat login",
+                "Kenapa saya tidak bisa masuk ke aplikasi Tumanina?",
+                "Cara login aplikasi tuntunan sholat",
+                "Bantuan login Tumanina",
+                "Apakah saya perlu mendaftar dulu sebelum login Tumanina?",
+                "Langkah-langkah login Tumanina"
+            ],
+            "responses": [
+                "Untuk login ke Tumanina, masukkan email dan password Anda yang sudah terdaftar. Jika belum memiliki akun, silakan daftar terlebih dahulu.",
+                "Jika lupa password, Anda bisa menggunakan fitur 'Lupa Password' di halaman login untuk mengatur ulang password Anda.",
+                "Pastikan koneksi internet Anda stabil dan informasi login yang Anda masukkan sudah benar.",
+                "Tumanina mendukung login dengan akun Google untuk memudahkan akses. Pilih opsi 'Login dengan Google' di halaman login.",
+                "Jika terjadi error saat login, coba tutup aplikasi dan buka kembali. Jika masalah berlanjut, hubungi tim dukungan kami.",
+                "Pastikan aplikasi Tumanina Anda sudah diperbarui ke versi terbaru dari Play Store atau App Store.",
+                "Anda perlu mendaftar terlebih dahulu jika belum memiliki akun untuk dapat login ke aplikasi Tumanina.",
+                "Langkah-langkah login Tumanina: Buka aplikasi, masukkan email dan password Anda, lalu klik tombol 'Masuk'.",
+                "Jika masalah login terus berlanjut, Anda bisa menghubungi dukungan pelanggan melalui email support@tumanina.com."
+            ]
+        },
+        {
+            "tag": "register.tumanina",
+            "patterns": [
+                "Saya ingin mendaftar ke Tumanina",
+                "Bagaimana cara daftar di aplikasi Tumanina?",
+                "Daftar Tumanina",
+                "Mau register Tumanina",
+                "Bantu saya membuat akun Tumanina",
+                "Saya baru di Tumanina, bagaimana cara daftar?",
+                "Cara registrasi di aplikasi Tumanina",
+                "Mendaftar ke aplikasi Tumanina",
+                "Ingin membuat akun baru di Tumanina",
+                "Bagaimana langkah-langkah registrasi di Tumanina?",
+                "Cara buat akun Tumanina"
+            ],
+            "responses": [
+                "Untuk mendaftar di Tumanina, silakan buka aplikasi dan klik tombol 'Daftar'. Isi informasi yang diminta dan ikuti langkah-langkahnya.",
+                "Anda dapat mendaftar di Tumanina dengan membuka aplikasi, klik 'Daftar', dan isi formulir pendaftaran dengan data yang benar.",
+                "Registrasi di Tumanina sangat mudah! Buka aplikasi, pilih 'Daftar', dan ikuti panduan pendaftaran.",
+                "Silakan buka aplikasi Tumanina, klik 'Daftar', isi data seperti nama, email, dan password, lalu ikuti instruksi lebih lanjut.",
+                "Untuk membuat akun baru, klik tombol 'Daftar' di halaman utama aplikasi Tumanina, lalu isi semua data yang diperlukan.",
+                "Anda baru di Tumanina? Tidak masalah! Cukup klik 'Daftar' di aplikasi dan ikuti petunjuk yang ada.",
+                "Langkah pertama mendaftar di Tumanina adalah dengan membuka aplikasinya, lalu klik tombol 'Daftar'. Isi data dan selesaikan proses registrasi.",
+                "Mendaftar di Tumanina itu mudah! Buka aplikasinya, klik 'Daftar', masukkan informasi pribadi Anda, dan akun Anda siap digunakan.",
+                "Untuk memulai menggunakan Tumanina, daftarlah dengan membuka aplikasi, klik 'Daftar', dan isi data yang diminta.",
+                "Pendaftaran akun Tumanina dapat dilakukan melalui aplikasi dengan mengklik 'Daftar' dan mengikuti langkah-langkah yang ditunjukkan."
+            ]
+        },
+        {
+            "tag": "rukun.sholat",
+            "patterns": [
+                "Apa saja rukun sholat?",
+                "Rukun sholat itu apa saja?",
+                "Sebutkan rukun sholat!",
+                "Bagaimana urutan rukun sholat?",
+                "Rukun dalam sholat apa saja?",
+                "Apa itu rukun sholat?",
+                "Berapa jumlah rukun sholat?",
+                "Tolong jelaskan rukun sholat!",
+                "Apa yang dimaksud dengan rukun sholat?",
+                "Urutan rukun sholat dari awal sampai akhir",
+                "Rukun sholat secara lengkap",
+                "Langkah-langkah rukun sholat",
+                "Bagian wajib dalam sholat",
+                "Tata cara rukun sholat"
+            ],
+            "responses": [
+                "Rukun sholat adalah bagian yang wajib dilakukan dalam sholat. Berikut ini adalah 13 rukun sholat yang harus dipenuhi:\n1. Berdiri bagi yang mampu\n2. Takbiratul ihram\n3. Membaca Al-Fatihah\n4. Rukuk\n5. I’tidal\n6. Sujud\n7. Duduk di antara dua sujud\n8. Tasyahud akhir\n9. Duduk tasyahud akhir\n10. Membaca shalawat Nabi pada tasyahud akhir\n11. Salam\n12. Tertib (berurutan)\n13. Thuma’ninah (tenang dan tumaninah di setiap rukun)",
+                "Dalam sholat, terdapat 13 rukun yang harus dipenuhi. Rukun ini meliputi takbiratul ihram, membaca Al-Fatihah, rukuk, i’tidal, sujud, duduk di antara dua sujud, tasyahud akhir, salam, dan lain-lain. Pelajari rukun ini secara mendalam agar sholat menjadi sah.",
+                "Rukun sholat mencakup hal-hal wajib yang tidak boleh ditinggalkan. Contohnya adalah takbiratul ihram, rukuk, sujud, dan membaca Al-Fatihah. Semua rukun ini harus dilakukan dengan tertib dan tumaninah.",
+                "Berikut adalah rukun sholat yang harus dilakukan:\n1. Berdiri bagi yang mampu\n2. Takbiratul ihram\n3. Membaca Al-Fatihah\n4. Rukuk\n5. I’tidal\n6. Sujud\n7. Duduk di antara dua sujud\n8. Tasyahud akhir\n9. Duduk tasyahud akhir\n10. Membaca shalawat Nabi\n11. Salam\n12. Tertib\n13. Tumaninah (tenang di setiap gerakan)",
+                "Untuk melaksanakan sholat yang sah, setiap muslim harus memahami dan menjalankan 13 rukun sholat, seperti berdiri bagi yang mampu, takbiratul ihram, membaca Al-Fatihah, rukuk, i’tidal, sujud, dan seterusnya. Pastikan semuanya dilakukan dengan tumaninah."
+            ]
+        },
+        {
+            "tag": "syarat.sholat",
+            "patterns": [
+                "Apa saja syarat sah sholat?",
+                "Syarat sah sholat itu apa ya?",
+                "Sebutkan syarat-syarat sholat!",
+                "Apa syarat wajib sholat?",
+                "Bagaimana syarat sholat yang benar?",
+                "Syarat sholat agar sah apa saja?",
+                "Hal-hal yang harus dipenuhi sebelum sholat?",
+                "Persyaratan untuk melaksanakan sholat?",
+                "Syarat sholat menurut Islam apa?"
+            ],
+            "responses": [
+                "Syarat sah sholat meliputi: 1) Islam, 2) Baligh, 3) Berakal, 4) Suci dari hadas kecil dan besar, 5) Menutup aurat, 6) Masuk waktu sholat, 7) Menghadap kiblat, dan 8) Mengetahui tata cara sholat.",
+                "Sebelum sholat, pastikan Anda memenuhi syarat: beragama Islam, sudah baligh, berakal sehat, suci dari hadas, menutup aurat, berada pada waktu sholat, dan menghadap kiblat.",
+                "Beberapa syarat sah sholat: 1) Islam, 2) Baligh, 3) Berakal, 4) Bersuci (wudhu atau mandi wajib), 5) Menutup aurat sesuai ketentuan, 6) Masuk waktu sholat, 7) Menghadap kiblat, 8) Mengetahui hukum sholat.",
+                "Untuk melaksanakan sholat, syarat sahnya adalah: Islam, baligh, berakal, bersuci, menutup aurat, masuk waktu sholat, menghadap kiblat, dan memahami niat sholat.",
+                "Syarat sah sholat antara lain: 1) Anda harus beragama Islam, 2) Sudah baligh, 3) Berakal sehat, 4) Suci dari hadas besar dan kecil, 5) Menutup aurat, 6) Waktunya sudah masuk, dan 7) Menghadap kiblat."
+            ]
+        },
+        {
+            "tag": "jenis.sholat",
+            "patterns": [
+                "Apa saja jenis sholat?",
+                "Jenis-jenis sholat ada apa saja?",
+                "Sholat itu ada berapa macam?",
+                "Tolong sebutkan macam-macam sholat?",
+                "Sholat apa saja yang wajib?",
+                "Sholat sunnah itu apa saja?",
+                "Ada berapa sholat fardhu?",
+                "Sholat yang sunnah itu apa saja?",
+                "Coba jelaskan jenis sholat yang ada?",
+                "Sholat wajib ada berapa?",
+                "Sebutkan sholat sunnah dan wajib!"
+            ],
+            "responses": [
+                "Ada dua jenis sholat secara umum, yaitu sholat wajib dan sholat sunnah. Sholat wajib meliputi: Subuh, Zuhur, Asar, Magrib, dan Isya. Sholat sunnah meliputi: Tahajud, Dhuha, Witir, dan lain-lain.",
+                "Sholat dibagi menjadi dua, yaitu sholat wajib (5 waktu) dan sholat sunnah. Sholat wajib meliputi Subuh, Zuhur, Asar, Magrib, dan Isya. Sementara sholat sunnah seperti Dhuha, Tahajud, dan Witir.",
+                "Jenis-jenis sholat: 1. Wajib: Subuh, Zuhur, Asar, Magrib, Isya. 2. Sunnah: Tahajud, Dhuha, Rawatib, Witir, dan lainnya.",
+                "Sholat wajib terdiri dari lima waktu: Subuh, Zuhur, Asar, Magrib, dan Isya. Sholat sunnah banyak, di antaranya: Dhuha, Tahajud, Witir, Rawatib, dan Sholat Istikharah.",
+                "Sholat wajib adalah Subuh, Zuhur, Asar, Magrib, dan Isya. Sementara itu, sholat sunnah meliputi banyak macam seperti Tahajud, Dhuha, dan Witir.",
+                "Ada dua kategori utama dalam sholat: 1. Sholat Wajib: Subuh, Zuhur, Asar, Magrib, Isya. 2. Sholat Sunnah seperti Dhuha, Tahajud, dan Witir."
+            ]
+        },
+        {
+            "tag": "gerakan.sholat",
+            "patterns": [
+                "Bagaimana cara melakukan ruku'?",
+                "Apa bacaan saat sujud?",
+                "Tata cara berdiri dalam sholat?",
+                "Apa yang dilakukan setelah takbiratul ihram?",
+                "Bagaimana cara duduk di antara dua sujud?",
+                "Gerakan sholat yang benar itu seperti apa?",
+                "Apa bacaan saat i'tidal?",
+                "Langkah-langkah sholat yang benar?",
+                "Bagaimana posisi tangan saat sholat?",
+                "Apa gerakan setelah ruku'?"
+            ],
+            "responses": [
+                "Untuk ruku', posisikan tubuh membungkuk dengan punggung sejajar. Bacaan ruku' adalah: 'Subhana rabbiyal azhimi wa bihamdih'.",
+                "Saat sujud, letakkan dahi, kedua telapak tangan, lutut, dan ujung jari kaki ke lantai. Bacaan sujud: 'Subhana rabbiyal a'la wa bihamdih'.",
+                "Dalam berdiri, pastikan tubuh tegak lurus dengan kedua tangan diletakkan di dada atau perut.",
+                "Setelah takbiratul ihram, letakkan tangan di dada dan baca doa iftitah atau langsung Al-Fatihah.",
+                "Duduk di antara dua sujud dilakukan dengan posisi duduk iftirasy, yaitu telapak kaki kiri dilipat dan kaki kanan ditegakkan. Bacaan: 'Rabbighfirli warhamni wajburni warfa'ni warzuqni wahdini wa'afini wa'fu anni'.",
+                "Gerakan sholat yang benar meliputi takbiratul ihram, ruku', i'tidal, sujud, duduk di antara dua sujud, hingga salam dengan tuma'ninah.",
+                "Saat i'tidal, berdiri tegak sambil mengangkat tangan dan membaca: 'Rabbana lakal hamd'.",
+                "Langkah-langkah sholat mencakup niat, takbir, membaca Al-Fatihah, ruku', i'tidal, sujud, duduk, hingga salam.",
+                "Posisi tangan saat sholat diletakkan di dada dengan tangan kanan menggenggam pergelangan tangan kiri.",
+                "Setelah ruku', lakukan i'tidal yaitu berdiri tegak dengan membaca: 'Sami'allahu liman hamidah'."
+            ]
+        },
+        {
+            "tag": "deteksi.gerakan.sholat",
+            "patterns": [
+                "Bagaimana cara mendeteksi gerakan sholat?",
+                "Apa saja gerakan sholat yang harus dideteksi?",
+                "Apakah aplikasi ini bisa membantu mendeteksi gerakan sholat?",
+                "Bagaimana cara aplikasi mendeteksi rukuk?",
+                "Apa fitur deteksi gerakan sholat di Tumanina?",
+                "Bisakah aplikasi ini memeriksa apakah gerakan saya benar?",
+                "Deteksi takbiratul ihram, apakah tersedia?",
+                "Bagaimana cara memastikan gerakan saya sesuai tuntunan sholat?",
+                "Adakah panduan untuk memperbaiki gerakan sholat di aplikasi ini?",
+                "Bagaimana memastikan gerakan sholat saya benar?"
+            ],
+            "responses": [
+                "Fitur deteksi gerakan sholat pada Tumanina membantu memastikan gerakan sesuai tuntunan syariat.",
+                "Anda dapat menggunakan fitur ini untuk mempelajari dan mengevaluasi gerakan sholat, seperti rukuk, sujud, atau berdiri.",
+                "Aplikasi Tumanina menggunakan teknologi berbasis video atau sensor untuk mendeteksi dan memberi umpan balik atas gerakan sholat Anda.",
+                "Gerakan sholat yang dapat dideteksi mencakup takbiratul ihram, rukuk, i'tidal, sujud, duduk di antara dua sujud, dan tahiyat.",
+                "Untuk memastikan gerakan Anda benar, gunakan panduan interaktif di aplikasi ini.",
+                "Tumanina memberikan notifikasi atau saran jika gerakan sholat Anda belum sesuai.",
+                "Fitur deteksi gerakan dirancang agar mudah digunakan, dengan panduan langkah demi langkah yang jelas.",
+                "Apabila ada gerakan yang kurang tepat, aplikasi ini akan memberikan tips untuk memperbaikinya.",
+                "Anda dapat mempelajari perbedaan gerakan sholat wajib dan sunnah dengan fitur ini.",
+                "Pastikan kamera atau sensor yang digunakan berfungsi dengan baik untuk hasil deteksi yang optimal."
+            ]
+        },
+        {
+            "tag": "kata.kasar",
+            "patterns": [
+                "bodoh",
+                "tolol",
+                "goblok",
+                "bego",
+                "idiot",
+                "kurang ajar",
+                "anjing",
+                "bangsat",
+                "setan",
+                "sialan",
+                "dasar gak guna",
+                "otak udang",
+                "kampret",
+                "monyet",
+                "parasit",
+                "brengsek"
+            ],
+            "responses": [
+                "Astaghfirullah, mari jaga lisan agar lebih baik.",
+                "Ucapan kasar tidak mencerminkan akhlak yang baik. Yuk, kita berbicara dengan santun.",
+                "Tutur kata kita mencerminkan kepribadian. Mari berkata baik atau diam.",
+                "Allah menyukai hamba-Nya yang menjaga lisan dari perkataan buruk.",
+                "Perkataan yang baik adalah sedekah. Mari kita gunakan untuk kebaikan.",
+                "Sebagai seorang Muslim, kita dianjurkan untuk berkata yang baik. Yuk, kita praktikkan.",
+                "Rasulullah ﷺ mengajarkan kita untuk tidak menyakiti orang lain dengan kata-kata.",
+                "Lisan adalah amanah. Gunakan untuk kebaikan ya.",
+                "Kata-kata yang indah membawa berkah, sedangkan yang buruk bisa menyakitkan. Mari pilih yang baik.",
+                "Kita semua bisa belajar bersama untuk berkata-kata lebih baik. Yuk mulai sekarang!"
+            ]
+        },
+        {
+            "tag": "kata.tidaksopan",
+            "patterns": [
+                "bodoh",
+                "tolol",
+                "goblok",
+                "bajingan",
+                "anjing",
+                "bangsat",
+                "monyet",
+                "setan",
+                "konyol",
+                "brengsek",
+                "kampret",
+                "kurang ajar",
+                "kasar banget sih",
+                "bahasa kamu gak sopan",
+                "parah banget omonganmu",
+                "ngomong yang sopan dong",
+                "jangan kasar"
+            ],
+            "responses": [
+                "Astaghfirullah, mari kita gunakan bahasa yang lebih baik dan sopan ya.",
+                "Bahasa yang baik mencerminkan akhlak yang baik. Yuk, jaga tutur kata kita.",
+                "Sebagai seorang muslim, kita diajarkan untuk selalu berbicara dengan lemah lembut. 😊",
+                "Ingatlah, kata-kata kita adalah cerminan hati kita. Semoga kita bisa lebih baik lagi.",
+                "Kata-kata kasar tidak membawa manfaat. Yuk, gunakan kata-kata yang baik dan mendamaikan.",
+                "Allah menyukai orang-orang yang berakhlak mulia. Mari jaga tutur kata kita.",
+                "Semoga kita senantiasa diberikan kesabaran dan kelapangan hati untuk berbicara dengan santun.",
+                "Jangan lupa untuk selalu menjaga adab dan kesopanan, baik dalam lisan maupun tulisan.",
+                "Bahasa yang baik adalah cermin dari hati yang bersih. Yuk, perbaiki bersama.",
+                "Mari kita saling mengingatkan dalam kebaikan, termasuk dalam menjaga lisan kita."
+            ]
+        },
+        {
+            "tag": "ajaran.rasul",
+            "patterns": [
+                "Apa ajaran Rasul tentang sholat?",
+                "Bagaimana Rasulullah mengajarkan sholat?",
+                "Apa sunnah Rasul dalam sholat?",
+                "Apa saja tuntunan Rasul untuk ibadah?",
+                "Bagaimana cara sholat sesuai ajaran Rasulullah?",
+                "Apa yang diajarkan Rasul tentang niat sholat?",
+                "Bagaimana sholat yang benar menurut Rasulullah?",
+                "Apa doa yang diajarkan Rasul setelah sholat?",
+                "Apa saja sunnah dalam sholat yang dicontohkan Rasul?",
+                "Bagaimana Rasul menjaga kekhusyukan dalam sholat?",
+                "Apa keutamaan mengikuti ajaran Rasul dalam ibadah?",
+                "Apa panduan Rasul tentang wudhu sebelum sholat?",
+                "Bagaimana Rasulullah mengajarkan adab sebelum sholat?",
+                "Apa saja dzikir setelah sholat yang diajarkan Rasul?",
+                "Apa anjuran Rasul tentang sholat berjamaah?"
+            ],
+            "responses": [
+                "Rasulullah SAW mengajarkan untuk menjaga kekhusyukan dalam sholat dengan memahami arti bacaan dan menghindari hal-hal yang mengganggu konsentrasi.",
+                "Menurut hadits, Rasulullah SAW bersabda: 'Sholatlah kalian sebagaimana kalian melihat aku sholat.' (HR. Bukhari). Ikuti sunnah beliau dalam gerakan, bacaan, dan tata cara sholat.",
+                "Rasulullah SAW sangat menganjurkan untuk menyempurnakan wudhu sebelum sholat dan membaca doa setelahnya.",
+                "Dalam sholat, Rasulullah SAW selalu memulai dengan niat yang ikhlas dan memusatkan hati untuk beribadah hanya kepada Allah SWT.",
+                "Sunnah Rasulullah dalam sholat antara lain: membaca doa iftitah, meletakkan tangan di atas dada setelah takbir, dan membaca surat pendek setelah Al-Fatihah.",
+                "Rasulullah SAW mengajarkan pentingnya sholat berjamaah, khususnya sholat lima waktu di masjid bagi laki-laki.",
+                "Setelah sholat, Rasulullah SAW biasa membaca dzikir seperti istighfar, tasbih, tahmid, takbir, dan membaca ayat kursi.",
+                "Rasulullah SAW mencontohkan untuk mengucapkan salam dengan tenang dan tidak tergesa-gesa setelah selesai sholat.",
+                "Untuk menjaga kekhusyukan, Rasulullah SAW mengajarkan untuk menghindari tempat yang bising dan menjaga fokus dengan menghadirkan hati.",
+                "Keutamaan mengikuti ajaran Rasul dalam ibadah adalah mendapatkan ridha Allah dan pahala yang berlipat ganda.",
+                "Rasulullah SAW juga mengajarkan adab sebelum sholat, seperti memakai pakaian bersih dan menutup aurat dengan sempurna."
+            ]
+        },
+        {
+            "tag": "ajaran.imamsyafii",
+            "patterns": [
+                "Apa ajaran Imam Syafi'i?",
+                "Bagaimana metode ibadah menurut Imam Syafi'i?",
+                "Imam Syafi'i mengajarkan apa saja?",
+                "Tata cara sholat menurut Imam Syafi'i?",
+                "Fikih Imam Syafi'i bagaimana?",
+                "Bagaimana pendapat Imam Syafi'i tentang wudhu?",
+                "Bolehkah mengikuti Imam Syafi'i?",
+                "Apa pandangan Imam Syafi'i tentang sholat?",
+                "Metode ibadah dalam Mazhab Syafi'i?",
+                "Dasar hukum Mazhab Syafi'i apa?"
+            ],
+            "responses": [
+                "Imam Syafi'i adalah salah satu imam mazhab dalam Islam yang dikenal dengan mazhab Syafi'i. Beliau menyusun metode ibadah berdasarkan Al-Qur'an dan Hadis yang disertai dengan qiyas (analogi).",
+                "Menurut Imam Syafi'i, niat adalah salah satu rukun penting dalam ibadah. Beliau menekankan bahwa niat harus dilafalkan dalam hati.",
+                "Mazhab Syafi'i memiliki panduan yang detail dalam tata cara sholat, seperti pengucapan niat, gerakan yang tepat, dan membaca doa tertentu.",
+                "Dalam Mazhab Syafi'i, wudhu memiliki syarat dan rukun yang jelas, seperti membasuh anggota tubuh dengan tertib dan tidak terputus.",
+                "Imam Syafi'i mengajarkan untuk selalu mengikuti dalil dari Al-Qur'an dan Hadis, serta mendahulukan kehati-hatian dalam ibadah.",
+                "Salah satu prinsip mazhab Syafi'i adalah pentingnya kebersihan dalam ibadah, termasuk memperhatikan najis dan tata cara membersihkannya.",
+                "Mazhab Syafi'i banyak dianut di wilayah Asia Tenggara, termasuk Indonesia, karena metodenya yang sangat rinci dan mudah dipahami.",
+                "Dalam sholat, Imam Syafi'i mengajarkan pentingnya tuma'ninah (ketenangan) dalam setiap gerakan.",
+                "Imam Syafi'i mengembangkan mazhabnya dengan menggunakan dasar-dasar syariat, termasuk qiyas (analogi) dan ijma' (kesepakatan ulama).",
+                "Menurut ajaran Imam Syafi'i, mengikuti satu mazhab tertentu memudahkan konsistensi dalam beribadah."
+            ]
+        },
+        {
+            "tag": "sesuai.imamsyafii",
+            "patterns": [
+                "Bagaimana niat sholat menurut Imam Syafi'i?",
+                "Apakah tata cara sholat sesuai Imam Syafi'i?",
+                "Imam Syafi'i mengajarkan apa tentang sholat?",
+                "Bagaimana cara wudhu menurut Imam Syafi'i?",
+                "Apa pandangan Imam Syafi'i tentang rukun sholat?",
+                "Apakah tumaninah wajib menurut Imam Syafi'i?",
+                "Seperti apa doa iftitah sesuai Imam Syafi'i?",
+                "Apa saja yang membatalkan sholat menurut Imam Syafi'i?",
+                "Bagaimana bacaan sholat menurut Imam Syafi'i?",
+                "Apa pendapat Imam Syafi'i tentang sholat berjamaah?",
+                "Bagaimana cara niat sholat yang benar menurut Imam Syafi'i?",
+                "Bagaimana Imam Syafi'i menjelaskan tentang rakaat sholat?",
+                "Apakah sujud sahwi dijelaskan oleh Imam Syafi'i?",
+                "Apa pendapat Imam Syafi'i tentang sholat sunnah?",
+                "Bagaimana tata cara tayamum menurut Imam Syafi'i?"
+            ],
+            "responses": [
+                "Menurut Imam Syafi'i, niat sholat harus dilakukan di dalam hati dan bersamaan dengan takbiratul ihram.",
+                "Imam Syafi'i menekankan pentingnya tumaninah (ketenangan) dalam setiap gerakan sholat agar sah.",
+                "Rukun sholat menurut Imam Syafi'i mencakup niat, takbiratul ihram, membaca Al-Fatihah, ruku', sujud, duduk di antara dua sujud, dan tasyahud akhir.",
+                "Dalam wudhu, Imam Syafi'i mewajibkan niat di awal serta mencuci anggota wudhu secara berurutan.",
+                "Imam Syafi'i menjelaskan bahwa doa iftitah dianjurkan, namun bukan bagian wajib dari sholat.",
+                "Sholat berjamaah sangat dianjurkan oleh Imam Syafi'i, terutama untuk sholat fardhu.",
+                "Imam Syafi'i menjelaskan bahwa sujud sahwi dilakukan untuk menutupi kesalahan kecil dalam sholat.",
+                "Bacaan sholat seperti Al-Fatihah harus dilakukan dengan tajwid yang benar menurut Imam Syafi'i.",
+                "Tayamum menurut Imam Syafi'i dilakukan dengan debu suci, diawali niat, dan mengusap wajah serta tangan.",
+                "Sholat sunnah seperti rawatib, tahajud, dan dhuha sangat dianjurkan oleh Imam Syafi'i.",
+                "Hal yang membatalkan sholat menurut Imam Syafi'i termasuk makan, minum, atau tertawa terbahak-bahak selama sholat."
+            ]
+        },
+        {
+            "tag": "madzab.imamsyafii",
+            "patterns": [
+                "Ini sholat deteksinya sesuai ajaran mazhab siapa?",
+                "Apakah ini mengikuti mazhab Imam Syafi'i?",
+                "Mazhab apa yang digunakan di panduan sholat ini?",
+                "Panduan ini berdasarkan mazhab siapa?",
+                "Ajaran mazhab apa yang digunakan untuk sholat ini?",
+                "Apakah panduan ini sesuai dengan mazhab Syafi'i?",
+                "Apakah panduan ini mencakup mazhab lain selain Syafi'i?",
+                "Sholat ini sesuai dengan mazhab Syafi'i atau lainnya?",
+                "Mazhab Syafi'i digunakan untuk sholat ini, benar?",
+                "Ini panduan sholat mazhab Syafi'i atau bukan?"
+            ],
+            "responses": [
+                "Panduan dalam aplikasi Tumanina mengacu pada ajaran mazhab Imam Syafi'i, yang merupakan salah satu dari empat mazhab utama dalam Islam.",
+                "Ibadah sholat di aplikasi ini mengikuti panduan dari mazhab Syafi'i untuk memastikan keakuratan dan kemudahan pengguna.",
+                "Aplikasi Tumanina dirancang sesuai dengan ajaran mazhab Syafi'i, namun prinsip-prinsip dasar juga dapat diaplikasikan pada mazhab lain.",
+                "Panduan sholat ini berpedoman pada mazhab Syafi'i, yang umum diikuti di berbagai negara Muslim, termasuk Indonesia.",
+                "Ya, aplikasi ini menggunakan mazhab Syafi'i sebagai rujukan utama untuk tuntunan niat dan ibadah sholat.",
+                "Aplikasi ini memberikan panduan sholat yang sesuai dengan mazhab Syafi'i, tetapi Anda tetap dapat menyesuaikan sesuai kebutuhan mazhab Anda.",
+                "Sholat dalam aplikasi ini didasarkan pada mazhab Imam Syafi'i, yang menekankan tata cara sholat yang benar dan tertib.",
+                "Tumanina menyajikan panduan ibadah berdasarkan ajaran mazhab Syafi'i, dengan fokus pada kemudahan dan keakuratan.",
+                "Iya, panduan dalam aplikasi ini sepenuhnya mengikuti ajaran mazhab Syafi'i.",
+                "Mazhab yang digunakan dalam aplikasi ini adalah mazhab Imam Syafi'i, yang sangat dihormati dalam tradisi Islam."
+            ]
+        },
+        {
+            "tag": "kiblat",
+            "patterns": [
+                "Dimana arah kiblat?",
+                "Bagaimana cara menentukan arah kiblat?",
+                "Arah kiblat itu kemana?",
+                "Saya butuh tahu arah kiblat.",
+                "Kiblat menghadap kemana?",
+                "Cara mudah menentukan kiblat.",
+                "Arah kiblat untuk sholat.",
+                "Bagaimana jika tidak tahu arah kiblat?",
+                "Kiblat di lokasi saya?",
+                "Arah kiblat untuk sholat dimana?",
+                "Bolehkah sholat tanpa tahu arah kiblat?",
+                "Cara cari kiblat tanpa alat.",
+                "Pakai apa untuk cari arah kiblat?",
+                "Kiblat itu arah Ka'bah, benar?",
+                "Arah kiblat kalau di luar negeri?",
+                "Dimana arah Ka'bah?",
+                "Apakah ada aplikasi untuk mencari arah kiblat?",
+                "Bagaimana menentukan kiblat pakai matahari?",
+                "Kiblat kalau tidak ada kompas gimana?",
+                "Cara tradisional menentukan kiblat."
+            ],
+            "responses": [
+                "Arah kiblat adalah menghadap ke Ka'bah di Mekkah. Untuk menentukan arah kiblat, Anda bisa menggunakan kompas di apliksi Tumanina",
+                "Anda bisa menggunakan aplikasi Tumanina untuk membantu menentukan arah kiblat secara akurat.",
+                "Jika Anda tidak tahu arah kiblat, lakukan ijtihad dengan memperkirakan arah Ka'bah. Allah Maha Pengampun atas ketidaktahuan Anda.",
+                "Gunakan aplikasi peta digital atau kompas untuk membantu menemukan arah kiblat dengan mudah.",
+                "Secara tradisional, arah kiblat dapat ditentukan dengan memperhatikan posisi matahari pada waktu tertentu, seperti saat bayangan tepat mengarah ke Ka'bah.",
+                "Anda bisa bertanya kepada orang sekitar atau melihat tanda di masjid terdekat untuk mengetahui arah kiblat.",
+                "Di luar negeri, arah kiblat dapat ditentukan dengan alat bantu seperti kompas atau aplikasi. Posisi Ka'bah biasanya ke arah barat laut dari Indonesia.",
+                "Aplikasi modern seperti Tumanina dapat membantu Anda menentukan arah kiblat dengan cepat dan akurat.",
+                "Jika Anda tidak memiliki alat bantu, gunakan tanda-tanda alam seperti arah matahari terbit dan terbenam untuk memperkirakan arah kiblat.",
+                "Bila ragu dengan arah kiblat, niatkan sholat sesuai kemampuan Anda. Allah menerima ibadah yang didasarkan pada niat yang ikhlas."
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Terima kasih",
+                "Sampai jumpa",
+                "Goodbye",
+                "Selamat tinggal",
+                "Wassalamu'alaikum",
+                "Terima kasih banyak",
+                "Sampai ketemu lagi",
+                "Saya pamit dulu ya",
+                "Selamat tinggal, sampai nanti",
+                "Sampai berjumpa lagi"
+            ],
+            "responses": [
+                "Semoga hari Anda diberkahi, sampai jumpa!",
+                "Wassalamu'alaikum, sampai bertemu lagi.",
+                "Selamat tinggal! Semoga Allah selalu menyertai langkah Anda.",
+                "Sampai jumpa lagi, semoga Anda selalu dalam lindungan-Nya.",
+                "Terima kasih, wassalamu'alaikum.",
+                "Selamat tinggal! Semoga hari Anda penuh berkah."
+            ]
+        },
+        {
+            "tag": "greetings.day",
+            "patterns": [
+                "pagi",
+                "selamat pagi",
+                "Hai selamat Pagi",
+                "Hallo selamat pagi"
+            ],
+            "responses": [
+                "Pagi juga",
+                "Selamat Pagi juga",
+                "Hai juga, selamat Pagi",
+                "Hallo juga, selamat pagi"
+            ]
+        },
+        {
+            "tag": "greetings.noon",
+            "patterns": [
+                "siang",
+                "selamat siang",
+                "Hai selamat siang",
+                "Hallo selamat siang"
+            ],
+            "responses": [
+                "Siang juga",
+                "Selamat Siang juga",
+                "Hai juga, selamat siang",
+                "Hallo juga, selamat siang"
+            ]
+        },
+        {
+            "tag": "greetings.afternoon",
+            "patterns": [
+                "sore",
+                "selamat sore",
+                "Hai selamat sore",
+                "Hallo selamat sore"
+            ],
+            "responses": [
+                "Sore juga",
+                "Selamat Sore juga",
+                "Hai juga, selamat sore",
+                "Hallo juga, selamat sore"
+            ]
+        },
+        {
+            "tag": "greetings.night",
+            "patterns": [
+                "malam",
+                "selamat malam",
+                "Hai juga, selamat malam",
+                "Hallo juga, selamat malam"
+            ],
+            "responses": [
+                "malam juga",
+                "selamat malam juga",
+                "Hai juga, selamat malam",
+                "Hallo juga, selamat malam"
+            ]
+        },
+        {
+            "tag": "dialog.FiturWeb",
+            "patterns": [
+                "apa saja fiturnya",
+                "fitur ",
+                "fitur apa yang dimiliki",
+                "apa saja yang bisa aku lakukan di website"
+            ],
+            "responses": [
+                "fitur utama Tumanina ada deteksi realtime gerakan Sholat, edukasi dan chatbot"
+            ]
+        },
+        {
+            "tag": "waktu_sholat",
+            "patterns": [
+                "Jam berapa waktu sholat hari ini?",
+                "Kapan waktu sholat maghrib?",
+                "Waktu sholat ashar?",
+                "Kapan waktu sholat subuh?",
+                "Waktu sholat dzuhur hari ini?",
+                "Jam berapa sholat isya?",
+                "Kapan waktu sholat sekarang?",
+                "Berapa waktu sholat untuk hari ini?",
+                "Jam berapa adzan subuh?",
+                "Apakah sudah masuk waktu dzuhur?",
+                "Tolong info waktu isya hari ini."
+            ],
+            "responses": [
+                "Waktu sholat tergantung pada lokasi Anda. Anda bisa menggunakan aplikasi untuk mengetahui waktu sholat di daerah Anda.",
+                "Untuk mengetahui waktu sholat, Anda bisa memeriksa jadwal di masjid terdekat atau aplikasi sholat.",
+                "Untuk waktu sholat, Anda bisa memeriksa jadwal di masjid terdekat atau gunakan aplikasi waktu sholat.",
+                "Waktu sholat tergantung lokasi Anda, coba cek di aplikasi penunjuk waktu sholat."
+            ]
+        },
+        {
+            "tag": "doa",
+            "patterns": [
+                "Apa doa sebelum makan?",
+                "Doa setelah sholat",
+                "Doa tidur dalam Islam",
+                "Doa untuk kesehatan",
+                "Doa untuk keberkahan hidup",
+                "Doa agar diberi kesehatan",
+                "Apa doa agar rezeki lancar?",
+                "Doa untuk ketenangan hati",
+                "Bagaimana doa sebelum tidur?",
+                "Doa saat hujan turun"
+            ],
+            "responses": [
+                "Doa sebelum makan: 'Bismillah, Allahumma barik lana fima razaqtana waqina azabannar.'",
+                "Doa setelah sholat: 'Astaghfirullaha Rabbi min kulli dhambin wa atubu ilaih.'",
+                "Doa tidur: 'Bismika Allahumma amutu wa ahya.'",
+                "Doa untuk kesehatan: 'Allahumma a'fini fi badani.'",
+                "Doa saat tidur: 'Bismika Allahumma amutu wa ahya.'",
+                "Untuk ketenangan hati, coba baca 'La ilaha illa Anta, subhanaka inni kuntu minaz-zalimin.'"
+            ]
+        },
+        {
+            "tag": "shalat_wajib",
+            "patterns": [
+                "Apa itu sholat wajib?",
+                "Sholat fardhu itu apa?",
+                "Kenapa sholat wajib itu penting?",
+                "Apa saja sholat fardhu?",
+                "Apa itu sholat wajib lima waktu?",
+                "Kenapa sholat itu diwajibkan?",
+                "Apa saja syarat sah sholat wajib?",
+                "Mengapa kita harus sholat lima waktu?",
+                "Bolehkah tidak sholat wajib?"
+            ],
+            "responses": [
+                "Sholat wajib adalah ibadah yang harus dilakukan oleh setiap Muslim, seperti sholat Subuh, Dzuhur, Ashar, Maghrib, dan Isya.",
+                "Sholat fardhu terdiri dari lima waktu sholat: Subuh, Dzuhur, Ashar, Maghrib, dan Isya. Ini adalah kewajiban setiap Muslim.",
+                "Sholat wajib adalah kewajiban utama yang harus dilaksanakan setiap Muslim lima kali sehari.",
+                "Sholat lima waktu adalah pilar utama dalam Islam dan menjadi bentuk ibadah kepada Allah."
+            ]
+        },
+        {
+            "tag": "puasa",
+            "patterns": [
+                "Apa itu puasa?",
+                "Kapan mulai puasa?",
+                "Kenapa kita harus puasa?",
+                "Apa syarat puasa?",
+                "Bagaimana cara puasa Ramadhan?",
+                "Apa tujuan puasa dalam Islam?",
+                "Bagaimana puasa bisa membersihkan diri?",
+                "Kapan kita diwajibkan puasa?",
+                "Apa saja yang membatalkan puasa?",
+                "Bagaimana niat puasa yang benar?"
+            ],
+            "responses": [
+                "Puasa adalah menahan diri dari makan, minum, dan hal-hal yang membatalkan puasa sejak fajar hingga terbenam matahari selama bulan Ramadhan.",
+                "Puasa Ramadhan dimulai saat terbit fajar hingga matahari terbenam. Selama itu, kita menahan diri dari makan, minum, dan hawa nafsu.",
+                "Puasa adalah ibadah menahan diri dari makan dan minum dari terbit fajar hingga terbenam matahari selama bulan Ramadhan.",
+                "Puasa bertujuan untuk meningkatkan ketakwaan kepada Allah dan melatih kesabaran."
+            ]
+        },
+        {
+            "tag": "zakat",
+            "patterns": [
+                "Apa itu zakat?",
+                "Kapan harus membayar zakat?",
+                "Siapa yang berhak menerima zakat?",
+                "Bagaimana cara membayar zakat?",
+                "Apa jenis zakat?",
+                "Apa manfaat zakat?",
+                "Siapa saja yang wajib zakat?",
+                "Kapan sebaiknya kita bayar zakat?",
+                "Berapa besar zakat yang harus dikeluarkan?",
+                "Bagaimana cara menghitung zakat?"
+            ],
+            "responses": [
+                "Zakat adalah kewajiban bagi Muslim yang mampu untuk diberikan kepada yang membutuhkan, biasanya 2.5% dari kekayaan yang dimiliki.",
+                "Zakat wajib dibayar setiap tahun oleh Muslim yang memenuhi syarat. Zakat dapat dibayarkan kepada orang miskin dan yang membutuhkan.",
+                "Zakat adalah bentuk ibadah untuk membantu sesama dan membersihkan harta kita.",
+                "Besaran zakat adalah 2.5% dari harta yang sudah mencapai nisab dan haul."
+            ]
+        },
+        {
+            "tag": "haji",
+            "patterns": [
+                "Apa itu haji?",
+                "Kapan waktu haji?",
+                "Apa syarat untuk berhaji?",
+                "Bagaimana cara melaksanakan ibadah haji?",
+                "Kenapa haji itu wajib?",
+                "Apakah haji wajib bagi semua orang?",
+                "Kapan waktu untuk melaksanakan haji?",
+                "Bagaimana tahapan ibadah haji?",
+                "Berapa biaya untuk pergi haji?",
+                "Apa saja persyaratan untuk haji?"
+            ],
+            "responses": [
+                "Haji adalah ibadah yang dilakukan di Mekah setiap tahun. Haji merupakan salah satu dari lima rukun Islam yang wajib dilakukan oleh Muslim yang mampu.",
+                "Ibadah haji dilaksanakan di Mekah pada bulan Zulhijah. Untuk berhaji, seseorang harus memenuhi syarat tertentu, termasuk kemampuan fisik dan finansial.",
+                "Haji adalah ibadah yang wajib bagi yang mampu secara finansial dan fisik.",
+                "Haji dilaksanakan pada bulan Dzulhijjah setiap tahunnya di kota Mekah."
+            ]
+        },
+        {
+            "tag": "wudhu",
+            "patterns": [
+                "Apa itu wudhu?",
+                "Bagaimana cara berwudhu?",
+                "Kenapa harus wudhu sebelum sholat?",
+                "Apa saja yang membatalkan wudhu?",
+                "Bagaimana niat untuk wudhu?",
+                "Apa saja tahapan wudhu yang benar?",
+                "Kapan harus berwudhu?",
+                "Apakah boleh wudhu tanpa air?",
+                "Mengapa wudhu penting sebelum sholat?"
+            ],
+            "responses": [
+                "Wudhu adalah cara untuk membersihkan diri sebelum melaksanakan sholat. Ini melibatkan mencuci tangan, mulut, hidung, wajah, dan kaki.",
+                "Wudhu dilakukan untuk menyucikan diri agar sholat kita diterima. Wudhu bisa batal dengan hal-hal seperti buang air kecil atau besar.",
+                "Wudhu adalah cara mensucikan diri untuk ibadah, dimulai dengan niat dan membasuh anggota tubuh tertentu.",
+                "Untuk wudhu tanpa air bisa dilakukan tayammum, jika dalam keadaan darurat."
+            ]
+        },
+        {
+            "tag": "niat_sholat",
+            "patterns": [
+                "Bagaimana niat sholat subuh?",
+                "Doa niat sholat fardhu",
+                "Niat sholat wajib apa saja?",
+                "Apa niat sholat isya?",
+                "Bagaimana niat sholat dzuhur?",
+                "Apakah niat sholat maghrib berbeda?",
+                "Bolehkah niat sholat hanya di dalam hati?",
+                "Apa pentingnya niat dalam sholat?",
+                "Tolong bantu niat untuk sholat isya."
+            ],
+            "responses": [
+                "Niat sholat subuh: 'Usholli fardhal subhi rak'ataini maktoubaatan lillahi ta'ala.'",
+                "Niat sholat wajib adalah mengucapkan niat sesuai dengan sholat yang akan dilakukan, seperti 'Usholli fardhal dzuhri rak'ataini maktoubaatan lillahi ta'ala.'",
+                "Niat sholat penting untuk menetapkan tujuan ibadah, cukup diucapkan di dalam hati.",
+                "Niat untuk sholat fardhu, misalnya: 'Usholli fardhal dzuhri rak'ataini maktoubaatan lillahi ta'ala.'"
+            ]
+        },
+        {
+            "tag": "sholat_jenazah",
+            "patterns": [
+                "Bagaimana cara sholat jenazah?",
+                "Doa sholat jenazah",
+                "Apa hukum sholat jenazah?",
+                "Kapan harus melakukan sholat jenazah?",
+                "Bagaimana tata cara sholat jenazah?",
+                "Apa yang harus dibaca dalam sholat jenazah?",
+                "Siapa yang wajib sholat jenazah?",
+                "Apakah ada rukun sholat jenazah?",
+                "Doa dalam sholat jenazah itu apa?"
+            ],
+            "responses": [
+                "Sholat jenazah dilakukan sebagai bentuk penghormatan dan doa untuk orang yang telah meninggal. Tidak ada ruku' atau sujud dalam sholat jenazah.",
+                "Doa dalam sholat jenazah: 'Allahumma ighfir lahu warhamhu wa'afihi wa'fu anhu.'",
+                "Sholat jenazah dilakukan tanpa ruku dan sujud, cukup berdiri dan membaca doa untuk jenazah.",
+                "Doa untuk sholat jenazah: 'Allahumma ighfir lahu warhamhu wa'afihi wa'fu anhu.'"
+            ]
+        },
+        {
+            "tag": "sholat_tahajud",
+            "patterns": [
+                "Apa itu sholat tahajud?",
+                "Bagaimana cara melakukan sholat tahajud?",
+                "Kapan waktu sholat tahajud?",
+                "Doa sholat tahajud",
+                "Bagaimana cara sholat tahajud yang benar?",
+                "Apa keutamaan sholat tahajud?",
+                "Kapan waktu terbaik untuk tahajud?",
+                "Berapa rakaat sholat tahajud?",
+                "Doa sholat tahajud itu apa?"
+            ],
+            "responses": [
+                "Sholat tahajud adalah sholat sunnah yang dilakukan pada malam hari setelah tidur. Waktu terbaik adalah pada sepertiga malam terakhir.",
+                "Doa sholat tahajud: 'Ya Allah, aku mohon kepada-Mu kebaikan di dunia dan akhirat.'",
+                "Sholat tahajud dilakukan di malam hari setelah tidur, biasanya pada sepertiga malam terakhir.",
+                "Keutamaan sholat tahajud adalah mendapatkan kedekatan dengan Allah dan keberkahan hidup."
+            ]
+        },
+        {
+            "tag": "sholat_dhuha",
+            "patterns": [
+                "Apa itu sholat dhuha?",
+                "Kapan waktu sholat dhuha?",
+                "Bagaimana cara sholat dhuha?",
+                "Doa sholat dhuha",
+                "Bagaimana cara melakukan sholat dhuha?",
+                "Apakah ada keutamaan dari sholat dhuha?",
+                "Kapan waktu sholat dhuha berakhir?",
+                "Berapa rakaat sholat dhuha?",
+                "Doa setelah sholat dhuha apa?"
+            ],
+            "responses": [
+                "Sholat dhuha adalah sholat sunnah yang dilakukan pada waktu pagi sebelum waktu dzuhur.",
+                "Doa sholat dhuha: 'Ya Allah, sesungguhnya sholat dhuha ini untuk-Mu.'",
+                "Sholat dhuha dikerjakan setelah matahari naik hingga menjelang dzuhur.",
+                "Keutamaan sholat dhuha adalah memohon rezeki dan keberkahan dari Allah."
+            ]
+        },
+        {
+            "tag": "tahiyyat_akhir",
+            "patterns": [
+                "Apa itu tahiyyat akhir?",
+                "Bagaimana cara melaksanakan tahiyyat akhir?",
+                "Apa doa dalam tahiyyat akhir?",
+                "Kapan dilakukan tahiyyat akhir?",
+                "Apa itu tahiyyat akhir dalam sholat?",
+                "Bagaimana doa tahiyyat akhir?",
+                "Kenapa harus tahiyyat akhir dalam sholat?",
+                "Apa bacaan dalam tahiyyat akhir?",
+                "Kapan membaca tahiyyat akhir?"
+            ],
+            "responses": [
+                "Tahiyyat akhir adalah doa yang dibaca saat duduk terakhir dalam sholat, setelah sujud kedua sebelum salam.",
+                "Doa tahiyyat akhir: 'At-tahiyyatu lillahi was-salawatu wat-tayyibatu, as-salamu 'alayka ayyuhan-nabiyyu wa rahmatullahi wa barakatuh.'",
+                "Tahiyyat akhir adalah bacaan yang dilakukan sebelum salam sebagai penutup sholat.",
+                "Bacaan tahiyyat akhir: 'At-tahiyyatu lillahi was-salawatu wat-tayyibatu, as-salamu 'alayka ayyuhan-nabiyyu wa rahmatullahi wa barakatuh.'"
+            ]
+        },
+        {
+            "tag": "sholat_rawatib",
+            "patterns": [
+                "Apa itu sholat rawatib?",
+                "Kapan sholat rawatib dilakukan?",
+                "Apa keutamaan sholat rawatib?",
+                "Sholat rawatib itu apa?",
+                "Apa yang dimaksud dengan sholat rawatib?",
+                "Berapa rakaat sholat rawatib?",
+                "Kapan dilakukan sholat rawatib?",
+                "Apa saja sholat rawatib?",
+                "Apa manfaat sholat rawatib?"
+            ],
+            "responses": [
+                "Sholat rawatib adalah sholat sunnah yang dikerjakan sebelum atau setelah sholat fardhu. Sholat rawatib terdiri dari 2 rakaat sebelum sholat dzuhur, 2 rakaat setelahnya, dan lain-lain.",
+                "Keutamaan sholat rawatib adalah memperkuat dan melengkapi sholat fardhu.",
+                "Sholat rawatib adalah sholat sunnah yang dilakukan sebelum atau setelah sholat fardhu.",
+                "Keutamaan sholat rawatib adalah sebagai pelengkap sholat wajib dan mendapatkan pahala tambahan."
+            ]
+        },
+        {
+            "tag": "sholat_sunnah",
+            "patterns": [
+                "Apa itu sholat sunnah?",
+                "Apa saja sholat sunnah yang dianjurkan?",
+                "Bagaimana cara melakukan sholat sunnah?",
+                "Apa keutamaan sholat sunnah?"
+            ],
+            "responses": [
+                "Sholat sunnah adalah ibadah tambahan yang tidak wajib, namun sangat dianjurkan untuk mendapatkan pahala tambahan.",
+                "Sholat sunnah yang dianjurkan misalnya sholat dhuha, tahajud, rawatib, dan witir."
+            ]
+        },
+        {
+            "tag": "sholat_witir",
+            "patterns": [
+                "Apa itu sholat witir?",
+                "Bagaimana cara melakukan sholat witir?",
+                "Berapa rakaat sholat witir?",
+                "Apa keutamaan sholat witir?"
+            ],
+            "responses": [
+                "Sholat witir adalah sholat sunnah yang dilakukan dengan rakaat ganjil, biasanya satu atau tiga rakaat.",
+                "Sholat witir dianjurkan sebagai penutup sholat malam."
+            ]
+        },
+        {
+            "tag": "sholat_taraweh",
+            "patterns": [
+                "Apa itu sholat taraweh?",
+                "Bagaimana cara melakukan sholat taraweh?",
+                "Berapa rakaat sholat taraweh?",
+                "Kapan sholat taraweh dilakukan?"
+            ],
+            "responses": [
+                "Sholat taraweh adalah sholat sunnah yang dilakukan pada malam hari di bulan Ramadhan.",
+                "Biasanya sholat taraweh dilakukan dengan 8 atau 20 rakaat."
+            ]
+        },
+        {
+            "tag": "sholat_idul_fitri",
+            "patterns": [
+                "Apa itu sholat Idul Fitri?",
+                "Bagaimana tata cara sholat Idul Fitri?",
+                "Kapan sholat Idul Fitri dilakukan?",
+                "Berapa rakaat sholat Idul Fitri?"
+            ],
+            "responses": [
+                "Sholat Idul Fitri adalah sholat sunnah yang dilakukan pada Hari Raya Idul Fitri setelah bulan Ramadhan.",
+                "Sholat Idul Fitri dilakukan dua rakaat dengan khutbah setelah sholat."
+            ]
+        },
+        {
+            "tag": "sholat_idul_adha",
+            "patterns": [
+                "Apa itu sholat Idul Adha?",
+                "Bagaimana cara sholat Idul Adha?",
+                "Kapan waktu sholat Idul Adha?",
+                "Berapa rakaat sholat Idul Adha?"
+            ],
+            "responses": [
+                "Sholat Idul Adha adalah sholat sunnah yang dilakukan pada Hari Raya Idul Adha, 10 Dzulhijjah.",
+                "Sholat Idul Adha dilakukan dua rakaat, diikuti khutbah setelahnya."
+            ]
+        },
+        {
+            "tag": "sholat_jumat",
+            "patterns": [
+                "Apa itu sholat Jumat?",
+                "Bagaimana tata cara sholat Jumat?",
+                "Berapa rakaat sholat Jumat?",
+                "Apa keutamaan sholat Jumat?"
+            ],
+            "responses": [
+                "Sholat Jumat adalah sholat wajib yang dilaksanakan pada hari Jumat untuk laki-laki Muslim.",
+                "Sholat Jumat terdiri dari dua rakaat dan didahului dengan khutbah."
+            ]
+        },
+        {
+            "tag": "sholat_tahiyatul_masjid",
+            "patterns": [
+                "Apa itu sholat tahiyatul masjid?",
+                "Bagaimana cara melakukan sholat tahiyatul masjid?",
+                "Kapan dilakukan sholat tahiyatul masjid?",
+                "Apa manfaat sholat tahiyatul masjid?"
+            ],
+            "responses": [
+                "Sholat tahiyatul masjid adalah sholat sunnah dua rakaat yang dilakukan saat masuk masjid sebagai penghormatan kepada masjid.",
+                "Sholat ini dilakukan sebelum duduk di masjid."
+            ]
+        },
+        {
+            "tag": "sholat_istikharah",
+            "patterns": [
+                "Apa itu sholat istikharah?",
+                "Bagaimana cara melakukan sholat istikharah?",
+                "Kapan sholat istikharah dilakukan?",
+                "Apa tujuan sholat istikharah?"
+            ],
+            "responses": [
+                "Sholat istikharah adalah sholat sunnah untuk memohon petunjuk dari Allah dalam mengambil keputusan.",
+                "Sholat ini dilakukan dua rakaat di waktu bebas, lalu berdoa meminta petunjuk kepada Allah."
+            ]
+        },
+        {
+            "tag": "sholat_hajat",
+            "patterns": [
+                "Apa itu sholat hajat?",
+                "Bagaimana cara melakukan sholat hajat?",
+                "Kapan sholat hajat dilakukan?",
+                "Apa manfaat sholat hajat?"
+            ],
+            "responses": [
+                "Sholat hajat adalah sholat sunnah untuk memohon pertolongan dari Allah terkait suatu hajat atau keinginan.",
+                "Dilakukan dua rakaat atau lebih, diikuti dengan doa memohon kepada Allah."
+            ]
+        },
+        {
+            "tag": "sholat_tahiyyat",
+            "patterns": [
+                "Apa itu tahiyyat awal?",
+                "Apa doa tahiyyat awal?",
+                "Bagaimana cara melaksanakan tahiyyat awal?",
+                "Kapan membaca tahiyyat awal?"
+            ],
+            "responses": [
+                "Tahiyyat awal adalah duduk di tengah sholat setelah rakaat kedua untuk membaca doa tahiyyat.",
+                "Doa tahiyyat awal adalah 'At-tahiyyatu lillahi was-salawatu wat-tayyibatu...'."
+            ]
+        },
+        {
+            "tag": "sholat_tasbih",
+            "patterns": [
+                "Apa itu sholat tasbih?",
+                "Bagaimana cara melakukan sholat tasbih?",
+                "Kapan sholat tasbih dilakukan?",
+                "Berapa rakaat sholat tasbih?"
+            ],
+            "responses": [
+                "Sholat tasbih adalah sholat sunnah dengan memperbanyak bacaan tasbih dalam setiap gerakan.",
+                "Dilakukan empat rakaat dengan membaca tasbih 75 kali di setiap rakaat."
+            ]
+        },
+        {
+            "tag": "sholat_dzuhur",
+            "patterns": [
+                "Kapan waktu sholat dzuhur?",
+                "Berapa rakaat sholat dzuhur?",
+                "Bagaimana cara melakukan sholat dzuhur?",
+                "Apa keutamaan sholat dzuhur?"
+            ],
+            "responses": [
+                "Sholat dzuhur dilakukan pada tengah hari, terdiri dari empat rakaat.",
+                "Sholat dzuhur adalah salah satu sholat fardhu yang dilakukan saat matahari mulai condong ke barat."
+            ]
+        },
+        {
+            "tag": "sholat_ashar",
+            "patterns": [
+                "Kapan waktu sholat ashar?",
+                "Berapa rakaat sholat ashar?",
+                "Bagaimana cara melakukan sholat ashar?",
+                "Apa keutamaan sholat ashar?"
+            ],
+            "responses": [
+                "Sholat ashar dilakukan di sore hari, terdiri dari empat rakaat.",
+                "Sholat ashar adalah sholat fardhu yang harus dilaksanakan tepat waktu."
+            ]
+        },
+        {
+            "tag": "niat.sholat.wajib",
+            "patterns": [
+                "Apa niat sholat Subuh?",
+                "Bagaimana cara niat sholat Dzuhur?",
+                "Tolong ajarkan niat sholat Ashar",
+                "Niat untuk sholat Maghrib gimana ya?",
+                "Sholat Isya niatnya apa?",
+                "Bacaan niat sholat wajib Subuh",
+                "Niat sholat Dzuhur yang benar",
+                "Boleh tahu niat sholat Ashar?",
+                "Apa bacaan niat sholat Maghrib?",
+                "Niat sholat Isya lengkapnya gimana?",
+                "Ajarkan niat sholat lima waktu",
+                "Bagaimana niat untuk sholat wajib?",
+                "Apa bacaan niat sebelum sholat wajib?"
+            ],
+            "responses": [
+                "Niat sholat Subuh: \"Usholli fardhosh shubhi rak'ataini mustaqbilal qiblati adaa-an lillaahi ta'aala.\" Artinya: \"Aku berniat sholat fardhu Subuh dua rakaat menghadap kiblat karena Allah Ta'ala.\"",
+                "Niat sholat Dzuhur: \"Usholli fardhodz dzuhri arba'a raka'atin mustaqbilal qiblati adaa-an lillaahi ta'aala.\" Artinya: \"Aku berniat sholat fardhu Dzuhur empat rakaat menghadap kiblat karena Allah Ta'ala.\"",
+                "Niat sholat Ashar: \"Usholli fardhol 'ashri arba'a raka'atin mustaqbilal qiblati adaa-an lillaahi ta'aala.\" Artinya: \"Aku berniat sholat fardhu Ashar empat rakaat menghadap kiblat karena Allah Ta'ala.\"",
+                "Niat sholat Maghrib: \"Usholli fardhol maghribi thalatha raka'atin mustaqbilal qiblati adaa-an lillaahi ta'aala.\" Artinya: \"Aku berniat sholat fardhu Maghrib tiga rakaat menghadap kiblat karena Allah Ta'ala.\"",
+                "Niat sholat Isya: \"Usholli fardhol 'isyaa-i arba'a raka'atin mustaqbilal qiblati adaa-an lillaahi ta'aala.\" Artinya: \"Aku berniat sholat fardhu Isya empat rakaat menghadap kiblat karena Allah Ta'ala.\"",
+                "Setiap sholat wajib memiliki niat tersendiri, berikut daftarnya: \n1. Subuh: \"Usholli fardhosh shubhi rak'ataini mustaqbilal qiblati adaa-an lillaahi ta'aala.\" \n2. Dzuhur: \"Usholli fardhodz dzuhri arba'a raka'atin mustaqbilal qiblati adaa-an lillaahi ta'aala.\" \n3. Ashar: \"Usholli fardhol 'ashri arba'a raka'atin mustaqbilal qiblati adaa-an lillaahi ta'aala.\" \n4. Maghrib: \"Usholli fardhol maghribi thalatha raka'atin mustaqbilal qiblati adaa-an lillaahi ta'aala.\" \n5. Isya: \"Usholli fardhol 'isyaa-i arba'a raka'atin mustaqbilal qiblati adaa-an lillaahi ta'aala.\"",
+                "Pastikan niat dilakukan dengan penuh khusyuk dan ikhlas sebelum memulai sholat wajib. Jika ada yang kurang jelas, saya siap membantu."
+            ]
+        },
+        {
+            "tag": "doa.setelah.sholat",
+            "patterns": [
+                "Apa doa setelah sholat?",
+                "Doa setelah sholat wajib apa saja?",
+                "Bagaimana cara membaca doa setelah sholat?",
+                "Tolong ajarkan doa setelah sholat",
+                "Doa setelah sholat wajib dan sunnah?",
+                "Apa doa yang dibaca setelah sholat?",
+                "Bisa berikan doa setelah sholat?",
+                "Doa setelah sholat apa ya?",
+                "Doa pendek setelah sholat apa saja?",
+                "Bacaan doa setelah sholat wajib?"
+            ],
+            "responses": [
+                "Berikut adalah doa setelah sholat yang biasa dibaca:\n1. Astaghfirullahaladzim (3 kali)\n2. Allahumma antas-salam wa minkas-salam tabarakta ya dzal-jalali wal-ikram\n3. Laa ilaaha illallah wahdahu laa syariika lah, lahul mulku wa lahul hamdu wa huwa 'alaa kulli syai'in qadiir\n4. Subhanallah (33 kali), Alhamdulillah (33 kali), Allahu Akbar (33 kali), dan ditutup dengan Laa ilaaha illallah wahdahu laa syariika lah...\n\nApakah Anda ingin penjelasan lebih lanjut?",
+                "Doa setelah sholat biasanya diawali dengan membaca istighfar (Astaghfirullahaladzim) sebanyak 3 kali, dilanjutkan dengan dzikir seperti tasbih (Subhanallah), tahmid (Alhamdulillah), takbir (Allahu Akbar), dan doa-doa lain sesuai kebutuhan. Jika Anda ingin teks lengkapnya, saya bisa bantu!",
+                "Doa setelah sholat: \nAstaghfirullahaladzim (3 kali), lalu dilanjutkan: Allahumma antas-salam wa minkas-salam tabarakta ya dzal-jalali wal-ikram. Dzikir berikutnya: Subhanallah, Alhamdulillah, Allahu Akbar masing-masing 33 kali, lalu ditutup dengan doa tambahan seperti: Laa ilaaha illallah wahdahu laa syariika lah...\nApakah Anda ingin versi lengkapnya?",
+                "Doa setelah sholat: \n1. Istighfar (Astaghfirullahaladzim 3 kali)\n2. Dzikir-dzikir: Subhanallah, Alhamdulillah, Allahu Akbar\n3. Doa penutup seperti Allahumma ajirna minan naar\nIngin tahu lebih banyak?",
+                "Setelah sholat, umat Islam dianjurkan membaca dzikir dan doa. Misalnya: \n- Istighfar (Astaghfirullahaladzim) 3 kali\n- Dzikir pendek: Subhanallah, Alhamdulillah, Allahu Akbar (masing-masing 33 kali)\n- Doa: Laa ilaaha illallah wahdahu laa syariika lah...\n\nJika Anda memerlukan panduan lebih lengkap, beri tahu saya ya!"
+            ]
+        },
+        {
+            "tag": "download.tumanina",
+            "patterns": [
+                "Di mana saya bisa mengunduh aplikasi Tumanina?",
+                "Bagaimana cara download aplikasi Tumanina?",
+                "Link download aplikasi Tumanina?",
+                "Apa itu aplikasi Tumanina?",
+                "Saya ingin belajar sholat, apakah ada aplikasi Tumanina?",
+                "Tumanina itu apa?",
+                "Aplikasi untuk belajar sholat yang direkomendasikan?",
+                "Saya ingin mengenal Islam lebih baik, adakah aplikasi untuk itu?",
+                "Aplikasi untuk belajar sholat dan Islam?",
+                "Cara mengenal rukun Islam melalui aplikasi?"
+            ],
+            "responses": [
+                "Aplikasi Tumanina dapat membantu Anda belajar sholat dan mengenal Islam dengan mudah. Anda bisa mengunduhnya di Google Play Store atau App Store.",
+                "Tumanina adalah aplikasi edukasi Islam yang dirancang untuk membantu pengguna mempelajari sholat dan dasar-dasar agama Islam. Unduh sekarang melalui tautan resmi kami.",
+                "Anda dapat mengunduh aplikasi Tumanina untuk belajar sholat dan mengenal Islam lebih dalam. Kunjungi toko aplikasi seperti Google Play atau App Store.",
+                "Tertarik belajar sholat? Aplikasi Tumanina adalah solusi tepat untuk Anda. Unduh sekarang secara gratis!",
+                "Pelajari rukun Islam, tata cara sholat, dan banyak lagi dengan aplikasi Tumanina. Tersedia di toko aplikasi kesayangan Anda.",
+                "Untuk belajar sholat dan mengenal Islam, unduh aplikasi Tumanina di Google Play Store atau App Store.",
+                "Aplikasi Tumanina dapat memandu Anda mengenal Islam dengan cara yang interaktif dan mudah dipahami. Dapatkan aplikasinya sekarang juga.",
+                "Temukan panduan lengkap sholat dan rukun Islam dalam aplikasi Tumanina. Unduh melalui platform unduhan resmi.",
+                "Ingin mengenal Islam lebih baik? Aplikasi Tumanina adalah pilihan yang tepat. Dapatkan aplikasinya di Google Play atau App Store.",
+                "Belajar Islam kini lebih mudah dengan aplikasi Tumanina. Unduh dan temukan panduan interaktif untuk meningkatkan pengetahuan agama Anda."
+            ]
+        },
+        {
+            "tag": "fitur.tumanina",
+            "patterns": [
+                "Apa saja fitur aplikasi deteksi gerakan sholat?",
+                "Bagaimana cara belajar sholat dengan aplikasi ini?",
+                "Apakah aplikasi ini bisa mendeteksi tuma'ninah dalam sholat?",
+                "Saya ingin belajar gerakan sholat yang benar, apakah bisa?",
+                "Apa keunggulan aplikasi ini untuk mengenal Islam?",
+                "Bisakah aplikasi ini membantu saya memastikan gerakan sholat saya sudah benar?",
+                "Bagaimana aplikasi ini membantu belajar rukun Islam?",
+                "Apakah ada panduan untuk bacaan sholat dalam aplikasi ini?",
+                "Apa manfaat aplikasi ini untuk belajar agama Islam?",
+                "Bisakah aplikasi ini memberi evaluasi untuk sholat saya?"
+            ],
+            "responses": [
+                "Aplikasi ini memiliki fitur deteksi gerakan sholat secara real-time untuk membantu memastikan tuma'ninah dan kebenaran gerakan sholat Anda.",
+                "Anda dapat belajar sholat melalui panduan interaktif yang mencakup bacaan, gerakan, dan doa dalam sholat.",
+                "Fitur evaluasi akan membantu Anda mengetahui apakah gerakan sholat Anda sudah sesuai dengan tuma'ninah.",
+                "Dengan menggunakan teknologi pengenalan gerakan, aplikasi ini membantu memastikan setiap gerakan sholat dilakukan dengan benar.",
+                "Aplikasi ini juga menyediakan informasi lengkap tentang rukun Islam dan rukun iman untuk memperdalam pemahaman agama.",
+                "Terdapat fitur pengingat sholat, panduan doa harian, dan materi pengenalan Islam yang mudah dipahami.",
+                "Anda dapat merekam gerakan sholat Anda dan mendapatkan masukan untuk memperbaikinya.",
+                "Panduan audio dan visual dalam aplikasi akan mempermudah belajar sholat dengan lebih efektif.",
+                "Fitur tambahan seperti kuis Islam dan tafsir Al-Qur'an membantu pengguna mengenal Islam lebih dalam.",
+                "Aplikasi ini sangat bermanfaat untuk pemula yang ingin belajar sholat atau mendalami ilmu agama dengan mudah."
+            ]
+        },
+        {
+            "tag": "sholat_maghrib",
+            "patterns": [
+                "Kapan waktu sholat maghrib?",
+                "Berapa rakaat sholat maghrib?",
+                "Bagaimana cara melakukan sholat maghrib?",
+                "Apa keutamaan sholat maghrib?"
+            ],
+            "responses": [
+                "Sholat maghrib dilakukan saat matahari terbenam, terdiri dari tiga rakaat.",
+                "Sholat maghrib merupakan sholat fardhu yang memiliki keutamaan besar."
+            ]
+        },
+        {
+            "tag": "sholat_isya",
+            "patterns": [
+                "Kapan waktu sholat isya?",
+                "Berapa rakaat sholat isya?",
+                "Bagaimana cara melakukan sholat isya?",
+                "Apa keutamaan sholat isya?"
+            ],
+            "responses": [
+                "Sholat isya dilakukan setelah waktu maghrib hingga tengah malam, terdiri dari empat rakaat.",
+                "Sholat isya melengkapi lima waktu sholat fardhu dalam sehari."
+            ]
+        },
+        {
+            "tag": "sholat_subuh",
+            "patterns": [
+                "Kapan waktu sholat subuh?",
+                "Berapa rakaat sholat subuh?",
+                "Bagaimana cara melakukan sholat subuh?",
+                "Apa keutamaan sholat subuh?"
+            ],
+            "responses": [
+                "Sholat subuh dilakukan sebelum terbit fajar, terdiri dari dua rakaat.",
+                "Sholat subuh memiliki keutamaan besar, terutama jika dilakukan berjamaah."
+            ]
+        },
+        {
+            "tag": "qadha_sholat",
+            "patterns": [
+                "Apa itu sholat qadha?",
+                "Bagaimana cara melakukan sholat qadha?",
+                "Kapan harus melakukan sholat qadha?",
+                "Bolehkah sholat qadha untuk sholat yang terlewat?"
+            ],
+            "responses": [
+                "Sholat qadha adalah sholat yang dilakukan untuk menggantikan sholat wajib yang terlewat.",
+                "Sholat qadha dilakukan dengan niat qadha untuk sholat yang terlewatkan."
+            ]
+        },
+        {
+            "tag": "sholat_safar",
+            "patterns": [
+                "Apa itu sholat safar?",
+                "Bagaimana cara melakukan sholat safar?",
+                "Apa syarat sholat safar?",
+                "Kapan sholat safar dilakukan?"
+            ],
+            "responses": [
+                "Sholat safar adalah sholat yang dilakukan saat sedang bepergian, yang bisa diringkas menjadi dua rakaat untuk sholat fardhu.",
+                "Sholat ini dilakukan untuk mempermudah ibadah selama perjalanan jauh."
+            ]
+        },
+        {
+            "tag": "sholat_khusyuk",
+            "patterns": [
+                "Bagaimana cara agar sholat lebih khusyuk?",
+                "Apa tips untuk khusyuk dalam sholat?",
+                "Bagaimana cara fokus dalam sholat?",
+                "Mengapa penting khusyuk dalam sholat?"
+            ],
+            "responses": [
+                "Khusyuk dalam sholat dapat dicapai dengan memahami makna bacaan dan menghindari gangguan.",
+                "Tips agar khusyuk adalah fokus pada Allah dan menjauhi hal-hal yang mengganggu pikiran."
+            ]
+        },
+        {
+            "tag": "sholat_dalam_hati",
+            "patterns": [
+                "Bolehkah niat sholat hanya dalam hati?",
+                "Apakah niat sholat harus diucapkan?",
+                "Bagaimana cara niat sholat yang benar?",
+                "Apakah cukup niat dalam hati saja untuk sholat?"
+            ],
+            "responses": [
+                "Niat sholat cukup dilakukan dalam hati sebagai tanda kesungguhan untuk beribadah.",
+                "Tidak ada kewajiban melafalkan niat, cukup dalam hati sudah sah."
+            ]
+        },
+        {
+            "tag": "takbiratul_ihram",
+            "patterns": [
+                "Apa itu takbiratul ihram?",
+                "Bagaimana cara melakukan takbiratul ihram?",
+                "Apa bacaan takbiratul ihram?",
+                "Kapan kita melakukan takbiratul ihram?"
+            ],
+            "responses": [
+                "Takbiratul ihram adalah gerakan awal dalam sholat dengan mengangkat kedua tangan sejajar telinga atau bahu sambil membaca 'Allahu Akbar'.",
+                "Takbiratul ihram menandai masuknya ke dalam sholat dan harus dilakukan dengan khusyuk."
+            ]
+        },
+        {
+            "tag": "ruku",
+            "patterns": [
+                "Apa itu ruku?",
+                "Bagaimana cara melakukan ruku?",
+                "Apa bacaan ruku?",
+                "Kapan kita melakukan ruku dalam sholat?"
+            ],
+            "responses": [
+                "Ruku adalah gerakan membungkukkan badan dengan tangan memegang lutut, sambil membaca 'Subhana rabbiyal adzimi wabihamdih' sebanyak tiga kali.",
+                "Ruku dilakukan setelah membaca surat dalam posisi berdiri."
+            ]
+        },
+        {
+            "tag": "i_tidal",
+            "patterns": [
+                "Apa itu i'tidal?",
+                "Bagaimana cara melakukan i'tidal?",
+                "Apa bacaan i'tidal?",
+                "Kapan kita melakukan i'tidal dalam sholat?"
+            ],
+            "responses": [
+                "I'tidal adalah gerakan berdiri setelah ruku, sambil membaca 'Sami'allahu liman hamidah' dan 'Rabbana lakal hamd'.",
+                "I'tidal dilakukan untuk kembali berdiri setelah ruku sebelum turun ke sujud."
+            ]
+        },
+        {
+            "tag": "sujud",
+            "patterns": [
+                "Apa itu sujud?",
+                "Bagaimana cara melakukan sujud?",
+                "Apa bacaan sujud?",
+                "Kapan kita melakukan sujud dalam sholat?"
+            ],
+            "responses": [
+                "Sujud adalah gerakan menempelkan dahi, hidung, kedua telapak tangan, lutut, dan kaki ke lantai sambil membaca 'Subhana rabbiyal a'la wabihamdih' tiga kali.",
+                "Sujud dilakukan dua kali dalam setiap rakaat, sebagai bentuk ketundukan total kepada Allah."
+            ]
+        },
+        {
+            "tag": "duduk_di_antara_dua_sujud",
+            "patterns": [
+                "Apa itu duduk di antara dua sujud?",
+                "Bagaimana cara duduk di antara dua sujud?",
+                "Apa bacaan duduk di antara dua sujud?",
+                "Kapan kita melakukan duduk di antara dua sujud?"
+            ],
+            "responses": [
+                "Duduk di antara dua sujud adalah posisi duduk setelah sujud pertama, sambil membaca 'Rabbighfirli warhamni wajburni warfa'ni warzuqni wahdini wa'afini wa'fu anni'.",
+                "Posisi ini dilakukan setelah sujud pertama, sebelum melakukan sujud kedua."
+            ]
+        },
+        {
+            "tag": "duduk_tasyahud_awal",
+            "patterns": [
+                "Apa itu duduk tasyahud awal?",
+                "Bagaimana cara duduk tasyahud awal?",
+                "Apa bacaan tasyahud awal?",
+                "Kapan kita melakukan duduk tasyahud awal?"
+            ],
+            "responses": [
+                "Duduk tasyahud awal adalah posisi duduk setelah rakaat kedua, di mana kita membaca doa tahiyyat awal.",
+                "Bacaan tasyahud awal adalah 'At-tahiyyatu lillahi was-salawatu wat-tayyibatu...' hingga 'wa asyhadu anna Muhammadan abduhu wa rasuluh'."
+            ]
+        },
+        {
+            "tag": "tasyahud_akhir",
+            "patterns": [
+                "Apa itu tasyahud akhir?",
+                "Bagaimana cara melakukan tasyahud akhir?",
+                "Apa bacaan tasyahud akhir?",
+                "Kapan kita melakukan tasyahud akhir dalam sholat?"
+            ],
+            "responses": [
+                "Tasyahud akhir adalah doa yang dibaca di duduk terakhir dalam sholat sebelum salam, mencakup bacaan tahiyyat akhir.",
+                "Bacaan tasyahud akhir adalah 'At-tahiyyatu lillahi was-salawatu wat-tayyibatu...' hingga 'innaKa hamidun majid'."
+            ]
+        },
+        {
+            "tag": "salam",
+            "patterns": [
+                "Apa itu salam?",
+                "Bagaimana cara melakukan salam dalam sholat?",
+                "Apa bacaan salam?",
+                "Kapan kita mengucapkan salam dalam sholat?"
+            ],
+            "responses": [
+                "Salam adalah gerakan menoleh ke kanan dan ke kiri sambil mengucapkan 'Assalamu'alaikum warahmatullah', yang menandakan akhir dari sholat.",
+                "Salam dilakukan di akhir sholat sebagai tanda mengakhiri ibadah sholat."
+            ]
+        },
+        {
+            "tag": "qiyam",
+            "patterns": [
+                "Apa itu qiyam?",
+                "Bagaimana cara melakukan qiyam dalam sholat?",
+                "Apa bacaan qiyam?",
+                "Kapan kita melakukan qiyam dalam sholat?"
+            ],
+            "responses": [
+                "Qiyam adalah posisi berdiri dalam sholat sambil membaca surah Al-Fatihah dan surah lain setelahnya.",
+                "Qiyam dilakukan di setiap rakaat sebelum ruku."
+            ]
+        },
+        {
+            "tag": "duduk_tawarruk",
+            "patterns": [
+                "Apa itu duduk tawarruk?",
+                "Bagaimana cara melakukan duduk tawarruk?",
+                "Kapan duduk tawarruk dilakukan?",
+                "Apa manfaat duduk tawarruk dalam sholat?"
+            ],
+            "responses": [
+                "Duduk tawarruk adalah posisi duduk pada tasyahud akhir dalam sholat, dengan kaki kiri di bawah kaki kanan.",
+                "Duduk tawarruk dilakukan pada rakaat terakhir dalam sholat yang memiliki tasyahud akhir."
+            ]
+        },
+        {
+            "tag": "duduk_iftirosy",
+            "patterns": [
+                "Apa itu duduk iftirosy?",
+                "Bagaimana cara melakukan duduk iftirosy?",
+                "Kapan duduk iftirosy dilakukan?",
+                "Apa manfaat duduk iftirosy dalam sholat?"
+            ],
+            "responses": [
+                "Duduk iftirosy adalah posisi duduk antara dua sujud atau pada tasyahud awal, dengan kaki kiri dilipat dan diduduki.",
+                "Duduk iftirosy dilakukan pada tasyahud awal atau di antara dua sujud."
+            ]
+        },
+        {
+            "tag": "bacaan_al_fatihah",
+            "patterns": [
+                "Bagaimana bacaan Al-Fatihah dalam sholat?",
+                "Apa arti bacaan Al-Fatihah?",
+                "Kenapa Al-Fatihah penting dalam sholat?",
+                "Kapan membaca Al-Fatihah dalam sholat?"
+            ],
+            "responses": [
+                "Al-Fatihah adalah surah yang wajib dibaca di setiap rakaat sholat, berisi tujuh ayat yang memuji Allah dan memohon petunjuk.",
+                "Al-Fatihah dibaca pada setiap rakaat sholat setelah takbiratul ihram."
+            ]
+        },
+        {
+            "tag": "bacaan_surah_pendek",
+            "patterns": [
+                "Apa saja surah pendek yang bisa dibaca dalam sholat?",
+                "Kapan membaca surah pendek dalam sholat?",
+                "Bagaimana cara memilih surah pendek dalam sholat?",
+                "Apa tujuan membaca surah pendek setelah Al-Fatihah?"
+            ],
+            "responses": [
+                "Surah pendek seperti Al-Ikhlas, Al-Falaq, atau An-Nas bisa dibaca setelah Al-Fatihah pada dua rakaat pertama.",
+                "Membaca surah pendek setelah Al-Fatihah menambah pahala dan memperkaya bacaan dalam sholat."
+            ]
+        },
+        {
+            "tag": "bacaan_ruku",
+            "patterns": [
+                "Apa bacaan saat ruku?",
+                "Mengapa membaca doa saat ruku?",
+                "Apa arti bacaan ruku?",
+                "Kapan membaca doa ruku dalam sholat?"
+            ],
+            "responses": [
+                "Bacaan saat ruku adalah 'Subhana rabbiyal adzimi wabihamdih' sebanyak tiga kali.",
+                "Doa ini merupakan bentuk penghormatan kepada Allah dalam posisi ruku."
+            ]
+        },
+        {
+            "tag": "bacaan_sujud",
+            "patterns": [
+                "Apa bacaan saat sujud?",
+                "Mengapa membaca doa saat sujud?",
+                "Apa arti bacaan sujud?",
+                "Kapan membaca doa sujud dalam sholat?"
+            ],
+            "responses": [
+                "Bacaan saat sujud adalah 'Subhana rabbiyal a'la wabihamdih' sebanyak tiga kali.",
+                "Bacaan ini menunjukkan ketundukan total kepada Allah dalam posisi sujud."
+            ]
+        },
+        {
+            "tag": "doa_qunut",
+            "patterns": [
+                "Apa itu doa qunut?",
+                "Bagaimana cara membaca doa qunut?",
+                "Kapan doa qunut dibaca?",
+                "Apa manfaat doa qunut?"
+            ],
+            "responses": [
+                "Doa qunut adalah doa yang dibaca dalam sholat subuh atau saat sholat witir, terutama pada rakaat terakhir.",
+                "Doa ini memohon perlindungan dan hidayah dari Allah."
+            ]
+        },
+        {
+            "tag": "bacaan_tasyahud_awal",
+            "patterns": [
+                "Apa bacaan tasyahud awal?",
+                "Bagaimana cara membaca tasyahud awal?",
+                "Kapan membaca tasyahud awal dalam sholat?",
+                "Apa arti bacaan tasyahud awal?"
+            ],
+            "responses": [
+                "Bacaan tasyahud awal adalah 'At-tahiyyatu lillahi was-salawatu wat-tayyibatu...'.",
+                "Tasyahud awal dibaca pada rakaat kedua dalam sholat yang memiliki lebih dari dua rakaat."
+            ]
+        },
+        {
+            "tag": "bacaan_tasyahud_akhir",
+            "patterns": [
+                "Apa bacaan tasyahud akhir?",
+                "Bagaimana cara membaca tasyahud akhir?",
+                "Kapan membaca tasyahud akhir dalam sholat?",
+                "Apa arti bacaan tasyahud akhir?"
+            ],
+            "responses": [
+                "Bacaan tasyahud akhir adalah 'At-tahiyyatu lillahi was-salawatu wat-tayyibatu...' hingga akhir doa sebelum salam.",
+                "Tasyahud akhir dibaca pada rakaat terakhir sebelum salam."
+            ]
+        },
+        {
+            "tag": "bacaan_salam",
+            "patterns": [
+                "Apa bacaan salam?",
+                "Bagaimana cara membaca salam dalam sholat?",
+                "Kapan kita membaca salam dalam sholat?",
+                "Apa arti bacaan salam dalam sholat?"
+            ],
+            "responses": [
+                "Bacaan salam adalah 'Assalamu'alaikum warahmatullah', yang diucapkan dengan menoleh ke kanan dan ke kiri.",
+                "Salam menandakan bahwa kita selesai dari sholat dan kembali ke keadaan biasa."
+            ]
+        },
+        {
+            "tag": "doa_setelah_salam",
+            "patterns": [
+                "Apa doa setelah salam?",
+                "Apa yang harus dibaca setelah sholat selesai?",
+                "Doa apa yang dibaca setelah salam?",
+                "Apa manfaat membaca doa setelah sholat?"
+            ],
+            "responses": [
+                "Doa setelah salam yang dianjurkan adalah istighfar, dzikir tasbih, tahmid, takbir, dan doa memohon kebaikan dunia akhirat.",
+                "Membaca doa setelah salam sebagai bentuk penyempurnaan sholat dan memohon perlindungan dari Allah."
+            ]
+        }
+    ]
+}

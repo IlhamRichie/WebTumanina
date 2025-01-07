@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <h1>Dashboard</h1>
+    <p>Selamat Datang, <strong>Admin Tumaninah</strong></p>
+</div>
+
+<div class="cards-container">
+    <!-- Card User -->
+    <div class="card">
+        <div class="card-icon">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="card-info">
+            <h2>{{ user_count }}</h2>
+            <p>Users</p>
+        </div>
+        <a href="{{ url_for('auth.users') }}" class="view-details">View Details</a>
+    </div>
+
+    <!-- Card Artikel -->
+    <div class="card">
+        <div class="card-icon">
+            <i class="fas fa-newspaper"></i>
+        </div>
+        <div class="card-info">
+            <h2>{{ article_count }}</h2>
+            <p>Articles</p>
+        </div>
+        <a href="{{ url_for('auth.artikel') }}" class="view-details">View Details</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-primary text-white text-center">
+        <h5>Sentiment Analysis</h5>
+    </div>
+    <div class="card-body text-center">
+        <canvas id="sentimentPieChart" width="300" height="300"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Data dari backend
+    let positiveCount = {{ positive_count }};
+    let negativeCount = {{ negative_count }};
+
+    // Inisialisasi chart
+    const ctx = document.getElementById('sentimentPieChart').getContext('2d');
+    const sentimentChart = new Chart(ctx, {
+        type: 'doughnut', // Menggunakan tipe doughnut agar lebih modern
+        data: {
+            labels: ['Positive', 'Negative'],
+            datasets: [{
+                data: [positiveCount, negativeCount],
+                backgroundColor: ['#36A2EB', '#FF6384'], // Warna modern
+                hoverBackgroundColor: ['#1E88E5', '#E53935'], // Warna saat hover
+                borderWidth: 2 // Menambah border agar terlihat elegan
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            size: 14 // Ukuran font label
+                        },
+                        padding: 20 // Spasi antar label
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Sentiment Distribution',
+                    font: {
+                        size: 18 // Ukuran font judul
+                    }
+                }
+            },
+            layout: {
+                padding: {
+                    top: 10,
+                    bottom: 10
+                }
+            },
+            maintainAspectRatio: false // Membuat ukuran lebih fleksibel
+        }
+    });
+</script>
+
+{% endblock %}

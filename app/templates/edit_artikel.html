@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Artikel{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/edit_article.css') }}">
+{% endblock %}
+
+{% block content %}
+<h2>Edit Artikel</h2>
+<form action="{{ url_for('auth.edit_artikel', artikel_id=artikel[0]) }}" method="POST" enctype="multipart/form-data">
+    <label for="title">Judul:</label>
+    <input type="text" id="title" name="title" value="{{ artikel[1] }}" required>
+    <br><br>
+
+    <label for="content">Konten:</label>
+    <textarea id="content" name="content" required>{{ artikel[2] }}</textarea>
+    <br><br>
+
+    <label for="image">Upload Gambar:</label>
+    {% if artikel[3] %}
+    <p>Gambar Saat Ini:</p>
+    <img src="{{ url_for('static', filename='uploads/' + artikel[3]) }}" alt="Gambar Artikel" width="100">
+    <br><br>
+    {% endif %}
+    <input type="file" id="image" name="image" accept="image/*">
+    <br><br>
+
+    <!-- Tampilkan Tanggal Pembuatan -->
+    <label for="created_at">Tanggal Pembuatan:</label>
+    <input type="datetime-local" id="created_at" name="created_at" value="{{ artikel[4]|datetimeformat }}" required>
+    <br><br>
+
+    <button type="submit">Simpan</button>
+</form>
+
+<!-- CKEditor 4 Script -->
+<script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('content', {
+        removePlugins: 'notification,notificationaggregator'
+    });
+</script>
+
+</div>
+{% endblock %}

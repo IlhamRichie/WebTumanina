@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Daftar Users{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="header">
+    <h1>Daftar Users</h1>
+    <!-- Tautan untuk menambah user -->
+    <a href="{{ url_for('auth.add_user') }}" class="btn-add">Tambah User</a>
+</div>
+
+<!-- Tabel Daftar Users -->
+<div class="content">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>
+                    {% if session['role'] == 'super_admin' or (session['role'] == 'admin' and user[2] != 'admin') %}
+                        <a href="{{ url_for('auth.edit_user', user_id=user[0]) }}" class="btn-edit">Edit</a>
+                        <form action="{{ url_for('auth.delete_user', user_id=user[0]) }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn-delete">Delete</button>
+                        </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>        
+    </table>
+</div>
+
+<!-- Modal Pop-Up -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <p>Apakah Anda yakin ingin menghapus user ini?</p>
+        <div class="modal-actions">
+            <button id="confirmDelete" class="btn-confirm">Hapus</button>
+            <button id="cancelDelete" class="btn-cancel">Batal</button>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript untuk Modal -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteButtons = document.querySelectorAll('.btn-delete');
+        const modal = document.getElementById('deleteModal');
+        const confirmDelete = document.getElementById('confirmDelete');
+        const cancelDelete = document.getElementById('cancelDelete');
+        let formToSubmit = null;
+
+        // Show modal when delete button is clicked
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function (event) {
+                formToSubmit = button.closest('form'); // Store form reference
+                modal.style.display = 'block';
+            });
+        });
+
+        // Confirm deletion
+        confirmDelete.addEventListener('click', function () {
+            if (formToSubmit) {
+                formToSubmit.submit(); // Submit the stored form
+            }
+        });
+
+        // Cancel deletion
+        cancelDelete.addEventListener('click', function () {
+            modal.style.display = 'none'; // Hide the modal
+            formToSubmit = null; // Clear stored form
+        });
+
+        // Close modal if clicked outside the content
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                formToSubmit = null;
+            }
+        });
+    });
+</script>
+{% endblock %}

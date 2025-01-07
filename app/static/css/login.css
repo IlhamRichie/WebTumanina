@@ -1,0 +1,133 @@
+/* static/css/login.css */
+
+/* Global Styling */
+/* static/css/login.css */
+
+/* Background Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../images/baground.png"); /* Ganti dengan path gambar */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Login Container */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Warna putih dengan sedikit transparansi */
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+
+/* Logo */
+.login-logo img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1em;
+    border-radius: 50%;
+    background-color: #d1e7dd;
+    padding: 10px;
+}
+
+/* Title */
+.login-container h2 {
+    margin-bottom: 1em;
+    color: #333;
+}
+
+/* Form Styling */
+.login-container label {
+    display: block;
+    text-align: left;
+    margin: 0.5em 0 0.2em;
+    color: #333;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.login-container button {
+    width: 100%;
+    padding: 0.5em;
+    background-color: #20c997;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.login-container button:hover {
+    background-color: #17a2b8;
+}
+
+/* Flash Message Styling */
+.flash-messages {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+.flash-messages .error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 0.5em;
+}
+
+.flash-messages .success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 0.5em;
+}
+
+/* Options */
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+.options a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+/* Signup Link */
+.signup-link {
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tumanina</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&family=Raleway:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="static\css\main.css" rel="stylesheet">
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</head>
+
+
+<body class="index-page">
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="static/img/logo-baru.png" alt="Logo" style="width: 35px; margin-right: 8px;">
+        <h1 class="sitename">Tumanina.</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Beranda</a></li>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#features">Fitur</a></li>
+          <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+  <!-- Main Contentn -->
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="static/img/bg-hero.jpg" alt="Background Hero" class="hero-bg">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="static/img/hero-baru.png" class="img-fluid animated" alt="Tampilan Hero Baru">
+          </div>
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-in">
+            <h1>Belajar Sholat Lebih Mudah dengan <span>Tumanina</span>.</h1>
+            <p>Pelajari gerakan dan bacaan sholat dengan fitur deteksi AI yang interaktif dan praktis, kapan saja dan di
+              mana saja!</p>
+            <div class="d-flex">
+              <a href="#about" class="btn-get-started d-flex align-items-center">
+                <img src="static\img\Google_Play_Arrow_logo.svg" alt="Play Store Logo"
+                  style="width: 20px; margin-right: 8px;">
+                Download Sekarang
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section id="about" class="about section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+          <!-- Konten Kiri -->
+          <div class="col-xl-6 content">
+            <h3>Tentang Kami</h3>
+            <h2>Tumanina.</h2>
+            <p>
+              Tumanina hadir untuk membantu para mualaf, anak-anak, serta siapa saja yang ingin belajar sholat dengan
+              mudah dan interaktif. Dengan berbagai fitur canggih, kami mendukung Anda untuk memahami dan melaksanakan
+              sholat secara baik dan benar.
+            </p>
+            <p class="mt-4">
+              <strong>Tumaninah</strong>
+            </p>
+            <a href="#" class="read-more"><span>Selengkapnya</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <!-- Video Kanan -->
+          <div class="col-xl-6">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/62NNCMtR-HE?autoplay=1&loop=1&playlist=62NNCMtR-HE"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+
+
+    <section id="features" class="features section">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- Feature Item 1 -->
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="features-item" onclick="showImage('mockup1.png')">
+              <i class="bi bi-eye" style="color: #ffbb2c;"></i>
+              <h3><a href="javascript:void(0);" class="stretched-link">Login Feature</a></h3>
+            </div>
+          </div>
+
+          <!-- Feature Item 2 -->
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="features-item" onclick="showImage('mockup2.png')">
+              <i class="bi bi-infinity" style="color: #5578ff;"></i>
+              <h3><a href="javascript:void(0);" class="stretched-link">Home Feature</a></h3>
+            </div>
+          </div>
+
+          <!-- Feature Item 3 -->
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="features-item" onclick="showImage('mockup3.png')">
+              <i class="bi bi-mortarboard" style="color: #e80368;"></i>
+              <h3><a href="javascript:void(0);" class="stretched-link">Chatbot Feature</a></h3>
+            </div>
+          </div>
+
+          <!-- Feature Item 4 -->
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="features-item" onclick="showImage('mockup4.png')">
+              <i class="bi bi-nut" style="color: #e361ff;"></i>
+              <h3><a href="javascript:void(0);" class="stretched-link">Pantau Sholat Feature</a></h3>
+            </div>
+          </div>
+
+          <!-- Feature Item 5 -->
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="features-item" onclick="showImage('mockup5.png')">
+              <i class="bi bi-lightbulb" style="color: #47aeff;"></i>
+              <h3><a href="javascript:void(0);" class="stretched-link">Artikel Feature</a></h3>
+            </div>
+          </div>
+
+          <!-- Feature Item 6 -->
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="features-item" onclick="showImage('mockup6.png')">
+              <i class="bi bi-gear" style="color: #ffa76e;"></i>
+              <h3><a href="javascript:void(0);" class="stretched-link">Tasbih Feature</a></h3>
+            </div>
+          </div>
+
+          <!-- Feature Item 7 -->
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
+            <div class="features-item" onclick="showImage('mockup7.png')">
+              <i class="bi bi-star" style="color: #11dbcf;"></i>
+              <h3><a href="javascript:void(0);" class="stretched-link">Kiblat Feature</a></h3>
+            </div>
+          </div>
+
+          <!-- Feature Item 8 -->
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
+            <div class="features-item" onclick="showImage('mockup8.png')">
+              <i class="bi bi-eye" style="color: #ff5828;"></i>
+              <h3><a href="javascript:void(0);" class="stretched-link">Doa Sehari Hari Feature</a></h3>
+            </div>
+          </div>
+
+          <!-- Feature Item 9 -->
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
+            <div class="features-item" onclick="showImage('mockup9.png')">
+              <i class="bi bi-moon" style="color: #29cc61;"></i>
+              <h3><a href="javascript:void(0);" class="stretched-link">Ayat Al'Quran Feature</a></h3>
+            </div>
+          </div>
+
+          <!-- Feature Item 10 -->
+          <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
+            <div class="features-item" onclick="showImage('mockup10.png')">
+              <i class="bi bi-music-note" style="color: #ff1493;"></i>
+              <h3><a href="javascript:void(0);" class="stretched-link">Waktu Sholat Feature</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popup Image Modal -->
+      <div id="imagePopup" class="modal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.8); z-index:1000;">
+        <span class="close"
+          style="position:absolute; top:10px; right:25px; color:#fff; font-size:30px; font-weight:bold; cursor:pointer;"
+          onclick="closeImagePopup()">&times;</span>
+        <img id="popupImage" src="" alt="Feature Image"
+          style="margin:auto; display:block; max-width:90%; max-height:90%; border-radius:10px;">
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Galeri</h2>
+        <div>
+          <span></span>
+          <span class="description-title">Our Team</span>
+        </div>
+      </div>
+
+      <!-- Swiper Container -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <a href="static/img/gallery/gallery-1.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <a href="static/img/gallery/gallery-2.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <a href="static/img/gallery/gallery-3.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <a href="static/img/gallery/gallery-4.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+              <a href="static/img/gallery/gallery-5.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="swiper-slide">
+              <a href="static/img/gallery/gallery-6.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="static/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <!-- Navigation and Pagination -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /Gallery Section -->
+
+    <!-- Add Application Review Section -->
+    <section id="review">
+      <div id="reviews-list">
+        <h3>Ulasan Pengguna</h3>
+        <ul id="reviews"></ul>
+      </div>
+      <h2 class="fade-in">Masukan Review Anda terhadap aplikasi kami</h2>
+      <p class="slide-up">Bagikan pengalaman Anda menggunakan aplikasi kami.</p>
+      <div>
+        <form id="review-form">
+          <div>
+            <label for="reviewerName">Nama Anda:</label>
+            <input type="text" id="reviewerName" placeholder="Masukkan nama Anda" required>
+          </div>
+          <div>
+            <label for="reviewText">Tulis Ulasan Anda:</label>
+            <textarea id="reviewText" rows="4" placeholder="Bagikan pengalaman Anda..." required></textarea>
+          </div>
+          <button type="submit" id="submitButton">Kirim Ulasan</button>
+        </form>
+      </div>
+
+    </section>
+
+    <!-- JavaScript untuk Submit Review -->
+    <script>
+      document.getElementById('review-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const reviewerName = document.getElementById('reviewerName').value.trim();
+        const reviewText = document.getElementById('reviewText').value.trim();
+
+        if (!reviewerName || !reviewText) {
+          alert('Nama dan ulasan tidak boleh kosong.');
+          return;
+        }
+
+        fetch('/sentimen/add_review', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: reviewerName, text: reviewText })
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.error) {
+              alert('Error: ' + data.error);
+              return;
+            }
+
+            // Tambahkan ulasan baru ke daftar
+            const reviewsList = document.getElementById('reviews');
+            const newReview = document.createElement('li');
+            newReview.textContent = `${reviewerName}: ${reviewText}`;
+            reviewsList.appendChild(newReview);
+
+            // Reset form
+            document.getElementById('reviewerName').value = '';
+            document.getElementById('reviewText').value = '';
+          })
+          .catch(error => console.error('Error:', error));
+      });
+
+      // Opsional: Ambil ulasan dari server dan tampilkan
+      fetch('/sentimen/get_reviews')
+        .then(response => response.json())
+        .then(data => {
+          if (data.reviews) {
+            const reviewsList = document.getElementById('reviews');
+            data.reviews.forEach(review => {
+              const reviewItem = document.createElement('li');
+              reviewItem.textContent = `${review.name}: ${review.text}`;
+              reviewsList.appendChild(reviewItem);
+            });
+          }
+        })
+        .catch(error => console.error('Error:', error));
+    </script>
+    <script>
+      function showImage(imageName) {
+        const popup = document.getElementById('imagePopup');
+        const popupImage = document.getElementById('popupImage');
+        popupImage.src = `/static/images/${imageName}`;
+        popup.style.display = "block";
+      }
+
+      function closeImagePopup() {
+        const popup = document.getElementById('imagePopup');
+        popup.style.display = "none";
+      }
+    </script>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Kontak Kami</h2>
+        <div>
+          <span>Kenali Kami Lebih</span>
+          <span class="description-title">Dekat</span>
+        </div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <!-- Address -->
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Alamat</h3>
+                <p>POLITEKNIK HARAPAN BERSAMA KOTA TEGAL</p>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Kontak</h3>
+                <p>+1 5589 55488 55</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email</h3>
+                <p>hello@tumanina.my.id</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+              data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <button type="submit">Kirim Pesan</button>
+                </div>
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+
+    <!-- Floating Chatbot Icon -->
+    <div id="chatbot-icon"
+      style="position: fixed; bottom: 20px; right: 20px; background: #004c7e; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+      <i class="bi bi-chat-dots-fill" style="font-size: 24px;"></i>
+    </div>
+
+    <!-- Chatbot Popup -->
+    <div id="chatbot-popup"
+      style="position: fixed; bottom: 90px; right: 20px; background: white; border: 1px solid #004c7e; border-radius: 8px; width: 320px; height: 450px; display: none; flex-direction: column; z-index: 1000; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+      <div
+        style="background: #004c7e; color: white; padding: 10px; border-top-left-radius: 8px; border-top-right-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+        <span>Tanya Tumabot</span>
+        <span style="cursor: pointer; font-size: 18px;"
+          onclick="document.getElementById('chatbot-popup').style.display='none';">&times;</span>
+      </div>
+      <div id="chatbot-messages" style="flex: 1; overflow-y: auto; padding: 10px; background-color: #f9f9f9;"></div>
+      <div style="display: flex; border-top: 1px solid #ccc;">
+        <input id="chatbot-input" type="text" placeholder="Ketik pesan..."
+          style="flex: 1; padding: 10px; border: none; border-right: 1px solid #ccc; border-bottom-left-radius: 8px;">
+        <button id="chatbot-send"
+          style="background: #2ddcbf; color: white; border: none; padding: 10px; border-bottom-right-radius: 8px;">Kirim</button>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+
+          <!-- Footer Tentang -->
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Tumanina.</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Jl. Mataram 09</p>
+              <p>New York, NY 535022</p>
+              <p class="mt-3"><strong>Telepon:</strong> +1 5589 55488 55</p>
+              <p><strong>Email:</strong> assalamualaikum@tumanina.my.id</p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <!-- Tautan Berguna -->
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Tautan Berguna</h4>
+            <ul>
+              <li><a href="#">Beranda</a></li>
+              <li><a href="#">Tentang Kami</a></li>
+              <li><a href="#">Fitur</a></li>
+              <li><a href="#">Galeri</a></li>
+              <li><a href="#">Kontak</a></li>
+            </ul>
+          </div>
+
+          <!-- Layanan Kami -->
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Layanan Kami</h4>
+            <ul>
+              <li><a href="#">Deteksi Gerakan Sholat</a></li>
+              <li><a href="#">Chatbot Tumabot</a></li>
+              <li><a href="#">Al-Qur'an</a></li>
+              <li><a href="#">Waktu Sholat</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-12 footer-newsletter">
+            <h4>Newsletter Kami</h4>
+            <p>Langganan newsletter kami untuk mendapatkan informasi terbaru tentang produk dan layanan kami!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form">
+                <input type="email" name="email" placeholder="Masukkan email Anda">
+                <input type="submit" value="Langganan">
+              </div>
+              <div class="loading">Memuat</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Permintaan langganan Anda telah terkirim. Terima kasih!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="container copyright text-center mt-4">
+        <p>© <span>Hak Cipta</span> <strong class="px-1 sitename">Tumanina</strong> <span>Semua Hak Dilindungi</span>
+        </p>
+        <div class="credits">
+          Dirancang oleh <a href="https://tumanina.me">Tim Tumanina</a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/vendor/php-email-form/validate.js"></script>
+    <script src="static/vendor/aos/aos.js"></script>
+    <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="static\js\main.js"></script>
+    <script>
+      // Toggle chatbot popup
+      document.getElementById('chatbot-icon').onclick = function () {
+        const popup = document.getElementById('chatbot-popup');
+        popup.style.display = popup.style.display === 'none' ? 'flex' : 'none';
+      };
+
+      // Handle sending message
+      document.getElementById('chatbot-send').onclick = function () {
+        const input = document.getElementById('chatbot-input');
+        const message = input.value.trim();
+        if (!message) return;
+
+        const messagesDiv = document.getElementById('chatbot-messages');
+        messagesDiv.innerHTML += `<div style="margin: 10px 0; text-align: right;"><b>Anda:</b> ${message}</div>`;
+        input.value = '';
+
+        fetch('http://localhost:5000/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message })
+        })
+          .then(response => response.json())
+          .then(data => {
+            const botResponse = data.response;
+            messagesDiv.innerHTML += `<div style="margin: 10px 0;"><b>Bot:</b> ${botResponse}</div>`;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to bottom
+          })
+          .catch(error => console.error('Error:', error));
+      };
+    </script>
+
+
+</body>
+
+</html>
