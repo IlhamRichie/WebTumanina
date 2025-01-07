@@ -31,12 +31,12 @@ mysql.init_app(app)
 
 # Load TensorFlow model and related files
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'  # Optional: Disable oneDNN warnings
-model = tf.keras.models.load_model('app\\model\\chatbot_model.h5')
-with open('app/model/words.pkl', 'rb') as f:
+model = tf.keras.models.load_model('model\\chatbot_model.h5')
+with open('model/words.pkl', 'rb') as f:
     words = pickle.load(f)
-with open('app/model/classes.pkl', 'rb') as f:
+with open('model/classes.pkl', 'rb') as f:
     classes = pickle.load(f)
-with open('app/model/sholatislam.json') as f:
+with open('model/sholatislam.json') as f:
     intents = json.load(f)
 
 lemmatizer = WordNetLemmatizer()

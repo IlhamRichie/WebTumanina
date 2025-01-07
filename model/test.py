@@ -30,5 +30,5 @@ print("Confidence score:", res[index])
 
 
 # import tensorflow as tf
-# model = tf.keras.models.load_model('app/model/chatbot_model.h5')
+# model = tf.keras.models.load_model('model/chatbot_model.h5')
 # print("Model loaded successfully.")
