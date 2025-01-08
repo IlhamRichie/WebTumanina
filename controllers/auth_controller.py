@@ -2,8 +2,8 @@
 import os
 from flask import Blueprint, current_app, jsonify, render_template, request, redirect, url_for, session, flash
 from werkzeug.security import check_password_hash
-from app.models.user_model import UserModel
-from app import mysql 
+from models.user_model import UserModel
+from extensions import mysql
 from werkzeug.utils import secure_filename
 from bs4 import BeautifulSoup
 

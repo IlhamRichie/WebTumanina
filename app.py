@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, redirect, url_for, request, jsonify, flash
 from flask_mysqldb import MySQL
 from flask_cors import CORS
 from datetime import datetime
@@ -8,11 +8,13 @@ import pickle
 import numpy as np
 import json
 from nltk.stem import WordNetLemmatizer
+from controllers.auth_controller import auth_bp
+from controllers.sentiment_controller import sentiment_bp
+from models.user_model import UserModel
 
 # Setup Flask app
 app = Flask(__name__, template_folder='templates')
 CORS(app)  # Enable CORS
-
 
 # Secret key and database config
 app.secret_key = 'atmins'
@@ -23,6 +25,8 @@ app.config['MYSQL_DB'] = 'admin_tumanina'
 
 # Upload folder config
 app.config['UPLOAD_FOLDER'] = os.path.join('app', 'static', 'uploads')
+app.register_blueprint(auth_bp)
+app.register_blueprint(sentiment_bp)
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Initialize MySQL
@@ -62,6 +66,26 @@ def datetimeformat(value, format='%Y-%m-%dT%H:%M'):
     return value
 
 # Routes
+@app.route('/admin/login', methods=['GET', 'POST'])
+def users_login():
+    if request.method == 'POST':
+        # Logika untuk autentikasi admin
+        username = request.form.get('username')
+        password = request.form.get('password')
+        # Lakukan verifikasi username/password dengan database
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM users WHERE username = %s AND password = %s", (username, password))
+        admin = cur.fetchone()
+        if admin:
+            return render_template('dashboard.html')  # Redirect ke dashboard jika berhasil login
+        else:
+            return render_template('login.html', error="Login gagal. Cek username/password Anda.")
+    return render_template('login.html')
+
+@app.route('/admin/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
 @app.route('/')
 def index():
     return render_template('landing.html')

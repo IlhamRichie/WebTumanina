@@ -25,7 +25,7 @@
             {% endif %}
         {% endwith %}
 
-        <form action="{{ url_for('auth.login') }}" method="POST">
+        <form action="{{ url_for('users_login') }}" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             

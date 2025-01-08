@@ -1,4 +1,4 @@
-from app import mysql
+from extensions import mysql
 
 class UserModel:
     def __init__(self, id, username, password, role):

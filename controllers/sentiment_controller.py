@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify, session
-from app.models.indobert import SentimentAnalyzer
-from app import mysql
+from models.indobert import SentimentAnalyzer
+from extensions import mysql
 from datetime import datetime
 
 import logging
@@ -10,8 +10,8 @@ logging.basicConfig(level=logging.DEBUG)
 sentiment_bp = Blueprint('sentiment', __name__, url_prefix='/sentimen')
 
 # Paths to the model and vectorizer
-model_path = 'app/model/FinalModelSVM.pkl'
-vectorizer_path = 'app/model/reviews.pkl'
+model_path = 'model/FinalModelSVM.pkl'
+vectorizer_path = 'model/reviews.pkl'
 
 # Initialize SentimentAnalyzer
 analyzer = SentimentAnalyzer(model_path, vectorizer_path)
