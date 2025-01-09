@@ -1204,19 +1204,45 @@ section,
 /*--------------------------------------------------------------
 # Gallery Section
 --------------------------------------------------------------*/
-.gallery .gallery-item {
-  overflow: hidden;
-  border-right: 3px solid var(--background-color);
-  border-bottom: 3px solid var(--background-color);
+/* Gallery Item */
+/* Gallery Section */
+.gallery .swiper-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Sesuaikan tinggi maksimum gambar */
+  object-fit: cover; /* Memastikan gambar proporsional */
+  border-radius: 10px; /* Memberikan sudut melengkung */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan efek bayangan */
 }
 
-.gallery .gallery-item img {
-  transition: all ease-in-out 0.4s;
+/* Untuk memastikan responsivitas */
+.gallery .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gallery .gallery-item:hover img {
-  transform: scale(1.1);
+/* Navigasi dan Pagination */
+/* Perbaikan Swiper */
+.swiper {
+  width: 100%;
+  height: auto;
 }
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 
 /*--------------------------------------------------------------
 # Testimonials Section
@@ -1408,6 +1434,59 @@ section,
   font-size: 16px;
   margin: 0 2px;
 }
+
+
+/* Team Section Styles */
+header {
+  background-color: #ffffff; /* Dark background */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.team {
+  background-color: #f8f9fa; /* Light background */
+}
+
+.team .card {
+  border: none; /* Remove border for cleaner look */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.team .card:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.team .card img {
+  border-radius: 0.25rem; /* Slightly rounded corners */
+  height: 250px; /* Set fixed height for images */
+  object-fit: cover; /* Ensure image fits nicely */
+}
+
+.team .card-title {
+  font-size: 1.25rem; /* Larger font size for names */
+  font-weight: 600; /* Bold names */
+  margin-bottom: 5px;
+}
+
+.team .text-muted {
+  font-size: 0.9rem; /* Slightly smaller font for roles */
+  color: #6c757d; /* Muted color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team .card img {
+      height: 200px; /* Adjust image height for smaller screens */
+  }
+
+  .team .card-title {
+      font-size: 1.1rem; /* Slightly smaller font for mobile */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Pricing Section
