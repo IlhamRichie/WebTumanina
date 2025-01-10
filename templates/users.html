@@ -29,13 +29,13 @@
                 <td>{{ user[0] }}</td>
                 <td>{{ user[1] }}</td>
                 <td>
-                    {% if session['role'] == 'super_admin' or (session['role'] == 'admin' and user[2] != 'admin') %}
-                        <a href="{{ url_for('auth.edit_user', user_id=user[0]) }}" class="btn-edit">Edit</a>
+                    <a href="{{ url_for('auth.edit_user', user_id=user[0]) }}" class="btn-edit">Edit</a>
+                    {% if session['role'] == 'super_admin' %} <!-- Tombol Delete hanya untuk super_admin -->
                         <form action="{{ url_for('auth.delete_user', user_id=user[0]) }}" method="POST" style="display:inline;">
                             <button type="submit" class="btn-delete">Delete</button>
                         </form>
                     {% endif %}
-                </td>
+                </td>                
             </tr>
             {% endfor %}
         </tbody>        

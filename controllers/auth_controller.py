@@ -184,15 +184,14 @@ def delete_user(user_id):
     cursor.execute("SELECT id, role FROM users WHERE id=%s", (user_id,))
     target_user = cursor.fetchone()
 
-    if not target_user:
-        flash("Pengguna tidak ditemukan.", "error")
-        return redirect(url_for('auth.users'))
+    if 'role' not in session:
+        flash("Anda harus login terlebih dahulu.", "error")
+    return redirect(url_for('auth.login'))
 
     # Validasi hak akses
     if session['role'] != 'super_admin':
-        if target_user[1] == 'super_admin' or (session['role'] == 'admin' and target_user[1] == 'admin'):
-            flash("Anda tidak diizinkan untuk menghapus pengguna ini.", "error")
-            return redirect(url_for('auth.users'))
+        flash("Anda tidak memiliki izin untuk menghapus pengguna ini.", "error")
+        return redirect(url_for('auth.users'))
 
     # Proses hapus user
     cursor.execute("DELETE FROM users WHERE id=%s", (user_id,))
