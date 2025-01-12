@@ -1,0 +1,97 @@
+
+
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 60px;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Light grey background */
+    color: #2ddcbf; /* Dark grey text */
+  }
+  
+  header {
+    background: #2ddcbf; /* Dark background for header */
+    color: #fff;
+    padding: 15px 20px;
+    text-align: left;
+    position: fixed; /* Fixed position to stay at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+}
+  
+  header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  header a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Article Detail Section */
+  .article-detail {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .article-detail h1 {
+    font-size: 32px;
+    color: #343a40;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 10px;
+  }
+  
+  .article-detail img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .article-detail p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #495057; /* Muted grey for readability */
+    margin-bottom: 20px;
+  }
+  
+  .article-detail .container {
+    padding: 10px;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .article-detail h1 {
+      font-size: 28px;
+    }
+  
+    .article-detail p {
+      font-size: 16px;
+    }
+  }
+  .article-date {
+    font-size: 14px;
+    color: #6c757d; /* Muted grey for the date text */
+    text-align: center;
+    margin: 10px 0; /* Add spacing around the date */
+  }
+  
+  .article-detail p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #495057; /* Muted grey for readability */
+    margin-bottom: 15px; /* Spacing between paragraphs */
+    text-align: justify; /* Justify text for a cleaner look */
+}

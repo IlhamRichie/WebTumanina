@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Islam</title>
+  <link rel="stylesheet" href="static\css\quiz.css">
+</head>
+<body>
+
+  <!-- Welcome Section -->
+  <div id="welcome-screen" class="welcome-screen">
+    <div class="welcome-content">
+      <h1>Selamat datang di Quiz Islam</h1>
+      <p>Uji pengetahuanmu tentang Islam dengan menjawab pertanyaan-pertanyaan berikut.</p>
+      <button id="start-btn" class="start-btn">Mulai</button>
+    </div>
+  </div>
+
+  <!-- Quiz Section (hidden initially) -->
+  <div id="quiz-section" class="quiz-section" style="display: none;">
+    <h2>Quiz Islam</h2>
+
+    <!-- Timer -->
+    <div id="timer" class="timer">Waktu Tersisa: <span id="time-left">30</span> detik</div>
+
+    <div id="question-container" class="question-container">
+      <!-- Questions will be dynamically inserted here -->
+    </div>
+
+    <div class="quiz-controls">
+      <button id="next-btn" class="next-btn">Next</button>
+    </div>
+  </div>
+
+  <!-- Popup Modal -->
+  <div id="popup-modal" class="popup-modal">
+    <div class="popup-content">
+      <h2>Quiz Selesai!</h2>
+      <p id="popup-message">Nilai Anda: 0</p>
+      <button id="popup-btn" class="popup-btn">Tutup</button>
+    </div>
+  </div>
+
+  <script>
+    // Button "Mulai"
+    document.getElementById('start-btn').addEventListener('click', function() {
+      document.getElementById('welcome-screen').style.display = 'none';
+      document.getElementById('quiz-section').style.display = 'block';
+      startQuiz();
+    });
+
+    // Quiz logic
+    let currentQuestionIndex = 0;
+    let timer;
+    let timeLeft = 30;  // 30 seconds for each question
+    let score = 0;
+
+    const questions = [
+  {
+    "question": "Siapakah Nabi terakhir dalam Islam?",
+    "options": ["Nabi Musa", "Nabi Isa", "Nabi Muhammad", "Nabi Ibrahim"],
+    "correct": 2
+  },
+  {
+    "question": "Apa nama kitab suci umat Islam?",
+    "options": ["Al-Quran", "Injil", "Taurat", "Psalms"],
+    "correct": 0
+  },
+  {
+    "question": "Berapa jumlah rukun Islam?",
+    "options": ["4", "5", "6", "7"],
+    "correct": 1
+  },
+  {
+    "question": "Apa arti dari kata 'Islam'?",
+    "options": ["Damai", "Tunduk", "Taqwa", "Keimanan"],
+    "correct": 1
+  },
+  {
+    "question": "Siapa yang pertama kali menerima wahyu dalam Islam?",
+    "options": ["Nabi Ibrahim", "Nabi Muhammad", "Nabi Isa", "Nabi Musa"],
+    "correct": 1
+  },
+  {
+    "question": "Apa nama bulan puasa dalam Islam?",
+    "options": ["Ramadhan", "Syawal", "Dzulhijah", "Rabiul Awal"],
+    "correct": 0
+  },
+  {
+    "question": "Apa nama tempat suci umat Islam?",
+    "options": ["Mekkah", "Medinah", "Jerusalem", "Baghdad"],
+    "correct": 0
+  },
+  {
+    "question": "Apa nama orang yang memimpin salat dalam Islam?",
+    "options": ["Imam", "Muadzin", "Hafiz", "Ustaz"],
+    "correct": 0
+  },
+  {
+    "question": "Siapa yang menjadi istri pertama Nabi Muhammad?",
+    "options": ["Aisyah", "Khadijah", "Fatimah", "Zainab"],
+    "correct": 1
+  },
+  {
+    "question": "Apa nama tempat suci bagi umat Islam di Mekkah?",
+    "options": ["Ka'bah", "Masjidil Haram", "Al-Masjid al-Nabawi", "Masjid al-Aqsa"],
+    "correct": 0
+  },
+  {
+    "question": "Apa nama salat yang dilakukan umat Islam pada hari Jumat?",
+    "options": ["Salat Subuh", "Salat Duhur", "Salat Jum'at", "Salat Maghrib"],
+    "correct": 2
+  },
+  {
+    "question": "Apa nama saudara kandung Nabi Muhammad?",
+    "options": ["Abu Bakar", "Ali", "Hamzah", "Umar"],
+    "correct": 2
+  },
+  {
+    "question": "Berapa jumlah surah dalam Al-Quran?",
+    "options": ["112", "114", "120", "150"],
+    "correct": 1
+  },
+  {
+    "question": "Apa nama malaikat yang bertugas menyampaikan wahyu?",
+    "options": ["Malaikat Jibril", "Malaikat Mikail", "Malaikat Israfil", "Malaikat Azrael"],
+    "correct": 0
+  },
+  {
+    "question": "Di kota mana Nabi Muhammad dilahirkan?",
+    "options": ["Medinah", "Mekkah", "Damaskus", "Kairo"],
+    "correct": 1
+  }
+  
+      // Your list of questions goes here, no changes to this part
+    ];
+
+    function startQuiz() {
+      displayQuestion();
+      startTimer();
+    }
+
+    function displayQuestion() {
+      const questionContainer = document.getElementById('question-container');
+      const currentQuestion = questions[currentQuestionIndex];
+
+      questionContainer.innerHTML = `
+        <p class="question">${currentQuestion.question}</p>
+        <div class="options">
+          ${currentQuestion.options.map((option, index) => `
+            <div class="option" data-index="${index}">
+              <input type="radio" id="option-${index}" name="option" value="${index}">
+              <label for="option-${index}">${option}</label>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    // Timer logic
+    // Timer logic
+function startTimer() {
+    clearInterval(timer); // Pastikan timer sebelumnya dihentikan
+    const timeDisplay = document.getElementById('time-left');
+    timeLeft = 30;  // Reset timer to 30 seconds
+    timeDisplay.textContent = timeLeft;
+  
+    timer = setInterval(function() {
+      timeLeft--;
+      timeDisplay.textContent = timeLeft;
+  
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        alert("Waktu habis! Jawaban Anda dianggap salah.");
+        nextQuestion();
+      }
+    }, 1000);
+  }
+  
+    // Go to the next question
+    function nextQuestion() {
+        clearInterval(timer); // Hentikan timer sebelumnya
+        const selectedOption = document.querySelector('input[name="option"]:checked');
+        if (!selectedOption) {
+          alert('Pilih salah satu jawaban');
+          return;
+        }
+      
+        const selectedAnswer = parseInt(selectedOption.value);
+        if (selectedAnswer === questions[currentQuestionIndex].correct) {
+          score++;
+        }
+      
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+          displayQuestion();
+          startTimer();
+        } else {
+          showPopup();
+        }
+      }
+      
+
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+      
+      // Ambil 10 soal acak
+      function getRandomQuestions(questionArray, count) {
+        const shuffled = shuffleArray([...questionArray]); // Salin array sebelum diacak
+        return shuffled.slice(0, count); // Ambil 'count' soal pertama
+      }
+      
+      // Ambil 10 soal acak
+      const selectedQuestions = getRandomQuestions(questions, 10);
+      
+      // Log hasil untuk memastikan
+      console.log(selectedQuestions);
+
+    // Show the popup with results
+    function showPopup() {
+      const popupMessage = document.getElementById('popup-message');
+      popupMessage.textContent = `Nilai Anda: ${score}/${questions.length}. `;
+
+      if (score > questions.length / 2) {
+        popupMessage.innerHTML += "<br><strong>Anda Mahir Sekali!</strong>";
+      } else {
+        popupMessage.innerHTML += "<br><strong>Anda Belum Mahir, Silahkan Belajar Lagi!</strong>";
+      }
+
+      document.getElementById('popup-modal').style.display = 'flex';
+    }
+
+    document.getElementById('next-btn').addEventListener('click', function() {
+      nextQuestion();
+    });
+
+    document.getElementById('popup-btn').addEventListener('click', function() {
+      document.getElementById('popup-modal').style.display = 'none';
+      document.getElementById('welcome-screen').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>

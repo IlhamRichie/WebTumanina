@@ -1930,3 +1930,148 @@ header {
     margin-top: 20px; /* Memberikan jarak pada layar kecil lll*/
   }
 }
+
+
+
+
+
+
+
+
+/* Styling untuk gambar artikel */
+.article-item img {
+  width: 100%; /* Gambar akan memenuhi lebar container */
+  height: 250px; /* Menambah tinggi gambar */
+  object-fit: cover; /* Memotong bagian yang tidak sesuai */
+  border: 2px solid #ddd; /* Bingkai abu-abu */
+  border-radius: 10px; /* Sudut membulat */
+  padding: 5px; /* Spasi antara gambar dan bingkai */
+  background-color: #fff; /* Latar belakang bingkai putih */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+/* Styling untuk kontainer artikel */
+.article-scroll-container {
+  display: flex; /* Flexbox untuk tata letak horizontal */
+  overflow-x: auto; /* Izinkan scroll horizontal */
+  scroll-snap-type: x mandatory; /* Menentukan scroll berhenti pada setiap artikel */
+  gap: 20px; /* Spasi antar artikel */
+  padding: 10px 0;
+  -webkit-overflow-scrolling: touch;
+  width: 100%; /* Pastikan lebar kontainer 100% */
+}
+
+.article-item {
+  flex: 0 0 auto; /* Jangan biarkan artikel membesar atau mengecil */
+  width: 350px; /* Memperbesar lebar box artikel */
+  scroll-snap-align: start; /* Setiap artikel akan berhenti di posisi awal */
+}
+
+.article-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out; /* Transisi halus ketika hover */
+}
+
+.article-card:hover {
+  transform: translateY(-5px); /* Sedikit angkat saat hover */
+}
+
+/* Gambar artikel responsif */
+.article-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Styling untuk judul dan konten artikel */
+.article-card h3 {
+  font-size: 20px; /* Ukuran font lebih besar */
+  font-weight: bold;
+  margin: 15px;
+}
+
+.article-card p {
+  margin: 0 15px 15px;
+  color: #555;
+  font-size: 16px; /* Ukuran font lebih besar */
+}
+
+/* Styling untuk link "Selengkapnya" */
+.read-more {
+  display: block;
+  color: #2ddcbf;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #2ddcbf;
+  margin: 0 15px 15px;
+  border-radius: 5px;
+}
+
+.read-more:hover {
+  background-color: #2ddcbf;
+  color: #fff;
+  border-color: #2ddcbf;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 10px 15px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.pagination .active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination a:hover {
+  background-color: #ddd;
+}
+
+/* Media Queries untuk responsivitas pada perangkat mobile */
+@media (max-width: 768px) {
+  /* Mengatur lebar box artikel menjadi 100% pada layar kecil */
+  .article-item {
+    width: 100%;
+  }
+
+  /* Mengatur tinggi gambar menjadi auto agar lebih fleksibel */
+  .article-item img {
+    height: 200px; /* Menyesuaikan tinggi gambar */
+  }
+
+  /* Mengurangi ukuran font untuk ponsel */
+  .article-card h3 {
+    font-size: 18px;
+  }
+
+  .article-card p {
+    font-size: 14px;
+  }
+
+  /* Mengatur padding dan margin di pagination */
+  .pagination {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pagination a {
+    margin: 5px 0;
+  }
+}

@@ -1,7 +1,7 @@
 # app/controllers/auth_controller.py
 import os
 from flask import Blueprint, current_app, jsonify, render_template, request, redirect, url_for, session, flash
-from werkzeug.security import check_password_hash
+from werkzeug.security import check_password_hash, generate_password_hash
 from models.user_model import UserModel
 from extensions import mysql
 from werkzeug.utils import secure_filename
@@ -13,6 +13,7 @@ auth_bp = Blueprint('auth', __name__, url_prefix='/admin')
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'png', 'jpg', 'jpeg', 'gif'}
 
+# Login route
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -35,8 +36,7 @@ def login():
 
     return render_template('login.html')
 
-
-# app/controllers/auth_controller.py
+# Dashboard route
 @auth_bp.route('/dashboard')
 def dashboard():
     cursor = mysql.connection.cursor()
@@ -65,7 +65,6 @@ def dashboard():
         negative_count=negative_count
     )
 
-
 # Daftar Users
 @auth_bp.route('/users')
 def users():
@@ -75,10 +74,7 @@ def users():
     cursor.close()
     return render_template('users.html', users=users)
 
-# Tambah User
-# app/controllers/auth_controller.py
-from werkzeug.security import generate_password_hash, check_password_hash
-
+# Super admin dashboard
 @auth_bp.route('/super_admin_dashboard')
 def super_admin_dashboard():
     # Pastikan hanya super_admin yang bisa mengakses
@@ -90,19 +86,14 @@ def super_admin_dashboard():
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT COUNT(*) AS total_users FROM users")
     total_users = cursor.fetchone()[0]
-
-    cursor.execute("SELECT COUNT(*) AS total_articles FROM articles")
-    total_articles = cursor.fetchone()[0]
-
     cursor.close()
 
     return render_template(
         'super_admin_dashboard.html',
         total_users=total_users,
-        total_articles=total_articles
     )
 
-# Route to add user (already hashing the password)
+# Route to add user
 @auth_bp.route('/users/add', methods=['GET', 'POST'])
 def add_user():
     # Pastikan hanya super_admin yang dapat mengakses
@@ -174,7 +165,6 @@ def edit_user(user_id):
     cursor.close()
     return render_template('edit_user.html', user=target_user)
 
-
 # Hapus User
 @auth_bp.route('/users/delete/<int:user_id>', methods=['POST'])
 def delete_user(user_id):
@@ -184,14 +174,15 @@ def delete_user(user_id):
     cursor.execute("SELECT id, role FROM users WHERE id=%s", (user_id,))
     target_user = cursor.fetchone()
 
-    if 'role' not in session:
-        flash("Anda harus login terlebih dahulu.", "error")
-    return redirect(url_for('auth.login'))
+    if not target_user:
+        flash("Pengguna tidak ditemukan.", "error")
+        return redirect(url_for('auth.users'))
 
     # Validasi hak akses
     if session['role'] != 'super_admin':
-        flash("Anda tidak memiliki izin untuk menghapus pengguna ini.", "error")
-        return redirect(url_for('auth.users'))
+        if target_user[1] == 'super_admin' or (session['role'] == 'admin' and target_user[1] == 'admin'):
+            flash("Anda tidak diizinkan untuk menghapus pengguna ini.", "error")
+            return redirect(url_for('auth.users'))
 
     # Proses hapus user
     cursor.execute("DELETE FROM users WHERE id=%s", (user_id,))
@@ -201,8 +192,26 @@ def delete_user(user_id):
     flash('User berhasil dihapus!', 'success')
     return redirect(url_for('auth.users'))
 
-# Tambah Artikel
+# Upload Image Route
+@auth_bp.route('/upload_image', methods=['POST'])
+def upload_image():
+    if 'upload' in request.files:
+        image = request.files['upload']
+        if image and allowed_file(image.filename):
+            filename = secure_filename(image.filename)
+            filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+            image.save(filepath)
+            url = url_for('static', filename='uploads/' + filename)
+            return jsonify({"uploaded": True, "url": url})
+    return jsonify({"uploaded": False, "error": {"message": "Gagal mengunggah gambar"}})
 
+
+
+
+
+
+
+# Artikel Management
 @auth_bp.route('/artikel')
 def artikel():
     search = request.args.get('search', '')
@@ -227,9 +236,12 @@ def artikel():
 
     return render_template('artikel.html', articles=articles)
 
-# Route untuk menambah artikel
 
 
+
+
+
+# Add Artikel Route
 @auth_bp.route('/artikel/add', methods=['GET', 'POST'])
 def add_artikel():
     if request.method == 'POST':
@@ -266,7 +278,11 @@ def add_artikel():
 
     return render_template('add_artikel.html')
 
-# Edit Artikel
+
+
+
+
+# Edit Artikel Route
 @auth_bp.route('/artikel/edit/<int:artikel_id>', methods=['GET', 'POST'])
 def edit_artikel(artikel_id):
     cursor = mysql.connection.cursor()
@@ -287,17 +303,17 @@ def edit_artikel(artikel_id):
             if image and allowed_file(image.filename):
                 image_filename = secure_filename(image.filename)
                 image.save(os.path.join(current_app.config['UPLOAD_FOLDER'], image_filename))
+        else:
+            # Jika tidak ada gambar yang diupload, ambil gambar yang sudah ada
+            cursor.execute("SELECT image FROM articles WHERE id = %s", (artikel_id,))
+            existing_image = cursor.fetchone()
+            image_filename = existing_image[0]
 
-        if not image_filename:
-            cursor.execute("SELECT image FROM articles WHERE id=%s", (artikel_id,))
-            image_filename = cursor.fetchone()[0]
-
-        # Update artikel di database termasuk tanggal
         cursor.execute(
             """
             UPDATE articles 
-            SET title=%s, content=%s, image=%s, created_at=%s 
-            WHERE id=%s
+            SET title = %s, content = %s, image = %s, created_at = %s 
+            WHERE id = %s
             """,
             (title, cleaned_content, image_filename, created_at, artikel_id)
         )
@@ -307,37 +323,41 @@ def edit_artikel(artikel_id):
         flash('Artikel berhasil diperbarui!', 'success')
         return redirect(url_for('auth.artikel'))
 
-    # Ambil data artikel dari database
-    cursor.execute("SELECT id, title, content, image, created_at FROM articles WHERE id=%s", (artikel_id,))
-    artikel = cursor.fetchone()
+    cursor.execute("SELECT * FROM articles WHERE id = %s", (artikel_id,))
+    article = cursor.fetchone()
     cursor.close()
 
-    return render_template('edit_artikel.html', artikel=artikel)
+    if not article:
+        flash("Artikel tidak ditemukan.", "error")
+        return redirect(url_for('auth.artikel'))
 
-# Daftar Artikel
-# Hapus Artikel
+    return render_template('edit_artikel.html', artikel=article)
+
+
+
+
+
+# Delete Artikel Route
 @auth_bp.route('/artikel/delete/<int:artikel_id>', methods=['POST'])
 def delete_artikel(artikel_id):
     cursor = mysql.connection.cursor()
-    cursor.execute("DELETE FROM articles WHERE id=%s", (artikel_id,))
+    cursor.execute("SELECT image FROM articles WHERE id = %s", (artikel_id,))
+    article = cursor.fetchone()
+
+    # Hapus file gambar jika ada
+    if article and article[0]:
+        os.remove(os.path.join(current_app.config['UPLOAD_FOLDER'], article[0]))
+
+    cursor.execute("DELETE FROM articles WHERE id = %s", (artikel_id,))
     mysql.connection.commit()
     cursor.close()
-    
+
     flash('Artikel berhasil dihapus!', 'success')
     return redirect(url_for('auth.artikel'))
 
-# app/controllers/auth_controller.py
-@auth_bp.route('/upload_image', methods=['POST'])
-def upload_image():
-    if 'upload' in request.files:
-        image = request.files['upload']
-        if image and allowed_file(image.filename):
-            filename = secure_filename(image.filename)
-            filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
-            image.save(filepath)
-            url = url_for('static', filename='uploads/' + filename)
-            return jsonify({"uploaded": True, "url": url})
-    return jsonify({"uploaded": False, "error": {"message": "Gagal mengunggah gambar"}})
+
+
+
 
 
 

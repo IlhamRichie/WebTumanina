@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Islami Indonesia</title>
+  <link rel="stylesheet" href="static/css/vidio.css">
+</head>
+<body>
+
+  <h1>Video Islami Indonesia</h1>
+
+  <!-- Search Section -->
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Cari video Islami..." />
+    <button onclick="searchVideos()">Cari</button>
+  </div>
+
+  <!-- Video Gallery Section -->
+  <div class="video-gallery" id="video-gallery"></div>
+
+  <!-- Video Modal -->
+  <div id="video-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <iframe id="modal-video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    const apiKey = 'AIzaSyDAmzFR2n9Fif1B-O7UC4AXAefEa2MPrvU';
+    let query = 'keutamaan ibadah';
+
+    // Fetch YouTube API
+    function fetchVideos() {
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=10&regionCode=ID&relevanceLanguage=id&key=${apiKey}`;
+      
+      fetch(url)
+        .then(response => response.json())
+        .then(data => displayVideos(data.items))
+        .catch(error => console.error('Error fetching the videos:', error));
+    }
+
+    // Display Videos
+    function displayVideos(videos) {
+      const videoGallery = document.getElementById('video-gallery');
+      videoGallery.innerHTML = ''; // Clear previous results
+
+      videos.forEach(video => {
+        const videoCard = document.createElement('div');
+        videoCard.classList.add('video-card');
+
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${video.id.videoId}`;
+        iframe.frameBorder = '0';
+        iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+
+        iframe.onclick = () => openModal(video.id.videoId); // Open modal on click
+
+        const title = document.createElement('h3');
+        title.textContent = video.snippet.title;
+
+        videoCard.appendChild(iframe);
+        videoCard.appendChild(title);
+
+        videoGallery.appendChild(videoCard);
+      });
+    }
+
+    // Open Modal
+    function openModal(videoId) {
+      const modal = document.getElementById('video-modal');
+      const modalVideo = document.getElementById('modal-video');
+      modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`; // Add autoplay
+      modal.style.display = 'block';
+    }
+
+    // Close Modal
+    function closeModal() {
+      const modal = document.getElementById('video-modal');
+      const modalVideo = document.getElementById('modal-video');
+      modalVideo.src = ''; // Stop video playback
+      modal.style.display = 'none';
+    }
+
+    // Search Videos
+    function searchVideos() {
+      const searchInput = document.getElementById('search-input');
+      query = searchInput.value || 'ceramah Islam Indonesia'; // Default query if empty
+      fetchVideos();
+    }
+
+    // Fetch videos on page load
+    window.onload = fetchVideos;
+  </script>
+
+</body>
+</html>

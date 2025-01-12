@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ article.title }}</title>
+  <link href="{{ url_for('static', filename='css/detail_article.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <a href="/">Home</a>
+  </header>
+
+  <section class="article-detail">
+    <div class="container">
+        <h1>{{ article.title }}</h1>
+        {% if article.image %}
+        <img src="{{ url_for('static', filename='uploads/' + article.image) }}" alt="Article Image" class="img-fluid">
+        {% else %}
+        <img src="{{ url_for('static', filename='img/default-image.jpg') }}" alt="Default Image" class="img-fluid">
+        {% endif %}
+        <!-- Tanggal di bawah gambar -->
+        <p class="article-date">{{ article.created_at.strftime('%d %B %Y') }}</p>
+
+        <!-- Pecah paragraf di frontend -->
+        {% for paragraph in article.content.split('\n') %}
+        {% if paragraph.strip() != '' %}
+        <p>{{ paragraph }}</p>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+</body>
+</html>

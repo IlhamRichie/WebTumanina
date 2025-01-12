@@ -1,0 +1,73 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EAF8F1; /* Hijau lembut */
+    color: #1B5E20; /* Hijau gelap */
+  }
+  
+  .header {
+    background-color: #1B5E20; /* Hijau gelap */
+    color: white;
+    padding: 15px 20px;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header nav ul li {
+    display: inline;
+  }
+  
+  .header nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .card {
+    border: 1px solid #A5D6A7;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h2 {
+    margin: 0 0 10px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #2E7D32; /* Hijau medium */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #43A047; /* Hijau lebih terang */
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #1B5E20;
+    color: white;
+  }
+  

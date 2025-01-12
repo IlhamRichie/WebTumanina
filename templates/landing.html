@@ -1,3 +1,4 @@
+<!-- templates\landing.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="static/img/logo1.png" rel="icon">
+  <link href="static/img/logo-baru.png" rel="icon">
   <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -37,31 +38,38 @@
 
 <body class="index-page">
 
-  <!-- Header -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="/" class="logo d-flex align-items-center">
-        <img src="static/img/logo-baru.png" alt="Logo" style="width: 35px; margin-right: 8px;">
-        <h1 class="sitename">Tumanina.</h1>
-      </a>
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Beranda</a></li>
-          <li><a href="#about">Tentang Kami</a></li>
-          <li><a href="#features">Fitur</a></li>
-          <li><a href="#gallery">Galeri</a></li>
-          <li><a href="#contact">Kontak</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-    </div>
-  </header>
+
+<!-- Header -->
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+    <a href="/" class="logo d-flex align-items-center">
+      <img src="static/img/logo-baru.png" alt="Logo" style="width: 35px; margin-right: 8px;">
+      <h1 class="sitename">Tumanina.</h1>
+    </a>  
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active">Beranda</a></li>
+        <li><a href="#about">Tentang Kami</a></li>
+        <li><a href="#articles">Artikel</a></li>
+        <li><a href="#features">Fitur Mobile</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#contact">Kontak</a></li>
+        <li><a href="/video">Video</a></li>
+        <li><a href="/quiz">quiz</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+  </div>
+</header>
+
+
+
   <!-- Main Contentn -->
   <main class="main">
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-      <img src="static/img/bg-hero.jpg" alt="Background Hero" class="hero-bg">
+      <img src="static/img/hero-landing.png" alt="Background Hero" class="hero-bg">
 
       <div class="container">
         <div class="row gy-4 justify-content-between">
@@ -120,9 +128,62 @@
       </div>
     </section>
 
+
+    
+    <section id="articles" class="articles section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Artikel Terkini</h2>
+        <div class="row article-scroll-container">
+          {% for article in articles %}
+          <div class="col-lg-4 col-md-6 article-item">
+            <div class="article-card">
+              <!-- Tampilkan gambar jika ada -->
+              {% if article.image %}
+              <img src="{{ url_for('static', filename='uploads/' + article.image) }}" alt="Article Image" class="img-fluid">
+              {% else %}
+              <img src="{{ url_for('static', filename='img/default-image.jpg') }}" alt="Default Image" class="img-fluid">
+              {% endif %}
+              
+              <h3>{{ article.title }}</h3>
+              <p>{{ article.content[:100] }}...</p>
+              <a href="{{ url_for('article_detail', id=article.id) }}" class="read-more"><span>Selengkapnya</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          {% else %}
+          <p>No articles found.</p>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Pagination -->
+    <div class="pagination">
+        {% if current_page > 1 %}
+            <a href="{{ url_for('index', page=current_page - 1) }}">Previous</a>
+        {% endif %}
+    
+        {% for page_num in range(1, total_pages + 1) %}
+            <a href="{{ url_for('index', page=page_num) }}" class="{{ 'active' if page_num == current_page else '' }}">
+                {{ page_num }}
+            </a>
+        {% endfor %}
+    
+        {% if current_page < total_pages %}
+            <a href="{{ url_for('index', page=current_page + 1) }}">Next</a>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Pagination -->
+
+
+
+
+
     <section id="features" class="features section">
       <div class="container">
         <div class="row gy-4">
+        
 
           <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
             <div class="features-item" onclick="showImage('mockup3.png')">
@@ -187,74 +248,74 @@
             </div>
           </div>
 
-          <!-- Popup Image Modal -->
-          <div id="imagePopup" class="modal"
-            style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.8); z-index:1000;">
-            <span class="close"
-              style="position:absolute; top:10px; right:25px; color:#fff; font-size:30px; font-weight:bold; cursor:pointer;"
-              onclick="closeImagePopup()">&times;</span>
-            <img id="popupImage" src="" alt="Feature Image"
-              style="margin:auto; display:block; max-width:95%; max-height:95%; border-radius:10px;">
-          </div>
+      <!-- Popup Image Modal -->
+      <div id="imagePopup" class="modal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.8); z-index:1000;">
+        <span class="close"
+          style="position:absolute; top:10px; right:25px; color:#fff; font-size:30px; font-weight:bold; cursor:pointer;"
+          onclick="closeImagePopup()">&times;</span>
+        <img id="popupImage" src="" alt="Feature Image"
+          style="margin:auto; display:block; max-width:90%; max-height:90%; border-radius:10px;">
+      </div>
     </section>
 
-    <!-- team -->
+<!-- team -->
     <header class="bg-white text-white py-3">
       <div class="container">
-        <h1 class="text-center">Hamba Kesayangan Allah</h1>
+          <h1 class="text-center">Hamba Kesayangan Allah</h1>
       </div>
-    </header>
+  </header>
 
-    <section class="team py-5">
+  <section class="team py-5">
       <div class="container">
-        <div class="row text-center">
-          <!-- Team Member 1 -->
-          <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card shadow-sm">
-              <img src="static/img/team/1.jpg" alt="Walter White" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Satrio Ramadhan W</h5>
-                <p class="text-muted">Moto : Yang Sudah Boleh Pulang</p>
+          <div class="row text-center">
+              <!-- Team Member 1 -->
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="card shadow-sm">
+                      <img src="static/img/team/1.jpg" alt="Walter White" class="card-img-top">
+                      <div class="card-body">
+                          <h5 class="card-title">Satrio Ramadhan W</h5>
+                          <p class="text-muted">DEVELOPER</p>
+                      </div>
+                  </div>
               </div>
-            </div>
-          </div>
-          <!-- Team Member 2 -->
-          <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card shadow-sm">
-              <img src="static/img/team/3.jpg" alt="Sarah Johnson" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Angga Sukha Pratama </h5>
-                <p class="text-muted">Moto : Bertahan Demi Mie Ayam</p>
+              <!-- Team Member 2 -->
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="card shadow-sm">
+                      <img src="static/img/team/3.jpg" alt="Sarah Johnson" class="card-img-top">
+                      <div class="card-body">
+                          <h5 class="card-title">Angga Sukha Pratama </h5>
+                          <p class="text-muted">DEVELOPER</p>
+                      </div>
+                  </div>
               </div>
-            </div>
-          </div>
-          <!-- Team Member 3 -->
-          <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card shadow-sm">
-              <img src="static/img/team/6.jpg" alt="William Anderson" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">M.Ilham Rigan Agachi</h5>
-                <p class="text-muted">Moto : Hidup Suryadi</p>
+              <!-- Team Member 3 -->
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="card shadow-sm">
+                      <img src="static/img/team/6.jpg" alt="William Anderson" class="card-img-top">
+                      <div class="card-body">
+                          <h5 class="card-title">M.Ilham Rigan Agachi</h5>
+                          <p class="text-muted">DEVELOPER</p>
+                      </div>
+                  </div>
               </div>
-            </div>
-          </div>
-          <!-- Team Member 4 -->
-          <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card shadow-sm">
-              <img src="static/img/team/7.jpg" alt="Amanda Jepson" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">M.Iqbal Firmansyah</h5>
-                <p class="text-muted">Moto : Cekrekk!!</p>
+              <!-- Team Member 4 -->
+              <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="card shadow-sm">
+                      <img src="static/img/team/7.jpg" alt="Amanda Jepson" class="card-img-top">
+                      <div class="card-body">
+                          <h5 class="card-title">M.Iqbal Firmansyah</h5>
+                          <p class="text-muted">DEVELOPER</p>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
       </div>
-    </section>
+  </section>
 
 
 
-
+  
     <section id="gallery" class="gallery section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Galeri</h2>
@@ -263,28 +324,37 @@
           <span class="description-title">Hamba Sahaya </span>
         </div>
       </div>
-
+    
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
-
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <img src="static/img/gallery/A11.jpg" alt="Team Member 1">
+            </div>
             <!-- Slide 2 -->
             <div class="swiper-slide">
-              <img src="static/img/team/2.jpg" alt="Team Member 2">
+              <img src="static/img/gallery/A1.jpg" alt="Team Member 2">
             </div>
-
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <img src="static/img/gallery/A2.jpg" alt="Team Member 3">
+            </div>
             <!-- Slide 4 -->
             <div class="swiper-slide">
-              <img src="static/img/team/4.jpg" alt="Team Member 4">
+              <img src="static/img/gallery/A3.jpg" alt="Team Member 4">
             </div>
             <!-- Slide 5 -->
             <div class="swiper-slide">
-              <img src="static/img/team/5.jpg" alt="Team Member 5">
+              <img src="static/img/gallery/A4.jpg" alt="Team Member 5">
             </div>
-
+            <!-- Slide 6 -->
+            <div class="swiper-slide">
+              <img src="static/img/gallery/A5.jpg" alt="Team Member 6">
+            </div>
           </div>
-
-
+          
+    
           <!-- Navigation -->
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
@@ -292,7 +362,7 @@
         </div>
       </div>
     </section>
-
+    
     <!-- /Gallery Section -->
 
     <!-- Add Application Review Section -->
@@ -407,24 +477,52 @@
         },
       });
       // Swiper Initialization
-      const swiper = new Swiper('.mySwiper', {
-        loop: true, // Mengulang slider secara otomatis
-        autoplay: {
-          delay: 3000, // Waktu jeda antar slide (dalam milidetik)
-          disableOnInteraction: false, // Autoplay tetap aktif meskipun pengguna berinteraksi
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      });
+const swiper = new Swiper('.mySwiper', {
+  loop: true, // Mengulang slider secara otomatis
+  autoplay: {
+    delay: 3000, // Waktu jeda antar slide (dalam milidetik)
+    disableOnInteraction: false, // Autoplay tetap aktif meskipun pengguna berinteraksi
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
 
     </script>
 
+    <script>
+     // Menambahkan event listener untuk scroll otomatis
+let scrollContainer = document.querySelector('.article-scroll-container');
+let scrollInterval;
+
+scrollContainer.addEventListener('mouseenter', function() {
+    // Hentikan scroll otomatis saat mouse masuk ke dalam kontainer
+    clearInterval(scrollInterval);
+});
+
+scrollContainer.addEventListener('mouseleave', function() {
+    // Mulai scroll otomatis lagi ketika mouse keluar
+    startAutoScroll();
+});
+
+function startAutoScroll() {
+    scrollInterval = setInterval(() => {
+        scrollContainer.scrollBy({
+            left: 1,
+            behavior: 'smooth'
+        });
+    }, 30); // Kecepatan scroll
+}
+
+// Mulai scroll otomatis saat halaman dimuat
+startAutoScroll();
+    </script>
+    
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
