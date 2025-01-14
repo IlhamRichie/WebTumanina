@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perpustakaan Google Books</title>
+  <link rel="stylesheet" href="static/css/perpus.css">
+  <script src="https://www.google.com/books/jsapi.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Perpustakaan Islami</h1>
+    <p>Jelajahi koleksi buku dari Islami Indonesia.</p>
+  </header>
+
+  <!-- Search Section -->
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Cari buku...">
+    <button onclick="searchBooks()">Cari</button>
+  </div>
+
+  <!-- Book Gallery Section -->
+  <div class="book-gallery" id="book-gallery"></div>
+
+  <!-- Book Viewer Modal -->
+  <div id="viewer-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&#x2716;</button>
+      <div id="viewer"></div>
+    </div>
+  </div>
+
+  <script>
+    const apiUrl = 'https://www.googleapis.com/books/v1/volumes';
+    let currentBookId = null;
+  
+    // Initialize Google Books Viewer
+    google.books.load();
+  
+    // Fetch Books
+    function fetchBooks(query = 'Islam') {
+      const url = `${apiUrl}?q=${query}&maxResults=32`;
+  
+      fetch(url)
+        .then(response => response.json())
+        .then(data => displayBooks(data.items))
+        .catch(error => console.error('Error fetching the books:', error));
+    }
+  
+    // Display Books
+    function displayBooks(books) {
+        const bookGallery = document.getElementById('book-gallery');
+        bookGallery.innerHTML = ''; // Clear previous results
+      
+        books.forEach(book => {
+          const bookInfo = book.volumeInfo;
+          const accessInfo = book.accessInfo;
+      
+          // Filter books with readable content
+          if (accessInfo.viewability === 'NO_PAGES') return;
+      
+          const bookCard = document.createElement('div');
+          bookCard.classList.add('book-card');
+      
+          const thumbnail = document.createElement('img');
+          thumbnail.src = bookInfo.imageLinks?.thumbnail || 'static/images/default_book_cover.jpg';
+          thumbnail.alt = bookInfo.title;
+      
+          const title = document.createElement('h3');
+          title.textContent = bookInfo.title;
+      
+          const author = document.createElement('p');
+          author.textContent = `Penulis: ${bookInfo.authors?.join(', ') || 'Tidak Diketahui'}`;
+      
+          const link = document.createElement('button');
+          link.textContent = 'Baca Buku';
+          link.classList.add('read-link');
+          link.onclick = () => window.open(accessInfo.webReaderLink, '_blank');
+      
+          bookCard.appendChild(thumbnail);
+          bookCard.appendChild(title);
+          bookCard.appendChild(author);
+          bookCard.appendChild(link);
+      
+          bookGallery.appendChild(bookCard);
+        });
+      }
+      
+      
+  
+    // Open Viewer
+    function openViewer(bookId) {
+      currentBookId = bookId;
+      const viewer = new google.books.DefaultViewer(document.getElementById('viewer'));
+      viewer.load(bookId);
+      document.getElementById('viewer-modal').style.display = 'flex';
+    }
+  
+    // Close Modal
+    function closeModal() {
+      document.getElementById('viewer-modal').style.display = 'none';
+    }
+  
+    // Search Books
+    function searchBooks() {
+      const searchInput = document.getElementById('search-input');
+      const query = searchInput.value || 'Islam';
+      fetchBooks(query);
+    }
+  
+    // Back Button Function
+  
+    // Fetch books on page load
+    window.onload = () => fetchBooks();
+  </script>  
+  
+</body>
+</html>

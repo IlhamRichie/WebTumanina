@@ -2075,3 +2075,25 @@ header {
     margin: 5px 0;
   }
 }
+
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #004c7e; /* Warna biru tua dengan transparansi */
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  z-index: 9999;
+}
+
+.notification.hide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-20px); /* Geser ke atas */
+}
+

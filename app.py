@@ -22,7 +22,7 @@ app.secret_key = 'atmins'
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'tumanina_db'
+app.config['MYSQL_DB'] = 'admin_tumanina'
 
 # Upload folder config
 app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
@@ -157,6 +157,11 @@ def video():
 @app.route('/quiz')
 def quiz():
     return render_template('quiz.html')
+
+@app.route('/perpus')
+def perpus():
+    return render_template('perpus.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

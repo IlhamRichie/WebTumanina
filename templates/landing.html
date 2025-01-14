@@ -36,6 +36,8 @@
 </head>
 
 
+
+
 <body class="index-page">
 
 
@@ -56,11 +58,35 @@
         <li><a href="#contact">Kontak</a></li>
         <li><a href="/video">Video</a></li>
         <li><a href="/quiz">quiz</a></li>
+        <li><a href="/perpus">perpustakaan</a></li>
+
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
   </div>
 </header>
+
+
+
+<!-- Welcome Modal -->
+<div id="welcome-notification" class="notification">
+  Selamat Datang, para Muslim dan Muslimah di Tumanina! 🌙✨
+</div>
+<script>
+  window.onload = function () {
+    const notification = document.getElementById('welcome-notification');
+    
+    // Tampilkan notifikasi selama 3 detik, lalu sembunyikan
+    setTimeout(() => {
+      notification.classList.add('hide'); // Tambahkan kelas untuk animasi menghilang
+    }, 3000); // Tampilkan selama 3 detik
+
+    // Hapus elemen notifikasi setelah animasi selesai (5 detik total)
+    setTimeout(() => {
+      notification.remove();
+    }, 5000); // Hapus setelah selesai animasi
+  };
+</script>
 
 
 
@@ -92,6 +118,8 @@
       </div>
     </section>
 
+
+    
 
 
 

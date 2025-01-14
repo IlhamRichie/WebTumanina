@@ -8,7 +8,11 @@
 </head>
 <body>
 
-  <h1>Video Islami Indonesia</h1>
+  <header class="header">
+    <!-- Back Button -->
+    <h1>Video Islami Indonesia</h1>
+    <p>Temukan video Islami yang inspiratif dan penuh makna.</p>
+  </header>
 
   <!-- Search Section -->
   <div class="search-bar">
@@ -22,7 +26,7 @@
   <!-- Video Modal -->
   <div id="video-modal" class="modal">
     <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <button class="close-btn" onclick="closeModal()">&#x2716;</button>
       <iframe id="modal-video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
@@ -30,14 +34,18 @@
   <script>
     const apiKey = 'AIzaSyDAmzFR2n9Fif1B-O7UC4AXAefEa2MPrvU';
     let query = 'keutamaan ibadah';
+    let pageToken = ''; // Token for changing video result
 
     // Fetch YouTube API
     function fetchVideos() {
-      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=10&regionCode=ID&relevanceLanguage=id&key=${apiKey}`;
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=20&regionCode=ID&relevanceLanguage=id&pageToken=${pageToken}&key=${apiKey}`;
       
       fetch(url)
         .then(response => response.json())
-        .then(data => displayVideos(data.items))
+        .then(data => {
+          displayVideos(data.items);
+          pageToken = data.nextPageToken || ''; // Update page token for refresh
+        })
         .catch(error => console.error('Error fetching the videos:', error));
     }
 
@@ -50,19 +58,17 @@
         const videoCard = document.createElement('div');
         videoCard.classList.add('video-card');
 
-        const iframe = document.createElement('iframe');
-        iframe.src = `https://www.youtube.com/embed/${video.id.videoId}`;
-        iframe.frameBorder = '0';
-        iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-
-        iframe.onclick = () => openModal(video.id.videoId); // Open modal on click
+        const thumbnail = document.createElement('img');
+        thumbnail.src = video.snippet.thumbnails.medium.url;
+        thumbnail.alt = video.snippet.title;
 
         const title = document.createElement('h3');
         title.textContent = video.snippet.title;
 
-        videoCard.appendChild(iframe);
+        videoCard.appendChild(thumbnail);
         videoCard.appendChild(title);
+
+        videoCard.onclick = () => openModal(video.id.videoId); // Open modal on click
 
         videoGallery.appendChild(videoCard);
       });
@@ -73,7 +79,7 @@
       const modal = document.getElementById('video-modal');
       const modalVideo = document.getElementById('modal-video');
       modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`; // Add autoplay
-      modal.style.display = 'block';
+      modal.style.display = 'flex';
     }
 
     // Close Modal
@@ -88,12 +94,17 @@
     function searchVideos() {
       const searchInput = document.getElementById('search-input');
       query = searchInput.value || 'ceramah Islam Indonesia'; // Default query if empty
+      pageToken = ''; // Reset page token for new search
       fetchVideos();
+    }
+
+    // Back Button Function
+    function goBack() {
+      window.location.href = '/';
     }
 
     // Fetch videos on page load
     window.onload = fetchVideos;
   </script>
-
 </body>
 </html>
