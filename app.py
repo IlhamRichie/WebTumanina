@@ -11,6 +11,8 @@ import json
 from nltk.stem import WordNetLemmatizer
 from controllers.auth_controller import auth_bp
 from controllers.sentiment_controller import sentiment_bp
+from controllers.diskusi_controller import diskusi_bp
+
 from models.user_model import UserModel
 
 # Setup Flask app
@@ -28,6 +30,8 @@ app.config['MYSQL_DB'] = 'admin_tumanina'
 app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
 app.register_blueprint(auth_bp)
 app.register_blueprint(sentiment_bp)
+app.register_blueprint(diskusi_bp)
+
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Initialize MySQL
