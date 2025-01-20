@@ -11,7 +11,6 @@ import json
 from nltk.stem import WordNetLemmatizer
 from controllers.auth_controller import auth_bp
 from controllers.sentiment_controller import sentiment_bp
-from controllers.diskusi_controller import diskusi_bp
 
 from models.user_model import UserModel
 
@@ -30,7 +29,6 @@ app.config['MYSQL_DB'] = 'admin_tumanina'
 app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
 app.register_blueprint(auth_bp)
 app.register_blueprint(sentiment_bp)
-app.register_blueprint(diskusi_bp)
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
@@ -165,6 +163,172 @@ def quiz():
 @app.route('/perpus')
 def perpus():
     return render_template('perpus.html')
+
+# Endpoint untuk mendapatkan semua thread
+@app.route('/api/threads', methods=['GET'])
+def get_threads():
+    try:
+        cur = mysql.connection.cursor(DictCursor)
+        cur.execute("""
+            SELECT 
+                t.id AS thread_id, 
+                t.title, 
+                t.content, 
+                t.created_at, 
+                u.username AS author_username 
+            FROM 
+                threads t
+            JOIN 
+                users_apk u ON t.author_id = u.id
+            ORDER BY 
+                t.created_at DESC
+        """)
+        threads = cur.fetchall()
+        cur.close()
+        return jsonify({'status': 'success', 'threads': threads}), 200
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
+# Endpoint untuk membuat thread baru
+@app.route('/api/threads', methods=['POST'])
+def create_thread():
+    try:
+        data = request.get_json()
+        title = data.get('title')
+        content = data.get('content')
+        author_id = data.get('author_id')  # ID pengguna dari users_apk
+
+        if not title or not content or not author_id:
+            return jsonify({'status': 'error', 'message': 'All fields are required'}), 400
+
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            INSERT INTO threads (title, content, author_id) 
+            VALUES (%s, %s, %s)
+        """, (title, content, author_id))
+        mysql.connection.commit()
+        cur.close()
+        return jsonify({'status': 'success', 'message': 'Thread created successfully'}), 201
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
+# Endpoint untuk mendapatkan semua komentar dari thread tertentu
+@app.route('/api/threads/<int:thread_id>/comments', methods=['GET'])
+def get_comments(thread_id):
+    try:
+        cur = mysql.connection.cursor(DictCursor)
+        cur.execute("""
+            SELECT 
+                c.id AS comment_id, 
+                c.content, 
+                c.created_at, 
+                u.username AS author_username, 
+                c.parent_comment_id 
+            FROM 
+                comments c
+            JOIN 
+                users_apk u ON c.author_id = u.id
+            WHERE 
+                c.thread_id = %s
+            ORDER BY 
+                c.created_at ASC
+        """, (thread_id,))
+        comments = cur.fetchall()
+        cur.close()
+        return jsonify({'status': 'success', 'comments': comments}), 200
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
+# Endpoint untuk menambahkan komentar pada thread tertentu
+@app.route('/api/threads/<int:thread_id>/comments', methods=['POST'])
+def add_comment(thread_id):
+    try:
+        data = request.get_json()
+        content = data.get('content')
+        author_id = data.get('author_id')  # ID pengguna dari users_apk
+        parent_comment_id = data.get('parent_comment_id', None)  # Optional, untuk nested comment
+
+        if not content or not author_id:
+            return jsonify({'status': 'error', 'message': 'Content and author_id are required'}), 400
+
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            INSERT INTO comments (thread_id, content, author_id, parent_comment_id) 
+            VALUES (%s, %s, %s, %s)
+        """, (thread_id, content, author_id, parent_comment_id))
+        mysql.connection.commit()
+        cur.close()
+        return jsonify({'status': 'success', 'message': 'Comment added successfully'}), 201
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/api/threads/<int:thread_id>', methods=['PUT'])
+def edit_thread(thread_id):
+    try:
+        data = request.get_json()
+        title = data.get('title')
+        content = data.get('content')
+
+        if not title or not content:
+            return jsonify({'status': 'error', 'message': 'Title and content are required'}), 400
+
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            UPDATE threads 
+            SET title = %s, content = %s 
+            WHERE id = %s
+        """, (title, content, thread_id))
+        mysql.connection.commit()
+        cur.close()
+        return jsonify({'status': 'success', 'message': 'Thread updated successfully'}), 200
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/api/threads/<int:thread_id>', methods=['DELETE'])
+def delete_thread(thread_id):
+    try:
+        cur = mysql.connection.cursor()
+        cur.execute("DELETE FROM threads WHERE id = %s", (thread_id,))
+        mysql.connection.commit()
+        cur.close()
+        return jsonify({'status': 'success', 'message': 'Thread deleted successfully'}), 200
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/api/comments/<int:comment_id>', methods=['PUT'])
+def edit_comment(comment_id):
+    try:
+        data = request.get_json()
+        content = data.get('content')
+
+        if not content:
+            return jsonify({'status': 'error', 'message': 'Content is required'}), 400
+
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            UPDATE comments 
+            SET content = %s 
+            WHERE id = %s
+        """, (content, comment_id))
+        mysql.connection.commit()
+        cur.close()
+        return jsonify({'status': 'success', 'message': 'Comment updated successfully'}), 200
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/api/comments/<int:comment_id>', methods=['DELETE'])
+def delete_comment(comment_id):
+    try:
+        cur = mysql.connection.cursor()
+        cur.execute("DELETE FROM comments WHERE id = %s", (comment_id,))
+        mysql.connection.commit()
+        cur.close()
+        return jsonify({'status': 'success', 'message': 'Comment deleted successfully'}), 200
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
 
 
 if __name__ == '__main__':

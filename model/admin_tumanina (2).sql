@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 20, 2025 at 07:49 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Waktu pembuatan: 20 Jan 2025 pada 11.36
+-- Versi server: 8.0.30
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `articles`
+-- Struktur dari tabel `articles`
 --
 
 CREATE TABLE `articles` (
@@ -36,7 +36,7 @@ CREATE TABLE `articles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `articles`
+-- Dumping data untuk tabel `articles`
 --
 
 INSERT INTO `articles` (`id`, `title`, `content`, `image`, `created_at`) VALUES
@@ -48,61 +48,29 @@ INSERT INTO `articles` (`id`, `title`, `content`, `image`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `discussions`
+-- Struktur dari tabel `comments`
 --
 
-CREATE TABLE `discussions` (
+CREATE TABLE `comments` (
   `id` int NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `user_id` int NOT NULL,
-  `user_apk_id` int DEFAULT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `thread_id` int NOT NULL,
+  `content` text NOT NULL,
+  `author_id` int NOT NULL,
+  `parent_comment_id` int DEFAULT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `discussions`
+-- Dumping data untuk tabel `comments`
 --
 
-INSERT INTO `discussions` (`id`, `title`, `content`, `user_id`, `user_apk_id`, `created_at`, `updated_at`) VALUES
-(7, 'gsgsgs', 'shshsh', 30, 2, '2025-01-20 13:30:45', '2025-01-20 13:30:45'),
-(8, 'jajaja', 'aakakka', 30, 1, '2025-01-20 13:41:03', '2025-01-20 13:41:03'),
-(9, 'aajaj', 'ajjaja', 34, 2, '2025-01-20 13:51:45', '2025-01-20 13:51:45'),
-(11, 'fffff', 'fff', 34, 2, '2025-01-20 14:44:59', '2025-01-20 14:44:59');
+INSERT INTO `comments` (`id`, `thread_id`, `content`, `author_id`, `parent_comment_id`, `created_at`) VALUES
+(1, 1, 'Ini adalah komentar baru', 1, NULL, '2025-01-20 17:21:30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `discussion_comments`
---
-
-CREATE TABLE `discussion_comments` (
-  `id` int NOT NULL,
-  `discussion_id` int NOT NULL,
-  `comment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `user_apk_id` int NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `discussion_comments`
---
-
-INSERT INTO `discussion_comments` (`id`, `discussion_id`, `comment`, `user_apk_id`, `created_at`, `updated_at`) VALUES
-(1, 8, 'hahahaha', 1, '2025-01-20 13:47:35', '2025-01-20 13:47:35'),
-(2, 7, 'hhahaha', 1, '2025-01-20 13:49:04', '2025-01-20 13:49:04'),
-(3, 8, 'hahaha', 1, '2025-01-20 13:50:38', '2025-01-20 13:50:38'),
-(4, 9, 'wkwkkw', 1, '2025-01-20 14:03:54', '2025-01-20 14:03:54'),
-(5, 9, 'halo', 1, '2025-01-20 14:09:18', '2025-01-20 14:09:18'),
-(7, 7, 'tailaso', 1, '2025-01-20 14:32:51', '2025-01-20 14:32:51'),
-(8, 7, 'astagfirullah', 1, '2025-01-20 14:33:02', '2025-01-20 14:33:02');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `hasil_model`
+-- Struktur dari tabel `hasil_model`
 --
 
 CREATE TABLE `hasil_model` (
@@ -115,7 +83,7 @@ CREATE TABLE `hasil_model` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `hasil_model`
+-- Dumping data untuk tabel `hasil_model`
 --
 
 INSERT INTO `hasil_model` (`id_hasil_model`, `nama`, `tanggal`, `review`, `label`, `id_review`) VALUES
@@ -129,7 +97,7 @@ INSERT INTO `hasil_model` (`id_hasil_model`, `nama`, `tanggal`, `review`, `label
 -- --------------------------------------------------------
 
 --
--- Table structure for table `input_review`
+-- Struktur dari tabel `input_review`
 --
 
 CREATE TABLE `input_review` (
@@ -140,7 +108,7 @@ CREATE TABLE `input_review` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `input_review`
+-- Dumping data untuk tabel `input_review`
 --
 
 INSERT INTO `input_review` (`id_review`, `nama`, `tanggal`, `review`) VALUES
@@ -154,7 +122,28 @@ INSERT INTO `input_review` (`id_review`, `nama`, `tanggal`, `review`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `threads`
+--
+
+CREATE TABLE `threads` (
+  `id` int NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `author_id` int NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data untuk tabel `threads`
+--
+
+INSERT INTO `threads` (`id`, `title`, `content`, `author_id`, `created_at`) VALUES
+(1, 'Thread Diupdate', 'Isi thread telah diperbarui', 1, '2025-01-20 17:18:41');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -165,7 +154,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
@@ -176,7 +165,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_apk`
+-- Struktur dari tabel `users_apk`
 --
 
 CREATE TABLE `users_apk` (
@@ -189,7 +178,7 @@ CREATE TABLE `users_apk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users_apk`
+-- Dumping data untuk tabel `users_apk`
 --
 
 INSERT INTO `users_apk` (`id`, `username`, `email`, `password`, `created_at`, `updated_at`) VALUES
@@ -201,116 +190,116 @@ INSERT INTO `users_apk` (`id`, `username`, `email`, `password`, `created_at`, `u
 --
 
 --
--- Indexes for table `articles`
+-- Indeks untuk tabel `articles`
 --
 ALTER TABLE `articles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `discussions`
+-- Indeks untuk tabel `comments`
 --
-ALTER TABLE `discussions`
+ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `user_apk_id` (`user_apk_id`);
+  ADD KEY `thread_id` (`thread_id`),
+  ADD KEY `author_id` (`author_id`),
+  ADD KEY `parent_comment_id` (`parent_comment_id`);
 
 --
--- Indexes for table `discussion_comments`
---
-ALTER TABLE `discussion_comments`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `discussion_id` (`discussion_id`),
-  ADD KEY `user_apk_id` (`user_apk_id`);
-
---
--- Indexes for table `hasil_model`
+-- Indeks untuk tabel `hasil_model`
 --
 ALTER TABLE `hasil_model`
   ADD PRIMARY KEY (`id_hasil_model`);
 
 --
--- Indexes for table `input_review`
+-- Indeks untuk tabel `input_review`
 --
 ALTER TABLE `input_review`
   ADD PRIMARY KEY (`id_review`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `threads`
+--
+ALTER TABLE `threads`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `author_id` (`author_id`);
+
+--
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- Indexes for table `users_apk`
+-- Indeks untuk tabel `users_apk`
 --
 ALTER TABLE `users_apk`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `articles`
+-- AUTO_INCREMENT untuk tabel `articles`
 --
 ALTER TABLE `articles`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `discussions`
+-- AUTO_INCREMENT untuk tabel `comments`
 --
-ALTER TABLE `discussions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `comments`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `discussion_comments`
---
-ALTER TABLE `discussion_comments`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `hasil_model`
+-- AUTO_INCREMENT untuk tabel `hasil_model`
 --
 ALTER TABLE `hasil_model`
   MODIFY `id_hasil_model` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `input_review`
+-- AUTO_INCREMENT untuk tabel `input_review`
 --
 ALTER TABLE `input_review`
   MODIFY `id_review` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `threads`
+--
+ALTER TABLE `threads`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT for table `users_apk`
+-- AUTO_INCREMENT untuk tabel `users_apk`
 --
 ALTER TABLE `users_apk`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `discussions`
+-- Ketidakleluasaan untuk tabel `comments`
 --
-ALTER TABLE `discussions`
-  ADD CONSTRAINT `discussions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `discussions_ibfk_2` FOREIGN KEY (`user_apk_id`) REFERENCES `users_apk` (`id`) ON DELETE SET NULL;
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`thread_id`) REFERENCES `threads` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `users_apk` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `comments_ibfk_3` FOREIGN KEY (`parent_comment_id`) REFERENCES `comments` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `discussion_comments`
+-- Ketidakleluasaan untuk tabel `threads`
 --
-ALTER TABLE `discussion_comments`
-  ADD CONSTRAINT `discussion_comments_ibfk_1` FOREIGN KEY (`discussion_id`) REFERENCES `discussions` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `discussion_comments_ibfk_2` FOREIGN KEY (`user_apk_id`) REFERENCES `users_apk` (`id`) ON DELETE CASCADE;
+ALTER TABLE `threads`
+  ADD CONSTRAINT `threads_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `users_apk` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

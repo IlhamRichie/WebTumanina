@@ -24,7 +24,6 @@
                 <li><a href="{{ url_for('auth.users') }}" class="{% if request.endpoint == 'auth.users' %}active{% endif %}">Users</a></li>
                 <li><a href="{{ url_for('auth.artikel') }}" class="{% if request.endpoint == 'auth.artikel' %}active{% endif %}">Artikel</a></li>
                 <li><a href="{{ url_for('sentiment.index') }}" class="{% if request.endpoint == 'sentiment.index' %}active{% endif %}">Sentiments</a></li>
-                <li><a href="{{ url_for('diskusi.manage_discussions') }}" class="{% if request.endpoint == 'diskusi.manage_discussions' %}active{% endif %}">Diskusi</a></li>
                 <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
             </ul>
         </div>
